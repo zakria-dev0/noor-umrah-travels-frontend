@@ -1,0 +1,352 @@
+/* Noor package carousel
+ * - Infinite looping with clones
+ * - Autoplay every N ms
+ * - Arrows + dots
+ * - Responsive visible slides (sm/md/lg)
+ * - Stops autoplay after user interaction
+ */
+
+(function () {
+  "use strict";
+
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function getVisibleCount(root) {
+    // Defaults: 1 (sm), 2 (md), 3 (lg)
+    var sm = parseInt(root.getAttribute("data-visible-sm") || "1", 10);
+    var md = parseInt(root.getAttribute("data-visible-md") || "2", 10);
+    var lg = parseInt(root.getAttribute("data-visible-lg") || "3", 10);
+
+    if (window.matchMedia("(min-width: 1024px)").matches) return lg;
+    if (window.matchMedia("(min-width: 768px)").matches) return md;
+    return sm;
+  }
+
+  function initCarousel(root) {
+    var viewport = root.querySelector("[data-noor-carousel-viewport]");
+    var track = root.querySelector("[data-noor-carousel-track]");
+    var prevBtn = root.querySelector("[data-noor-carousel-prev]");
+    var nextBtn = root.querySelector("[data-noor-carousel-next]");
+    var dotsWrap = root.querySelector("[data-noor-carousel-dots]");
+
+    if (!viewport || !track) return;
+
+    var intervalMs = parseInt(root.getAttribute("data-interval") || "3000", 10);
+    intervalMs = clamp(intervalMs || 3000, 800, 60000);
+
+    // Whether autoplay should stop permanently after user interaction.
+    // Default: true. Set data-stop-on-interact="0" to keep autoplay looping.
+    var stopOnInteractAttr = (root.getAttribute("data-stop-on-interact") || "1").toString();
+    var stopOnInteract = !(stopOnInteractAttr === "0" || stopOnInteractAttr.toLowerCase() === "false");
+
+    var gapPx = parseInt(root.getAttribute("data-gap") || "24", 10);
+    gapPx = clamp(gapPx || 24, 0, 64);
+
+    var autoplayTimer = null;
+    var userInteracted = false;
+    var pointerDownX = null;
+    var normalizeTimer = null;
+
+    // Original slides are those present in markup with data-slide="1"
+    function getOriginalSlides() {
+      return Array.prototype.slice.call(track.querySelectorAll('[data-noor-slide="1"]'));
+    }
+
+    function clearClones() {
+      Array.prototype.slice
+        .call(track.querySelectorAll('[data-noor-clone="1"]'))
+        .forEach(function (n) {
+          n.parentNode && n.parentNode.removeChild(n);
+        });
+    }
+
+    var state = {
+      visible: 3,
+      originalCount: 0,
+      index: 0, // index in track children (including clones)
+      transitioning: false,
+      cloneCount: 0,
+    };
+
+    function scheduleNormalize() {
+      if (normalizeTimer) clearTimeout(normalizeTimer);
+      // Slightly longer than the transition duration (500ms)
+      normalizeTimer = setTimeout(function () {
+        normalizeAfterTransition();
+      }, 560);
+    }
+
+    function setTransition(enabled) {
+      track.style.transitionProperty = enabled ? "transform" : "none";
+      track.style.transitionDuration = enabled ? "500ms" : "0ms";
+      track.style.transitionTimingFunction = enabled ? "cubic-bezier(0.22, 1, 0.36, 1)" : "linear";
+    }
+
+    function applySizes() {
+      state.visible = getVisibleCount(root);
+
+      var viewportWidth = viewport.clientWidth;
+      var totalGap = gapPx * Math.max(0, state.visible - 1);
+      var slideWidth = (viewportWidth - totalGap) / Math.max(1, state.visible);
+
+      track.style.display = "flex";
+      track.style.gap = gapPx + "px";
+
+      Array.prototype.slice.call(track.children).forEach(function (child) {
+        if (!(child instanceof HTMLElement)) return;
+        child.style.flex = "0 0 auto";
+        child.style.width = slideWidth + "px";
+      });
+    }
+
+    function currentDotIndex() {
+      if (state.originalCount <= 0) return 0;
+      var base = state.index - (state.cloneCount || state.visible);
+      var mod = ((base % state.originalCount) + state.originalCount) % state.originalCount;
+      return mod;
+    }
+
+    function updateDots() {
+      if (!dotsWrap) return;
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll("button"));
+      var active = currentDotIndex();
+      dots.forEach(function (btn, i) {
+        var isActive = i === active;
+        btn.setAttribute("aria-current", isActive ? "true" : "false");
+        btn.classList.toggle("opacity-100", isActive);
+        btn.classList.toggle("opacity-40", !isActive);
+      });
+    }
+
+    function translateToIndex(immediate) {
+      var viewportWidth = viewport.clientWidth;
+      var slideWidth = (viewportWidth - gapPx * Math.max(0, state.visible - 1)) / Math.max(1, state.visible);
+      var x = state.index * (slideWidth + gapPx);
+      setTransition(!immediate);
+      track.style.transform = "translate3d(" + -x + "px,0,0)";
+      updateDots();
+    }
+
+    function rebuild() {
+      // Preserve active slide (by dot index)
+      var desiredDot = currentDotIndex();
+
+      clearClones();
+
+      var originals = getOriginalSlides();
+      state.originalCount = originals.length;
+
+      // If not enough slides, disable carousel UI
+      var canSlide = state.originalCount > state.visible;
+
+      if (prevBtn) prevBtn.disabled = !canSlide;
+      if (nextBtn) nextBtn.disabled = !canSlide;
+      if (dotsWrap) dotsWrap.classList.toggle("hidden", state.originalCount <= 1);
+
+      // Build dots
+      if (dotsWrap) {
+        dotsWrap.innerHTML = "";
+        for (var i = 0; i < state.originalCount; i++) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "h-2.5 w-2.5 rounded-full bg-emerald-dark opacity-40 transition-opacity";
+          b.setAttribute("aria-label", "Go to slide " + (i + 1));
+          (function (idx) {
+            b.addEventListener("click", function () {
+              userInteracted = true;
+              stopAutoplay();
+              goToDot(idx);
+            });
+          })(i);
+          dotsWrap.appendChild(b);
+        }
+      }
+
+      if (!canSlide) {
+        state.index = 0;
+        state.cloneCount = 0;
+        applySizes();
+        translateToIndex(true);
+        stopAutoplay();
+        return;
+      }
+
+      // Clone slides to front/end for seamless looping.
+      // Use a slightly larger buffer than visible to reduce how often we need to normalize.
+      var cloneCount = Math.min(state.originalCount, Math.max(1, state.visible * 2));
+      state.cloneCount = cloneCount;
+
+      var frontClones = originals.slice(-cloneCount).map(function (el) {
+        var c = el.cloneNode(true);
+        c.setAttribute("data-noor-clone", "1");
+        return c;
+      });
+      var endClones = originals.slice(0, cloneCount).map(function (el) {
+        var c = el.cloneNode(true);
+        c.setAttribute("data-noor-clone", "1");
+        return c;
+      });
+
+      frontClones.forEach(function (c) {
+        track.insertBefore(c, track.firstChild);
+      });
+      endClones.forEach(function (c) {
+        track.appendChild(c);
+      });
+
+      applySizes();
+
+      // Index starts at first original slide
+      state.index = cloneCount + clamp(desiredDot, 0, Math.max(0, state.originalCount - 1));
+      translateToIndex(true);
+
+      if (!userInteracted) startAutoplay();
+    }
+
+    function normalizeAfterTransition() {
+      if (state.originalCount <= state.visible) return;
+
+      var cc = state.cloneCount || state.visible;
+
+      // Left boundary
+      if (state.index < cc) {
+        state.index = state.index + state.originalCount;
+        translateToIndex(true);
+        return;
+      }
+
+      // Right boundary
+      if (state.index >= state.originalCount + cc) {
+        state.index = state.index - state.originalCount;
+        translateToIndex(true);
+      }
+    }
+
+    function next() {
+      if (state.originalCount <= state.visible) return;
+      state.index += 1;
+      translateToIndex(false);
+      scheduleNormalize();
+    }
+
+    function prev() {
+      if (state.originalCount <= state.visible) return;
+      state.index -= 1;
+      translateToIndex(false);
+      scheduleNormalize();
+    }
+
+    function goToDot(dotIndex) {
+      if (state.originalCount <= 0) return;
+      dotIndex = clamp(dotIndex, 0, state.originalCount - 1);
+      state.index = (state.cloneCount || state.visible) + dotIndex;
+      translateToIndex(false);
+      scheduleNormalize();
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (userInteracted && stopOnInteract) return;
+      if (state.originalCount <= state.visible) return;
+      autoplayTimer = setInterval(function () {
+        next();
+      }, intervalMs);
+    }
+
+    // Controls
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        if (stopOnInteract) {
+          userInteracted = true;
+          stopAutoplay();
+        }
+        prev();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        if (stopOnInteract) {
+          userInteracted = true;
+          stopAutoplay();
+        }
+        next();
+      });
+    }
+
+    // Swipe (basic)
+    viewport.addEventListener("pointerdown", function (e) {
+      pointerDownX = e.clientX;
+      if (stopOnInteract) {
+        userInteracted = true;
+        stopAutoplay();
+      }
+    });
+
+    viewport.addEventListener("pointerup", function (e) {
+      if (pointerDownX === null) return;
+      var dx = e.clientX - pointerDownX;
+      pointerDownX = null;
+      if (Math.abs(dx) < 50) return;
+      if (dx < 0) next();
+      else prev();
+    });
+
+    track.addEventListener("transitionend", function () {
+      normalizeAfterTransition();
+    });
+
+    // Pause on hover only (does not mark as user interaction)
+    root.addEventListener("mouseenter", function () {
+      stopAutoplay();
+    });
+    root.addEventListener("mouseleave", function () {
+      if (!userInteracted) startAutoplay();
+    });
+
+    // Resize
+    var resizeTimer = null;
+    window.addEventListener("resize", function () {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        rebuild();
+      }, 150);
+    });
+
+    rebuild();
+
+    // Expose for debugging if needed
+    root.__noorCarousel = {
+      next: next,
+      prev: prev,
+      stop: function () {
+        userInteracted = true;
+        stopAutoplay();
+      },
+      start: function () {
+        userInteracted = false;
+        startAutoplay();
+      },
+    };
+  }
+
+  function boot() {
+    var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-noor-carousel="1"]'));
+    nodes.forEach(initCarousel);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();

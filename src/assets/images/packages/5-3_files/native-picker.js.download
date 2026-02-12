@@ -1,0 +1,87 @@
+(function () {
+    function shouldEnhance(el) {
+        return (
+            el &&
+            el.tagName === 'INPUT' &&
+            (el.type === 'date' || el.type === 'datetime-local')
+        );
+    }
+
+    function openPicker(el) {
+        if (!el || el.disabled || el.readOnly) return;
+
+        // Chrome/Edge: showPicker() opens the native UI even when clicking input body.
+        if (typeof el.showPicker === 'function') {
+            try {
+                el.showPicker();
+            } catch (e) {
+                // Some browsers throw if not user-initiated; ignore.
+            }
+        }
+    }
+
+    function enhanceInput(el) {
+        if (!shouldEnhance(el)) return;
+        if (el.dataset.nativePickerEnhanced === '1') return;
+
+        el.dataset.nativePickerEnhanced = '1';
+        el.classList.add('native-picker-input');
+
+        // Open on click anywhere inside the field.
+        el.addEventListener(
+            'pointerdown',
+            function (e) {
+                // Only primary button.
+                if (typeof e.button === 'number' && e.button !== 0) return;
+                openPicker(el);
+            },
+            { passive: true }
+        );
+
+        // Keyboard accessibility.
+        el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                openPicker(el);
+            }
+        });
+    }
+
+    function scanAndEnhance(root) {
+        var scope = root || document;
+        scope
+            .querySelectorAll('input[type="date"], input[type="datetime-local"]')
+            .forEach(enhanceInput);
+    }
+
+    function init() {
+        scanAndEnhance(document);
+
+        // Support dynamically added fields (Alpine x-for etc.)
+        var obs = new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) {
+                m.addedNodes.forEach(function (node) {
+                    if (!node) return;
+                    if (node.nodeType !== 1) return; // element
+
+                    if (shouldEnhance(node)) {
+                        enhanceInput(node);
+                    }
+
+                    // Also scan children.
+                    scanAndEnhance(node);
+                });
+            });
+        });
+
+        obs.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

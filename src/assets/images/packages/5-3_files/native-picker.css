@@ -1,0 +1,21 @@
+/* Native date/time input enhancements (keeps browser default picker UI) */
+
+input.native-picker-input[type="date"],
+input.native-picker-input[type="datetime-local"] {
+    cursor: pointer;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input.native-picker-input[type="date"]:focus,
+input.native-picker-input[type="datetime-local"]:focus {
+    border-color: rgba(27, 94, 75, 0.55) !important;
+    box-shadow: 0 0 0 3px rgba(27, 94, 75, 0.14) !important;
+}
+
+/* Improve the click target a bit on touch devices while keeping native behavior */
+@media (pointer: coarse) {
+    input.native-picker-input[type="date"],
+    input.native-picker-input[type="datetime-local"] {
+        min-height: 44px;
+    }
+}
