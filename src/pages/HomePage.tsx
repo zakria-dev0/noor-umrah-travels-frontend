@@ -98,11 +98,11 @@ const HomePage: React.FC = () => {
         title="5 Star Luxury Packages"
         subtitle="Ultimate luxury with Haram views & VIP services"
         packages={[
-          { days: 7, price: 1795 },
-          { days: 10, price: 2095 },
-          { days: 14, price: 2495 },
-          { days: 21, price: 2995 },
-          { days: 28, price: 3495 },
+          { days: 7, price: 790 },
+          { days: 10, price: 990 },
+          { days: 14, price: 1190 },
+          // { days: 21, price: 2995 },
+          // { days: 28, price: 3495 },
         ]}
       />
 

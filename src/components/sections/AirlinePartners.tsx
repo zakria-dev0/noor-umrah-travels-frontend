@@ -41,7 +41,7 @@ const AirlinePartners: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-noor-light">
+    <section className="hidden md:block py-16 bg-noor-light">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-noor-green mb-3 font-display">
           Our Airline Partners

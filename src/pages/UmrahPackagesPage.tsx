@@ -301,7 +301,7 @@ const UmrahPackageCard = ({ pkg }: { pkg: PackageItem }) => {
 
         {/* Price */}
         <div className="mb-4">
-          <span className="text-noor-gold text-xs align-top">£</span>
+          <span className="text-noor-gold text-xs align-top">$</span>
           <span className="text-4xl font-bold text-noor-green">{pkg.price}</span>
           <span className="text-gray-400 text-sm ml-1">/ Per Person</span>
         </div>
@@ -414,7 +414,7 @@ const ContentSection = () => (
           Making the Right Choices – Contacting Noor Umrah Travels
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Help is needed to get through the complicated planning of Umrah 2026. Noor Umrah Travels makes this process easier by giving you a clear way to pick the right options. We are easy to contact; you can call us at +447777426722 or email info@noorumrahtravels.co.uk. Our experienced travel agents are ready to help, making the whole process smooth, from thinking about it to booking it.
+          Help is needed to get through the complicated planning of Umrah 2026. Noor Umrah Travels makes this process easier by giving you a clear way to pick the right options. We are easy to contact; you can call us at +447777426722 or email info@haramumrahtravels.com. Our experienced travel agents are ready to help, making the whole process smooth, from thinking about it to booking it.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">

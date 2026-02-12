@@ -186,7 +186,7 @@ const UmrahPackageCard = ({ pkg }: { pkg: PackageItem }) => {
 
         {/* Price */}
         <div className="mb-4">
-          <span className="text-noor-gold text-xs align-top">£</span>
+          <span className="text-noor-gold text-xs align-top">$S</span>
           <span className="text-4xl font-bold text-noor-green">{pkg.price}</span>
           <span className="text-gray-400 text-sm ml-1">/ Per Person</span>
         </div>

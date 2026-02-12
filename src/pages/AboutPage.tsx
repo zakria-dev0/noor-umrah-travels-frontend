@@ -449,7 +449,7 @@ const AboutHero: React.FC = () => (
         Noor Umrah Travels US
       </h1>
       <p className="text-white/70 mt-4 max-w-2xl text-lg leading-relaxed">
-        A trUSted and reliable Umrah travel agency in the US dedicated to providing seamless, affordable, and spiritually enriching journeys to Makkah and Madinah.
+        A trUSted and reliable Umrah travel agency in the US dedicated to providing seamless, affordable, and spiritually enriching journeys to Makkah.
       </p>
     </div>
   </section>

@@ -121,7 +121,7 @@
 //                 </div>
 //                 <div>
 //                   <h4 className="font-bold text-noor-green">Email Us</h4>
-//                   <p className="text-gray-500 text-sm">info@noorumrahtravels.co.uk</p>
+//                   <p className="text-gray-500 text-sm">info@haramumrahtravels.com</p>
 //                 </div>
 //               </div>
 
@@ -465,7 +465,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-noor-green">Email Us</h4>
-                  <p className="text-gray-500 text-sm">info@noorumrahtravels.co.uk</p>
+                  <p className="text-gray-500 text-sm">info@haramumrahtravels.com</p>
                 </div>
               </div>
 
@@ -573,7 +573,6 @@ const ContactSection: React.FC = () => {
                     className="bg-noor-green text-white px-8 py-3 rounded-full flex items-center gap-2 font-semibold hover:bg-[#2a5c3a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Submitting...' : 'Submit Inquiry'}
-                    {!loading && <ArrowRightIcon className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
@@ -610,7 +609,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What's included in your packages?",
-    answer: 'Our packages typically include return flights, hotel accommodation in Makkah and Madinah, airport transfers, Umrah visa processing, and 24/7 support. Some packages also include ziyarat tours and additional services. Check individual package details for full inclusions.',
+    answer: 'Our packages typically include return flights, hotel accommodation in Makkah, airport transfers, Umrah visa processing, and 24/7 support. Some packages also include ziyarat tours and additional services. Check individual package details for full inclusions.',
   },
 ];
 

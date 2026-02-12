@@ -165,14 +165,14 @@ const Footer: React.FC = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <h3 className="font-bold text-lg mb-4">About Us</h3>
-          <p className="text-white/50 text-sm leading-relaxed mb-6">
+          <p className="text-white text-sm leading-relaxed mb-6">
             Your trusted US-based partner for blessed Umrah journeys to the Holy Land. We provide premium Umrah packages with exceptional service and care.
           </p>
         </div>
 
         <div>
           <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-          <ul className="space-y-3 text-white/50 text-sm">
+          <ul className="space-y-3 text-sm">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
             <li><Link to="/umrah-packages" className="hover:text-white transition-colors">Umrah Packages</Link></li>
             <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
@@ -183,21 +183,21 @@ const Footer: React.FC = () => (
         <div>
           <h3 className="font-bold text-lg mb-4">Opening Hours</h3>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between text-white/50">
+            <div className="flex justify-between text-white">
               <span>Monday – Friday</span>
               <span className="text-white font-semibold">9:00 - 18:00</span>
             </div>
-            <div className="flex justify-between text-white/50">
+            <div className="flex justify-between text-white">
               <span>Saturday</span>
               <span className="text-white font-semibold">10:00 - 16:00</span>
             </div>
-            <div className="flex justify-between text-white/50">
+            <div className="flex justify-between text-white">
               <span>Sunday</span>
               <span className="text-white font-semibold">Closed</span>
             </div>
           </div>
           <div className="mt-6">
-            <p className="text-white/50 text-sm mb-3">Follow Us</p>
+            <p className="text-white text-sm mb-3">Follow Us</p>
             <div className="flex gap-3">
               {[FacebookIcon, InstagramIcon, XIcon, WhatsAppIcon].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-noor-gold transition-colors">

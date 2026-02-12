@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => (
     <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 md:py-20 w-full">
       <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 md:mb-6 font-display">
-          Begin Your Sacred Umrah Journey with Noor Umrah Travels
+          Begin Your Sacred Umrah Journey with Haram Umrah Travels
         </h1>
         <p className="text-white/80 text-base md:text-lg mb-6 md:mb-8 leading-relaxed max-w-2xl">
           Premium Umrah packages from the US, offering luxury hotels near the Haram, seamless visa processing, and expert guidance from an experienced, trusted Umrah travel team.

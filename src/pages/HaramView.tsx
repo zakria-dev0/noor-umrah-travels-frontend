@@ -32,7 +32,7 @@ const getPackageImages = () => ({
 const haramViewData: PackageCategory[] = [
   {
     name: 'Haram View Umrah Packages',
-    subtitle: 'Noor Umrah Travels',
+    subtitle: 'Haram Umrah Travels',
     packages: [
       { 
         title: '5 Star Haram View Package', 
@@ -186,7 +186,7 @@ const UmrahPackageCard = ({ pkg }: { pkg: PackageItem }) => {
 
         {/* Price */}
         <div className="mb-4">
-          <span className="text-noor-gold text-xs align-top">£</span>
+          <span className="text-noor-gold text-xs align-top">$</span>
           <span className="text-4xl font-bold text-noor-green">{pkg.price}</span>
           <span className="text-gray-400 text-sm ml-1">/ Per Person</span>
         </div>

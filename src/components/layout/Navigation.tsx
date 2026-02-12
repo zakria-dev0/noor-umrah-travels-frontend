@@ -199,7 +199,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Brand Name */}
         <Link to="/" className="flex items-center">
-          <span className="text-noor-green font-bold text-base md:text-xl uppercase tracking-wider font-display">Noor Umrah</span>
+          <span className="text-noor-green font-bold text-base md:text-xl uppercase tracking-wider font-display">Haram Umrah</span>
           <span className="text-noor-gold font-semibold text-base md:text-xl uppercase tracking-wider font-display ml-1.5">Travels</span>
         </Link>
 

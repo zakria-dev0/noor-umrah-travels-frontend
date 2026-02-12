@@ -36,7 +36,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ days, stars, price, starLabel
           {starLabel}
         </div>
         <div className="absolute top-4 right-4 bg-noor-green text-white px-4 py-1.5 rounded-full font-bold text-lg">
-          £{price.toLocaleString()}
+          ${price.toLocaleString()}
         </div>
       </div>
       <div className="p-5">
@@ -57,16 +57,16 @@ const PackageCard: React.FC<PackageCardProps> = ({ days, stars, price, starLabel
             {days === 7 ? 'Umrah visa processing' : 'Visa processing'}
           </div>
         </div>
-        <div className="flex gap-3 mt-5">
-          <button className="bg-noor-green text-white px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm font-semibold hover:bg-[#2a5c3a] transition-colors">
-            <WhatsAppIcon className="w-4 h-4" />
-            WhatsApp
-          </button>
-          <button className="border-2 border-noor-green text-noor-green px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm font-semibold hover:bg-noor-green hover:text-white transition-colors">
-            View Details
-            <ArrowRightIcon className="w-3 h-3" />
-          </button>
-        </div>
+    <div className="flex flex-col sm:flex-row gap-3 mt-5">
+  <button className="bg-noor-green text-white px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#2a5c3a] transition-colors">
+    <WhatsAppIcon className="w-4 h-4" />
+    WhatsApp
+  </button>
+  <button className="border-2 border-noor-green text-noor-green px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold hover:bg-noor-green hover:text-white transition-colors">
+    View Details
+    <ArrowRightIcon className="w-3 h-3" />
+  </button>
+</div>
       </div>
     </div>
   );

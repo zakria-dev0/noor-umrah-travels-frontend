@@ -388,7 +388,7 @@ const HaramViewDetail: React.FC = () => {
             img={movenpickImg}
             title="Hotel In Madina"
             subtitle="Anwar Al Medina Movenpick"
-            desc="The 5-star Anwar Al Madinah Mövenpick offers elegant accommodation less than 5 minutes' walk from The Mosque of the Prophet Mohammad. It features 4 on-site restaurants. Free WiFi is available in all rooms. The elegant air-conditioned rooms at Anwar Al Madinah are spacious and modern. Each comes with a refrigerator, a work desk and satellite TV, as well as an en suite bathroom."
+            desc="The 5-star Hotel offers elegant accommodation less than 5 minutes' walk from The Mosque of the Prophet Mohammad. It features 4 on-site restaurants. Free WiFi is available in all rooms. The elegant air-conditioned rooms are spacious and modern. Each comes with a refrigerator, a work desk and satellite TV, as well as an en suite bathroom."
           />
 
         </div>

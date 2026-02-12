@@ -109,7 +109,7 @@
 //               </div>
 //             </div>
 //             <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
-//               <p className="text-noor-green text-sm">We reply within the hour during UK business times.</p>
+//               <p className="text-noor-green text-sm">We reply within the hour during US business times.</p>
 //               <button
 //                 onClick={handleSubmit}
 //                 disabled={loading}
@@ -238,14 +238,13 @@ const InquiryForm: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
-              <p className="text-noor-green text-sm">We reply within the hour during UK business times.</p>
+              <p className="text-noor-green text-sm">We reply within the hour during US business times.</p>
               <button
                 onClick={handleSubmit}
                 disabled={loading}
                 className="bg-noor-green text-white px-8 py-3 rounded-full flex items-center gap-2 font-semibold hover:bg-[#2a5c3a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Submitting...' : 'Submit Inquiry'}
-                {!loading && <ArrowRightIcon className="w-4 h-4" />}
               </button>
             </div>
           </div>

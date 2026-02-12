@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase bg-noor-gold/10 px-4 py-1.5 rounded-full">About Us</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-noor-green mt-6 mb-6 leading-tight font-display">Your Trusted US Umrah Travel Partner</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-noor-green mt-6 mb-6 leading-tight font-display">Your Trusted US Umrah Travel Partner</h2>
             <p className="text-gray-600 leading-relaxed mb-10">We blend spiritual insight with professional travel expertise to deliver a smooth and memorable Umrah journey from the US, focused on comfort and care.</p>
             <div className="space-y-6">
               {features.map((feature, index) => (
@@ -110,13 +110,13 @@ const AboutSection: React.FC = () => {
                 </div>
               ))}
             </div>
-            <Link to="/contact" className="mt-10 bg-noor-green text-white px-8 py-3.5 rounded-full inline-flex items-center gap-2 font-semibold hover:bg-[#2a5c3a] transition-colors">
+              <Link to="/contact" className="mt-10 bg-noor-green text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full inline-flex items-center gap-2 text-sm sm:text-base font-semibold hover:bg-[#2a5c3a] transition-colors">
               <MailIcon className="w-5 h-5" />
               Contact Us for Free Quote
             </Link>
           </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=600&q=80" alt="Pilgrim at mosque" className="rounded-2xl shadow-xl w-full h-[550px] object-cover" />
+<img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=600&q=80" alt="Pilgrim at mosque" className="rounded-2xl shadow-xl w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover" />
           </div>
         </div>
       </div>

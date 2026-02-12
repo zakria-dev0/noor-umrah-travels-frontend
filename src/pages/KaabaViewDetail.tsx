@@ -294,7 +294,7 @@ const KaabaViewDetail: React.FC = () => {
             img={transportImg}
             title="Transportation On Ground"
             subtitle="Transportation On Ground"
-            desc="Quality service is our ambition. Enjoy complete ground service from Jeddah to Makkah, Makkah to Madinah and Madinah back to airport with our experienced staff."
+            desc="Quality service is our ambition. Enjoy complete ground service from Jeddah to Makkah, Makkah to airport with our experienced staff."
           />
 
           <ServiceCard
@@ -315,7 +315,7 @@ const KaabaViewDetail: React.FC = () => {
             img={movenpickImg}
             title="Hotel In Madina"
             subtitle="Anwar Al Medina Movenpick"
-            desc="The 5-star Anwar Al Madinah Mövenpick offers elegant accommodation less than 5 minutes' walk from the Prophet's Mosque, with modern rooms and on-site restaurants."
+            desc="The 5-star offers elegant accommodation less than 5 minutes' walk from the Prophet's Mosque, with modern rooms and on-site restaurants."
           />
 
         </div>

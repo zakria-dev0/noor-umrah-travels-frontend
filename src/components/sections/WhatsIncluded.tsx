@@ -9,7 +9,7 @@ const WhatsIncluded: React.FC = () => (
       <p className="text-white/60 mb-12">Everything you need for a peaceful, spiritually-focused journey</p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {[
-          { icon: <HotelIcon className="w-8 h-8 text-white" />, title: 'Hotel Accommodation', desc: 'Quality hotels in Makkah & Madinah with breakfast included' },
+          { icon: <HotelIcon className="w-8 h-8 text-white" />, title: 'Hotel Accommodation', desc: 'Quality hotels in Makkah with breakfast included' },
           { icon: <CarIcon className="w-8 h-8 text-white" />, title: 'Airport Transfers', desc: 'Private transfers from Jeddah to Makkah and between cities' },
           { icon: <VisaIcon className="w-8 h-8 text-white" />, title: 'Visa Assistance', desc: 'Complete Umrah visa processing and documentation support' },
           { icon: <SupportIcon className="w-8 h-8 text-white" />, title: '24/7 Support', desc: 'Dedicated support team available before and during your trip' },

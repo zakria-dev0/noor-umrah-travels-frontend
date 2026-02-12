@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'noor-green': '#1a3c2a',
-        'noor-green-dark': '#142e20',
+        'noor-green': '#234C6A',
+        'noor-green-dark': '#112635',
         'noor-gold': '#c8a84e',
         'noor-light': '#f5f7f5',
       },
