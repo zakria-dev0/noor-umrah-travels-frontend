@@ -117,17 +117,20 @@
 // DepartureCities.tsx
 import React from 'react';
 import { PhoneIcon } from '../icons/Icons';
+import { useNavigate } from 'react-router-dom';
 
 const DepartureCities: React.FC = () => {
+    const navigate = useNavigate();
+
   const cities = [
     { 
-      name: 'New York', 
+      name: 'Miami', 
       subtitle: 'Direct flights from JFK & Newark', 
       popular: true, 
       image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80'
     },
     { 
-      name: 'Houston', 
+      name: 'New York', 
       subtitle: 'Convenient Texas departures', 
       popular: false, 
       image: 'https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=600&q=80'
@@ -211,7 +214,8 @@ const DepartureCities: React.FC = () => {
         
         <div className="text-center mt-10">
           <p className="text-gray-500 mb-3">Can't find your city? We can arrange departures from any US airport.</p>
-          <button className="text-noor-gold font-semibold flex items-center gap-2 mx-auto hover:gap-3 transition-all">
+          <button onClick={() => navigate("/contact")}
+          className="text-noor-gold font-semibold flex items-center gap-2 mx-auto hover:gap-3 transition-all">
             <PhoneIcon className="w-4 h-4" />
             Contact Us for Custom Departures
           </button>

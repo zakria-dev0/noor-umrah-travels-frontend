@@ -41,7 +41,7 @@ const HeroSection: React.FC = () => (
   <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
     <div
       className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1920&q=80')` }}
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1617182195886-21a605900f11?q=80&w=1170')` }}
     >
       <div className="absolute inset-0 bg-black/50" />
     </div>

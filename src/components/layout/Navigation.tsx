@@ -159,6 +159,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CalendarIcon, ChevronDownIcon } from '../icons/Icons';
+import logo from '../../assets/images/logo.png';
+
 
 // Define the route mapping for each dropdown item
 const umrahPackageRoutes: Record<string, string> = {
@@ -198,10 +200,13 @@ const Navigation: React.FC = () => {
     <nav className={`sticky top-0 z-50 bg-white transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Brand Name */}
-        <Link to="/" className="flex items-center">
+        {/* <Link to="/" className="flex items-center">
           <span className="text-noor-green font-bold text-base md:text-xl uppercase tracking-wider font-display">Haram Umrah</span>
           <span className="text-noor-gold font-semibold text-base md:text-xl uppercase tracking-wider font-display ml-1.5">Travels</span>
-        </Link>
+        </Link> */}
+        <Link to="/" className="flex items-center">
+  <img src={logo} alt="Haram Umrah Travels" className="h-26 md:h-16" />
+</Link>
 
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8">

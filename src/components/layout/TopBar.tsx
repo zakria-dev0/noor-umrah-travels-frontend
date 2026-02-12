@@ -10,9 +10,9 @@ const TopBar: React.FC = () => (
         <span dir="rtl" className="whitespace-nowrap">٢١ شعبان، ١٤٤٧ هجری</span>
       </div>
 <div className="flex items-center gap-2 sm:gap-4 lg:gap-8">
-       <a href="tel:3057768923" className="hidden md:flex items-center gap-2 text-sm hover:text-noor-gold transition-colors">
+       <a href="tel:+1 305 7768923" className="hidden md:flex items-center gap-2 text-sm hover:text-noor-gold transition-colors">
   <PhoneIcon className="w-4 h-4 text-noor-gold" />
-  3057768923
+  +1 305 7768923
 </a>
      <a href="mailto:info@haramumrah" className="hidden lg:flex items-center gap-2 text-sm hover:text-noor-gold transition-colors">
   <MailIcon className="w-4 h-4 text-noor-gold" />

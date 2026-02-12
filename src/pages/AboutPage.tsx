@@ -644,8 +644,8 @@ const OurMission: React.FC = () => (
 // ==================== SERVING PILGRIMS ACROSS US ====================
 const ServingPilgrims: React.FC = () => {
   const cities = [
-    { name: 'New York', color: 'text-noor-green' },
-    { name: 'HoUSton', color: 'text-noor-gold' },
+    { name: 'Miami', color: 'text-noor-green' },
+    { name: 'New York', color: 'text-noor-gold' },
     { name: 'Chicago', color: 'text-noor-green' },
     { name: 'Los Angeles', color: 'text-noor-gold' },
     { name: 'Dallas', color: 'text-noor-green' },

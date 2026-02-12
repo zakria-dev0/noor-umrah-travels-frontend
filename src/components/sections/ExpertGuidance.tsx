@@ -51,14 +51,14 @@ const ExpertGuidance: React.FC = () => (
               <PhoneIcon className="w-5 h-5 text-noor-green" />
               <div>
                 <p className="text-xs text-gray-400">Call Us</p>
-                <p className="font-bold text-noor-green">3057768923</p>
+                <p className="font-bold text-noor-green">+1 305 7768923</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <WhatsAppIcon className="w-5 h-5 text-noor-green" />
               <div>
                 <p className="text-xs text-gray-400">WhatsApp</p>
-                <p className="font-bold text-noor-green">3057768923</p>
+                <p className="font-bold text-noor-green">+1 7866386022</p>
               </div>
             </div>
           </div>

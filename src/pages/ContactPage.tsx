@@ -101,7 +101,7 @@
 //                 </div>
 //                 <div>
 //                   <h4 className="font-bold text-noor-green">Visit Us</h4>
-//                   <p className="text-gray-500 text-sm">55 Hooper Street, Birmingham, United Kingdom, B18 7AR</p>
+//                   <p className="text-gray-500 text-sm">1395 Brickell Ave Suite 800 Miami FL 33131</p>
 //                 </div>
 //               </div>
 
@@ -111,7 +111,7 @@
 //                 </div>
 //                 <div>
 //                   <h4 className="font-bold text-noor-green">Call Us</h4>
-//                   <p className="text-gray-500 text-sm">+447777426722</p>
+//                   <p className="text-gray-500 text-sm">+1 305 7768923</p>
 //                 </div>
 //               </div>
 
@@ -250,7 +250,7 @@
 // const faqData: FAQItem[] = [
 //   {
 //     question: 'How do I book an Umrah package?',
-//     answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +447777426722, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
+//     answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +1 305 7768923, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
 //   },
 //   {
 //     question: 'Do you offer payment plans?',
@@ -445,7 +445,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-noor-green">Visit Us</h4>
-                  <p className="text-gray-500 text-sm">55 Hooper Street, Birmingham, United Kingdom, B18 7AR</p>
+                  <p className="text-gray-500 text-sm">1395 Brickell Ave Suite 800 Miami FL 33131</p>
                 </div>
               </div>
 
@@ -455,7 +455,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-noor-green">Call Us</h4>
-                  <p className="text-gray-500 text-sm">+447777426722</p>
+                  <p className="text-gray-500 text-sm">+1 305 7768923</p>
                 </div>
               </div>
 
@@ -473,10 +473,17 @@ const ContactSection: React.FC = () => {
                 <div className="w-10 h-10 bg-noor-green/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <WhatsAppIcon className="w-5 h-5 text-noor-green" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-noor-green">WhatsApp</h4>
-                  <p className="text-gray-500 text-sm">Chat with us instantly</p>
-                </div>
+               <a
+  href="https://wa.me/17866386022"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-start gap-3 hover:opacity-80 transition-opacity"
+>
+  <div>
+    <h4 className="font-bold text-noor-green">WhatsApp</h4>
+    <p className="text-gray-500 text-sm">Chat with us instantly</p>
+  </div>
+</a>
               </div>
             </div>
 
@@ -593,7 +600,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: 'How do I book an Umrah package?',
-    answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +447777426722, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
+    answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +1 305 7768923, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
   },
   {
     question: 'Do you offer payment plans?',

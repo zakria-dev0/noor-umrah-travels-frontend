@@ -31,7 +31,7 @@
 //             </div>
 //             <div>
 //               <p className="text-white/50 text-xs">Visit Us</p>
-//               <p className="font-bold">55 Hooper Street, Birmingham, United Kingdom, B18 7AR</p>
+//               <p className="font-bold">1395 Brickell Ave Suite 800 Miami FL 33131</p>
 //             </div>
 //           </div>
 //         </div>
@@ -136,7 +136,7 @@ const Footer: React.FC = () => (
             </div>
             <div>
               <p className="text-white/50 text-xs">Call Us</p>
-              <p className="font-bold">3057768923</p>
+              <p className="font-bold">+1 305 7768923</p>
             </div>
           </Link>
           <div className="flex items-center gap-4">
@@ -145,7 +145,7 @@ const Footer: React.FC = () => (
             </div>
             <div>
               <p className="text-white/50 text-xs">Email Us</p>
-              <p className="font-bold">info@haramumrah</p>
+              <p className="font-bold">info@haramumrahtravels.com</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -154,7 +154,7 @@ const Footer: React.FC = () => (
             </div>
             <div>
               <p className="text-white/50 text-xs">Visit Us</p>
-              <p className="font-bold">Miami, Florida, United States</p>
+              <p className="font-bold">1395 Brickell Ave Suite 800 Miami FL 33131</p>
             </div>
           </div>
         </div>
