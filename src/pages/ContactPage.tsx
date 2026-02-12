@@ -573,7 +573,7 @@ const ContactSection: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
-                  <p className="text-noor-green text-sm">We reply within the hour during UK business times.</p>
+                  <p className="text-noor-green text-sm">We reply within the hour during US business times.</p>
                   <button
                     onClick={handleSubmit}
                     disabled={loading}

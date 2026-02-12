@@ -160,7 +160,12 @@ const DepartureCities: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=600&q=80'
     },
   ];
-
+const scrollToPackages = () => {
+  const packagesSection = document.getElementById('packages-section');
+  if (packagesSection) {
+    packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -204,9 +209,12 @@ const DepartureCities: React.FC = () => {
               <div className="absolute bottom-4 left-4 right-4">
                 <h3 className="text-white font-bold text-lg">Umrah Packages from {city.name}</h3>
                 <p className="text-white/70 text-sm">{city.subtitle}</p>
-                <button className="mt-3 bg-white text-noor-green px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors">
-                  View Packages <span className="bg-noor-green text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">→</span>
-                </button>
+               <button 
+  onClick={scrollToPackages}
+  className="mt-3 bg-white text-noor-green px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors"
+>
+  View Packages <span className="bg-noor-green text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">→</span>
+</button>
               </div>
             </div>
           ))}

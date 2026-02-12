@@ -14,7 +14,7 @@ const PackagesSection: React.FC<PackagesSectionProps> = ({ stars, title, subtitl
   const starLabel = `${stars} star`;
 
   return (
-    <section className={`py-16 ${stars === 4 ? 'bg-noor-light' : 'bg-white'}`}>
+<section id="packages-section" className={`py-16 ${stars === 4 ? 'bg-noor-light' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4">
      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
   <div>
