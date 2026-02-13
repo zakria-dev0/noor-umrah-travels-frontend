@@ -1,5 +1,6 @@
 // PackageCard.tsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PlaneIcon, DocumentIcon, WhatsAppIcon, ArrowRightIcon, StarIconSolid } from '../icons/Icons';
 
 import star5img1 from '../../assets/images/packages/5-1.jpg';
@@ -20,8 +21,13 @@ interface PackageCardProps {
 }
 
 const PackageCard: React.FC<PackageCardProps> = ({ days, stars, price, starLabel }) => {
+  const navigate = useNavigate();
   const imageKey = `${stars}-${days}`;
   const imageSrc = imageMap[imageKey] || star5img1;
+
+  const handleViewDetails = () => {
+    navigate('/packages');
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
@@ -67,7 +73,10 @@ const PackageCard: React.FC<PackageCardProps> = ({ days, stars, price, starLabel
   <WhatsAppIcon className="w-4 h-4" />
   WhatsApp
 </button>
-  <button className="border-2 border-noor-green text-noor-green px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold hover:bg-noor-green hover:text-white transition-colors">
+  <button
+    onClick={handleViewDetails}
+    className="border-2 border-noor-green text-noor-green px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold hover:bg-noor-green hover:text-white transition-colors"
+  >
     View Details
     <ArrowRightIcon className="w-3 h-3" />
   </button>

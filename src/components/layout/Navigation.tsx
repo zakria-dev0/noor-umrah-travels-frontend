@@ -156,28 +156,14 @@
 // export default Navigation; 
 
 // Navigation.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CalendarIcon, ChevronDownIcon } from '../icons/Icons';
+import { CalendarIcon } from '../icons/Icons';
 import logo from '../../assets/images/logo.png';
-
-
-// Define the route mapping for each dropdown item
-const umrahPackageRoutes: Record<string, string> = {
-  '5 Star Kaaba View Umrah Packages': '/packages/kaaba-view',
-  '5 Star Haram View Umrah Packages': '/packages/haram-view',
-};
-
-const umrahDropdownItems = [
-  '5 Star Kaaba View Umrah Packages',
-  '5 Star Haram View Umrah Packages',
-];
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [umrahDropdownOpen, setUmrahDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const umrahRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -185,28 +171,12 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (umrahRef.current && !umrahRef.current.contains(event.target as Node)) {
-        setUmrahDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   return (
     <nav className={`sticky top-0 z-50 bg-white transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Brand Name */}
-        {/* <Link to="/" className="flex items-center">
-          <span className="text-noor-green font-bold text-base md:text-xl uppercase tracking-wider font-display">Haram Umrah</span>
-          <span className="text-noor-gold font-semibold text-base md:text-xl uppercase tracking-wider font-display ml-1.5">Travels</span>
-        </Link> */}
+      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-  <img src={logo} alt="Haram Umrah Travels" className="h-26 md:h-16" />
-</Link>
+          <img src={logo} alt="Haram Umrah Travels" className="h-14 md:h-20" />
+        </Link>
 
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8">
@@ -214,34 +184,9 @@ const Navigation: React.FC = () => {
             Home
           </Link>
 
-          {/* Umrah Packages Dropdown */}
-          <div ref={umrahRef} className="relative">
-            <button
-              onClick={() => setUmrahDropdownOpen(!umrahDropdownOpen)}
-              className="text-gray-700 hover:text-noor-green font-medium text-sm flex items-center gap-1 transition-colors"
-            >
-              Umrah Packages
-              <ChevronDownIcon className={`w-3 h-3 transition-transform ${umrahDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {umrahDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
-                {umrahDropdownItems.map((item, index) => {
-                  const route = umrahPackageRoutes[item] || '#';
-                  return (
-                    <Link
-                      key={index}
-                      to={route}
-                      className="block px-5 py-2.5 text-sm text-gray-600 hover:bg-noor-green/5 hover:text-noor-green transition-colors border-b border-gray-50 last:border-b-0"
-                      onClick={() => setUmrahDropdownOpen(false)}
-                    >
-                      {item}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
-          </div>
+          <Link to="/packages" className="text-gray-700 hover:text-noor-green font-medium text-sm transition-colors">
+            Umrah Packages
+          </Link>
 
           <Link to="/about" className="text-gray-700 hover:text-noor-green font-medium text-sm transition-colors">
             About
@@ -275,33 +220,9 @@ const Navigation: React.FC = () => {
             <Link to="/" className="block text-gray-700 hover:text-noor-green font-medium" onClick={() => setMobileMenuOpen(false)}>
               Home
             </Link>
-            {/* Umrah Packages Accordion */}
-            <div>
-              <button
-                onClick={() => setUmrahDropdownOpen(!umrahDropdownOpen)}
-                className="w-full flex items-center justify-between text-gray-700 hover:text-noor-green font-medium"
-              >
-                Umrah Packages
-                <ChevronDownIcon className={`w-4 h-4 transition-transform ${umrahDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {umrahDropdownOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  {umrahDropdownItems.map((item, index) => (
-                    <Link
-                      key={index}
-                      to={umrahPackageRoutes[item] || '#'}
-                      className="block text-sm text-gray-600 hover:text-noor-green py-2"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setUmrahDropdownOpen(false);
-                      }}
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link to="/packages" className="block text-gray-700 hover:text-noor-green font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Umrah Packages
+            </Link>
             <Link to="/about" className="block text-gray-700 hover:text-noor-green font-medium" onClick={() => setMobileMenuOpen(false)}>
               About
             </Link>

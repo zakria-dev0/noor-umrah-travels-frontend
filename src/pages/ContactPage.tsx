@@ -350,7 +350,7 @@ const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 // ==================== HERO BANNER ====================
 const ContactHero: React.FC = () => (
-  <section className="relative py-20 overflow-hidden">
+  <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
     <div className="absolute inset-0 bg-noor-green">
       <div
         className="absolute inset-0 opacity-10"
@@ -361,7 +361,7 @@ const ContactHero: React.FC = () => (
       />
     </div>
     <div className="relative z-10 max-w-7xl mx-auto px-4">
-      <div className="text-white/60 text-sm mb-6">
+      <div className="text-white/60 text-sm mb-4 sm:mb-6">
         <a href="/" className="hover:text-white transition-colors">Home</a>
         <span className="mx-2">›</span>
         <span className="text-white">Contact</span>
@@ -369,11 +369,11 @@ const ContactHero: React.FC = () => (
       <span className="bg-noor-gold text-white text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full inline-block mb-4">
         GET IN TOUCH
       </span>
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display leading-tight max-w-2xl">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display leading-tight max-w-2xl">
         We're Here to Help You Plan Your Journey
       </h1>
-      <p className="text-white/70 mt-4 max-w-2xl text-lg leading-relaxed">
-        Have questions? Our experienced team is ready to assist you with your Umrah or Hajj planning. Reach out today and let's make your pilgrimage unforgettable.
+      <p className="text-white/70 mt-4 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed">
+        Have questions? Our experienced team is ready to assist you with your Umrah planning. Reach out today and let's make your pilgrimage unforgettable.
       </p>
     </div>
   </section>
@@ -425,12 +425,12 @@ const ContactSection: React.FC = () => {
   const totalTravelers = Number(formData.adults) + Number(formData.children);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Left - Contact Information */}
           <div>
-            <h2 className="text-3xl font-bold text-noor-green mb-4 font-display">
+            <h2 className="text-2xl sm:text-3xl font-bold text-noor-green mb-4 font-display">
               Contact Information
             </h2>
             <p className="text-gray-500 leading-relaxed mb-8">
@@ -517,12 +517,12 @@ const ContactSection: React.FC = () => {
           {/* Right - Inquiry Form */}
           <div>
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="bg-noor-green px-8 py-6 text-center">
-                <p className="text-noor-gold text-xs font-bold tracking-[0.2em] uppercase mb-1">Personalised Quote</p>
-                <h2 className="text-white text-2xl font-bold font-display">Package Inquiry Form</h2>
-                <p className="text-white/60 text-sm mt-1">Select a package type to see the relevant details.</p>
+              <div className="bg-noor-green px-4 sm:px-6 md:px-8 py-4 sm:py-6 text-center">
+                <p className="text-noor-gold text-xs font-bold tracking-[0.2em] uppercase mb-1">Personalized Quote</p>
+                <h2 className="text-white text-xl sm:text-2xl font-bold font-display">Package Inquiry Form</h2>
+                <p className="text-white/60 text-xs sm:text-sm mt-1">Select a package type to see the relevant details.</p>
               </div>
-              <div className="p-8">
+              <div className="p-4 sm:p-6 md:p-8">
                 {status && (
                   <div className={`mb-6 px-4 py-3 rounded-lg text-sm font-medium ${status.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
                     {status.message}
@@ -628,16 +628,16 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-noor-light">
+    <section className="py-12 sm:py-16 md:py-20 bg-noor-light">
       <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <span className="bg-noor-green/10 text-noor-green text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full inline-block mb-4">
             FAQ
           </span>
-          <h2 className="text-4xl font-bold text-noor-green font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green font-display">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-500 mt-3">
+          <p className="text-gray-500 mt-3 text-sm sm:text-base">
             Quick answers to common questions about booking and planning your pilgrimage
           </p>
         </div>

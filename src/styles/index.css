@@ -11,25 +11,27 @@
   }
   
   .text-responsive-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .text-responsive-lg {
     @apply text-3xl md:text-4xl lg:text-5xl;
   }
-  
-  .text-responsive-lg {
-    @apply text-2xl md:text-3xl lg:text-4xl;
-  }
-  
+
   .text-responsive-base {
-    @apply text-sm md:text-base lg:text-lg;
+    @apply text-base md:text-lg lg:text-xl;
   }
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
