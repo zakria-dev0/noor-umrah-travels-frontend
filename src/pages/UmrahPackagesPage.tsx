@@ -32,7 +32,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'all-luxury': [
     {
       name: 'Shuttle Premium Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Shuttle Premium Package', nights: 5, price: 390, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Shuttle Premium Package', nights: 7, price: 490, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -41,7 +41,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
     },
     {
       name: 'Standard Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Standard Umrah Package', nights: 5, price: 690, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Standard Umrah Package', nights: 7, price: 790, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -50,7 +50,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
     },
     {
       name: 'Haram View Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Haram View Package', nights: 5, price: 890, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Haram View Package', nights: 7, price: 990, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -59,7 +59,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
     },
     {
       name: 'Kaaba View Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Kaaba View Package', nights: 5, price: 990, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Kaaba View Package', nights: 7, price: 1190, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -68,7 +68,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
     },
     {
       name: 'Special Promotions',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: 'Affordable Ramadan 1st Ashra Umrah Program', nights: 10, price: 1890, image: 'img1', features: ['Visa Included', 'Flight Included', 'Transportation Included', '5 Star Hotels Included', 'Departure on February 17th 2026', 'Return on February 28th 2026'] },
         { title: 'Affordable Ramadan 2nd Ashra Umrah Program', nights: 10, price: 1890, image: 'img2', features: ['Visa Included', 'Flight Included', 'Transportation Included', '5 Star Hotels Included', 'Departure on February 27th 2026', 'Return on March 10th 2026'] },
@@ -78,7 +78,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'group': [
     {
       name: 'Group Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Group Package', nights: 7, price: 450, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included', 'Group Discount Applied'] },
         { title: '5 Star Group Package', nights: 10, price: 550, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included', 'Group Discount Applied'] },
@@ -89,7 +89,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'kaaba-view': [
     {
       name: 'Kaaba View Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Kaaba View Package', nights: 5, price: 990, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Kaaba View Package', nights: 7, price: 1190, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -100,7 +100,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'haram-view': [
     {
       name: 'Haram View Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Haram View Package', nights: 5, price: 890, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Haram View Package', nights: 7, price: 990, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -111,7 +111,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'shuttle-premium': [
     {
       name: 'Shuttle Premium Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Shuttle Premium Package', nights: 5, price: 390, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Shuttle Premium Package', nights: 7, price: 490, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -122,7 +122,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'land': [
     {
       name: 'Land Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Land Package', nights: 5, price: 350, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Land Package', nights: 7, price: 450, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -133,7 +133,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'affordable': [
     {
       name: 'Affordable Umrah Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: '5 Star Affordable Package', nights: 5, price: 290, image: 'img1', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
         { title: '5 Star Affordable Package', nights: 7, price: 390, image: 'img2', features: ['Visa Included', 'Transportation Included', '5 Star Hotels Included'] },
@@ -144,7 +144,7 @@ const allPackageData: Record<string, PackageCategory[]> = {
   'travel': [
     {
       name: 'Umrah Travel Packages',
-      subtitle: 'Noor Umrah Travels',
+      subtitle: 'Haram Umrah Travels',
       packages: [
         { title: 'Umrah Travel Package', nights: 7, price: 595, image: 'img1', features: ['Visa Included', 'Transportation Included', '4 Star Hotels Included'] },
         { title: 'Umrah Travel Package', nights: 10, price: 795, image: 'img2', features: ['Visa Included', 'Transportation Included', '4 Star Hotels Included'] },
@@ -231,7 +231,7 @@ const PackagesHero = ({ title }: { title: string }) => (
       />
     </div>
     <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-      <p className="text-noor-gold font-display text-2xl italic mb-2">Noor Umrah Travels</p>
+      <p className="text-noor-gold font-display text-2xl italic mb-2">Haram Umrah Travels</p>
       <h1 className="text-4xl lg:text-5xl font-bold text-white font-display">{title}</h1>
     </div>
 
@@ -351,84 +351,84 @@ const ContentSection = () => (
     <div className="max-w-4xl mx-auto px-4">
       <div className="prose prose-lg max-w-none">
         <h2 className="text-3xl font-bold text-noor-green font-display mb-6">
-          Affordable Umrah Packages 2026 – A Spiritual Journey with Noor Umrah Travels
+          Affordable Umrah Packages 2026 – A Spiritual Journey with Haram Umrah Travels
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Starting a spiritual journey is a profound experience. If you are looking for Affordable Umrah Packages, Noor Umrah Travels' carefully crafted Umrah packages are calling to you. As a reliable company that offers Affordable Umrah Packages 2026, Noor Umrah Travels combines professionalism and dedication to its best.
+          Starting a spiritual journey is a profound experience. If you are looking for Affordable Umrah Packages, Haram Umrah Travels' carefully crafted Umrah packages are calling to you. As a reliable company that offers Affordable Umrah Packages 2026, Haram Umrah Travels combines professionalism and dedication to its best.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Getting on the spiritual path does not have to cost a lot of money. The affordable Umrah packages from Noor Umrah Travels for 2026 focus on giving people a spiritually enriching experience without sacrificing comfort. These packages are designed for modern pilgrims and capture the essence of Umrah while keeping costs low.
+          Getting on the spiritual path does not have to cost a lot of money. The affordable Umrah packages from Haram Umrah Travels for 2026 focus on giving people a spiritually enriching experience without sacrificing comfort. These packages are designed for modern pilgrims and capture the essence of Umrah while keeping costs low.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           Affordable Umrah Packages Tailored for You
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          When looking at Umrah packages 2026, price is one of the most important things to think about. Noor Umrah Travels knows how important it is for everyone to be able to go on this spiritual journey. Our affordable Umrah packages 2026 are designed for pilgrims, guaranteeing a great, affordable experience.
+          When looking at Umrah packages 2026, price is one of the most important things to think about. Haram Umrah Travels knows how important it is for everyone to be able to go on this spiritual journey. Our affordable Umrah packages 2026 are designed for pilgrims, guaranteeing a great, affordable experience.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
-          In 2026, Umrah calls pilgrims to a holy journey of devotion and self-discovery. Thanks to its many years of experience, Noor Umrah Travels makes sure that every part of your Umrah goes smoothly. Our Umrah Packages 2026 are made to make this spiritual journey a deep and uplifting one.
+          In 2026, Umrah calls pilgrims to a holy journey of devotion and self-discovery. Thanks to its many years of experience, Haram Umrah Travels makes sure that every part of your Umrah goes smoothly. Our Umrah Packages 2026 are made to make this spiritual journey a deep and uplifting one.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           Crafting Your Umrah Journey with Affordable Umrah Packages 2026
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          When you choose an Umrah package, it is not just about where you want to go; it is also about the journey. Noor Umrah Travels is proud to offer Umrah packages 2026 that cover all the bases. Your trip is our top priority, from great accommodation to easy transportation. Noor Umrah Travels makes sure that all of the details of your trip are taken care of.
+          When you choose an Umrah package, it is not just about where you want to go; it is also about the journey. Haram Umrah Travels is proud to offer Umrah packages 2026 that cover all the bases. Your trip is our top priority, from great accommodation to easy transportation. Haram Umrah Travels makes sure that all of the details of your trip are taken care of.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           Embracing Affordable Umrah Packages 2026
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Noor Umrah Travels is offering affordable Umrah packages 2026 for people who want to be holy but do not want to spend a lot of money. Our commitment to make this sacred pilgrimage accessible and affordable ensures that every pilgrim may participate. Do not spend a lot of money to enjoy the richness of the Umrah experience.
+          Haram Umrah Travels is offering affordable Umrah packages 2026 for people who want to be holy but do not want to spend a lot of money. Our commitment to make this sacred pilgrimage accessible and affordable ensures that every pilgrim may participate. Do not spend a lot of money to enjoy the richness of the Umrah experience.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Noor Umrah Travels has Affordable Umrah Packages 2026, which is important because spirituality and money often do not get along. Because we believe everyone should be able to make this sacred pilgrimage, our packages reflect this. With Noor Umrah Travels, you can find out how affordable Umrah is and how it can help you reach spiritual fulfilment.
+          Haram Umrah Travels has Affordable Umrah Packages 2026, which is important because spirituality and money often do not get along. Because we believe everyone should be able to make this sacred pilgrimage, our packages reflect this. With Haram Umrah Travels, you can find out how affordable Umrah is and how it can help you reach spiritual fulfilment.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           Umrah 2026 Tailored Calmness – Personalized Umrah Packages
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Trust is built on being open and honest, especially when it comes to prices. Noor Umrah Travels is proud of its prices, which are easy to understand and do not include any extra fees. The Ministry of Hajj and Umrah in Saudi Arabia has approved and certified this business, which adds to its credibility. With Noor Umrah Travels, pilgrims can be sure that their trip will be safe and reliable to the highest standards.
+          Trust is built on being open and honest, especially when it comes to prices. Haram Umrah Travels is proud of its prices, which are easy to understand and do not include any extra fees. The Ministry of Hajj and Umrah in Saudi Arabia has approved and certified this business, which adds to its credibility. With Haram Umrah Travels, pilgrims can be sure that their trip will be safe and reliable to the highest standards.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Noor Umrah Travels is offering customized Umrah Packages 2026 because we know that each pilgrim is different and has different spiritual needs. Make your sacred journey fit your needs to make sure you have a deeply enlightening experience that fits with your spiritual path.
+          Haram Umrah Travels is offering customized Umrah Packages 2026 because we know that each pilgrim is different and has different spiritual needs. Make your sacred journey fit your needs to make sure you have a deeply enlightening experience that fits with your spiritual path.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
-          We at Noor Umrah Travels know that spirituality is a journey that is unique to each person. Our customized affordable Umrah packages 2026 give pilgrims the freedom to make their Umrah 2026 exactly how they want it to be. Our packages are flexible enough to fit your needs, whether you want to be alone to think or with a group to have fun.
-        </p>
-
-        <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
-          Beyond Packages – Noor Umrah Travels' Commitment to Excellence
-        </h3>
-        <p className="text-gray-600 leading-relaxed mb-4">
-          In many ways, Umrah is more than just a pilgrimage. It is a dream that includes both spirituality and learning about other cultures. With our Umrah packages 2026, Noor Umrah Travels wants you to go beyond your wildest dreams.
-        </p>
-        <p className="text-gray-600 leading-relaxed mb-4">
-          Many people's dreams come true when they go to Umrah 2026, and Noor Umrah Travels makes this dream a real and enriching reality. Our Umrah Packages for 2026 include more than just the usual pilgrimage. Learn about the different cultures in Mecca and Madina and visit important historical sites to make your Umrah trip a real adventure.
+          We at Haram Umrah Travels know that spirituality is a journey that is unique to each person. Our customized affordable Umrah packages 2026 give pilgrims the freedom to make their Umrah 2026 exactly how they want it to be. Our packages are flexible enough to fit your needs, whether you want to be alone to think or with a group to have fun.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
-          Making the Right Choices – Contacting Noor Umrah Travels
+          Beyond Packages – Haram Umrah Travels' Commitment to Excellence
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Help is needed to get through the complicated planning of Umrah 2026. Noor Umrah Travels makes this process easier by giving you a clear way to pick the right options. We are easy to contact; you can call us at +1 305 7768923 or email info@haramumrahtravels.com. Our experienced travel agents are ready to help, making the whole process smooth, from thinking about it to booking it.
+          In many ways, Umrah is more than just a pilgrimage. It is a dream that includes both spirituality and learning about other cultures. With our Umrah packages 2026, Haram Umrah Travels wants you to go beyond your wildest dreams.
+        </p>
+        <p className="text-gray-600 leading-relaxed mb-4">
+          Many people's dreams come true when they go to Umrah 2026, and Haram Umrah Travels makes this dream a real and enriching reality. Our Umrah Packages for 2026 include more than just the usual pilgrimage. Learn about the different cultures in Mecca and Madina and visit important historical sites to make your Umrah trip a real adventure.
+        </p>
+
+        <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
+          Making the Right Choices – Contacting Haram Umrah Travels
+        </h3>
+        <p className="text-gray-600 leading-relaxed mb-4">
+          Help is needed to get through the complicated planning of Umrah 2026. Haram Umrah Travels makes this process easier by giving you a clear way to pick the right options. We are easy to contact; you can call us at +1 305 7768923 or email info@haramumrahtravels.com. Our experienced travel agents are ready to help, making the whole process smooth, from thinking about it to booking it.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           Secure Your Journey – Book Your Umrah Packages Now
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          It is time to act now that the journey through the details of Umrah packages is over. Book your Umrah packages with Noor Umrah Travels right now to make sure your spiritual journey goes smoothly. As of 2026, Noor Umrah Travels is still a reliable guide for people going on the holy journey of Umrah.
+          It is time to act now that the journey through the details of Umrah packages is over. Book your Umrah packages with Haram Umrah Travels right now to make sure your spiritual journey goes smoothly. As of 2026, Haram Umrah Travels is still a reliable guide for people going on the holy journey of Umrah.
         </p>
 
         <h3 className="text-2xl font-bold text-noor-green font-display mt-8 mb-4">
           A Spiritual Journey Awaits
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          With its Affordable Umrah Packages 2026, Noor Umrah Travels makes a Umrah 2026 easy. Each package opens the door to a deep and life-changing pilgrimage experience, from personalization to low prices. Noor Umrah Travels is the company to rely on for affordable holiness or spiritual journeys. Consider your Umrah 2026 and let Noor Umrah Travels bring you to spiritual fulfilment.
+          With its Affordable Umrah Packages 2026, Haram Umrah Travels makes a Umrah 2026 easy. Each package opens the door to a deep and life-changing pilgrimage experience, from personalization to low prices. Haram Umrah Travels is the company to rely on for affordable holiness or spiritual journeys. Consider your Umrah 2026 and let Haram Umrah Travels bring you to spiritual fulfilment.
         </p>
       </div>
     </div>

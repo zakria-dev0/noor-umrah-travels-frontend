@@ -32,7 +32,7 @@ const getPackageImages = () => ({
 const kaabaViewData: PackageCategory[] = [
   {
     name: 'Kaaba View Umrah Packages',
-    subtitle: 'Noor Umrah Travels',
+    subtitle: 'Haram Umrah Travels',
     packages: [
       { 
         title: '5 Star Kaaba View Package', 
@@ -110,7 +110,7 @@ const PackagesHero = () => (
       />
     </div>
     <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-      <p className="text-noor-gold font-display text-2xl italic mb-2">Noor Umrah Travels</p>
+      <p className="text-noor-gold font-display text-2xl italic mb-2">Haram Umrah Travels</p>
       <h1 className="text-4xl lg:text-5xl font-bold text-white font-display">5 Star Kaaba View Umrah Packages</h1>
     </div>
 
