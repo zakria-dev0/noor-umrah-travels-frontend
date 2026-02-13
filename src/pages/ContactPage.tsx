@@ -194,7 +194,7 @@
 //                   </div>
 //                   <div>
 //                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-//                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
+//                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
 //                   </div>
 //                   <div>
 //                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Number of Adults</label>
@@ -545,7 +545,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7XXX XXX XXX" className="w-full px-4 py-3 md:py-3.5 border border-gray-200 rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-noor-green/20" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 7XXX XXX XXX" className="w-full px-4 py-3 md:py-3.5 border border-gray-200 rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-noor-green/20" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Number of Adults</label>

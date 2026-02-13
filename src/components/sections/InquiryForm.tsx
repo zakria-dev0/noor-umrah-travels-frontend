@@ -81,7 +81,7 @@
 //               </div>
 //               <div>
 //                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-//                 <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
+//                 <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
 //               </div>
 //               <div>
 //                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Number of Adults</label>
@@ -210,7 +210,7 @@ const InquiryForm: React.FC = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 7XXX XXX XXX" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-noor-green focus:border-noor-green outline-none" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Number of Adults</label>
