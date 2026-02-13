@@ -16,7 +16,7 @@ const TopBar: React.FC = () => (
 </a>
      <a href="mailto:info@haramumrah" className="hidden lg:flex items-center gap-2 text-sm hover:text-noor-gold transition-colors">
   <MailIcon className="w-4 h-4 text-noor-gold" />
-  info@haramumrah
+  info@haramumrahtravels.com
 </a>
        <div className="flex items-center gap-2 bg-white/10 px-2 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm">
   <span className="font-semibold">US BASED</span>

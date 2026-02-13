@@ -128,41 +128,41 @@ import { Link } from 'react-router-dom';
 const Footer: React.FC = () => (
   <footer className="bg-noor-green-dark text-white">
     <div className="border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Link to="/contact" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-              <PhoneIcon className="w-5 h-5 text-noor-gold" />
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <Link to="/contact" className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <PhoneIcon className="w-4 h-4 sm:w-5 sm:h-5 text-noor-gold" />
             </div>
             <div>
               <p className="text-white/50 text-xs">Call Us</p>
-              <p className="font-bold">+1 305 7768923</p>
+              <p className="font-bold text-sm sm:text-base">+1 305 7768923</p>
             </div>
           </Link>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-              <MailIcon className="w-5 h-5 text-noor-gold" />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <MailIcon className="w-4 h-4 sm:w-5 sm:h-5 text-noor-gold" />
             </div>
             <div>
               <p className="text-white/50 text-xs">Email Us</p>
-              <p className="font-bold">info@haramumrahtravels.com</p>
+              <p className="font-bold text-sm sm:text-base break-all">info@haramumrahtravels.com</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-              <LocationIcon className="w-5 h-5 text-noor-gold" />
+          <div className="flex items-center gap-3 sm:gap-4 sm:col-span-2 lg:col-span-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <LocationIcon className="w-4 h-4 sm:w-5 sm:h-5 text-noor-gold" />
             </div>
             <div>
               <p className="text-white/50 text-xs">Visit Us</p>
-              <p className="font-bold">1395 Brickell Ave Suite 800 Miami FL 33131</p>
+              <p className="font-bold text-sm sm:text-base">1395 Brickell Ave Suite 800 Miami FL 33131</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 md:py-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
         <div>
           <h3 className="font-bold text-lg mb-4">About Us</h3>
           <p className="text-white text-sm leading-relaxed mb-6">
@@ -174,9 +174,19 @@ const Footer: React.FC = () => (
           <h3 className="font-bold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link to="/umrah-packages" className="hover:text-white transition-colors">Umrah Packages</Link></li>
+            <li><Link to="/packages" className="hover:text-white transition-colors">Umrah Packages</Link></li>
             <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
             <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold text-lg mb-4">Legal</h3>
+          <ul className="space-y-3 text-sm">
+            <li><Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
+            <li><Link to="/legal-compliance" className="hover:text-white transition-colors">Legal Compliance</Link></li>
           </ul>
         </div>
 

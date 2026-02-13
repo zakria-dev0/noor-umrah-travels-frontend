@@ -53,11 +53,18 @@ import GroupUmrah from './pages/GroupUmrah';
 import FiveStar from './pages/FiveStar';
 import HaramView from './pages/HaramView';
 import KaabaViewDetail from './pages/KaabaViewDetail';
-import HaramViewDetail from './pages/HaramViewDetail'; // ADD THIS IMPORT
+import HaramViewDetail from './pages/HaramViewDetail';
+import UmrahPackagesCombined from './pages/UmrahPackagesCombined';
+import TermsConditions from './pages/TermsConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import LegalCompliance from './pages/LegalCompliance';
+import ScrollToTop from './components/utils/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <TopBar />
         <Navigation />
@@ -68,7 +75,10 @@ const App: React.FC = () => {
           
           {/* Group Umrah specific route */}
           <Route path="/group-umrah" element={<GroupUmrah />} />
-          
+
+          {/* Combined Umrah Packages Route */}
+          <Route path="/packages" element={<UmrahPackagesCombined />} />
+
           {/* Kaaba View Routes */}
           <Route path="/packages/kaaba-view" element={<FiveStar />} />
           <Route path="/packages/kaaba-view/:nights" element={<KaabaViewDetail />} />
@@ -84,6 +94,12 @@ const App: React.FC = () => {
           <Route path="/packages/affordable" element={<UmrahPackagesPage />} />
           <Route path="/packages/travel" element={<UmrahPackagesPage />} />
           
+          {/* Legal Pages */}
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/legal-compliance" element={<LegalCompliance />} />
+
           {/* Guide Page Route */}
           <Route path="/guide" element={<div>Guide Page - Coming Soon</div>} />
           
