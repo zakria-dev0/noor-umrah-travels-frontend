@@ -391,7 +391,7 @@ const ContentSection = () => (
           Umrah 2026 Tailored Calmness – Personalized Umrah Packages
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Trust is built on being open and honest, especially when it comes to prices. Haram Umrah Travels is proud of its prices, which are easy to understand and do not include any extra fees. The Ministry of Hajj and Umrah in Saudi Arabia has approved and certified this business, which adds to its credibility. With Haram Umrah Travels, pilgrims can be sure that their trip will be safe and reliable to the highest standards.
+          Trust is built on being open and honest, especially when it comes to prices. Haram Umrah Travels is proud of its prices, which are easy to understand and do not include any extra fees. With Haram Umrah Travels, pilgrims can be sure that their trip will be safe and reliable to the highest standards.
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
           Haram Umrah Travels is offering customized Umrah Packages 2026 because we know that each pilgrim is different and has different spiritual needs. Make your sacred journey fit your needs to make sure you have a deeply enlightening experience that fits with your spiritual path.

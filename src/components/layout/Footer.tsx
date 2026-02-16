@@ -97,7 +97,7 @@ const Footer: React.FC = () => (
         </div>
       </div>
     </div>
-    <div className="border-t border-white/10">
+    {/* <div className="border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-center gap-2">
           <svg className="w-4 h-4 text-noor-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -108,7 +108,7 @@ const Footer: React.FC = () => (
           </p>
         </div>
       </div>
-    </div>
+    </div> */}
   </footer>
 );
 
