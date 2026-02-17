@@ -1,109 +1,112 @@
-//  // DepartureCities.tsx
+// // DepartureCities.tsx
 // import React from 'react';
 // import { PhoneIcon } from '../icons/Icons';
-
-// // Import images using the same path structure as PackageCard
-// import londonImg from '../../assets/images/packages/5-3_files/london-umrah-packages-69728887aa630.jpg';
-// import manchesterImg from '../../assets/images/packages/5-3_files/manchester-umrah-packages-69728887c15df.jpg';
-// import birminghamImg from '../../assets/images/packages/5-3_files/birmingham-umrah-packages-697285a15af47.jpg';
-// import edinburghImg from '../../assets/images/packages/5-3_files/edinburg-umrah-packages-6972888796914.jpg';
-// import glasgowImg from '../../assets/images/packages/5-3_files/glassgow-umrah-packages-69728887a29a2.jpg';
-// import bradfordImg from '../../assets/images/packages/5-3_files/bradford-umrah-packages-69728887a55cf.jpg';
+// import { useNavigate } from 'react-router-dom';
 
 // const DepartureCities: React.FC = () => {
+//     const navigate = useNavigate();
+
 //   const cities = [
-//     { 
-//       name: 'London', 
-//       subtitle: 'Direct flights from Heathrow & Gatwick', 
-//       popular: true, 
-//       image: londonImg 
+//     {
+//       name: 'Miami',
+//       subtitle: 'Direct flights Miami International Airport.',
+//       popular: true,
+//       image: 'https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&q=80'
 //     },
 //     { 
-//       name: 'Manchester', 
-//       subtitle: 'Convenient North West departures', 
+//       name: 'New York', 
+//       subtitle: 'Convenient Texas departures', 
 //       popular: false, 
-//       image: manchesterImg 
+//       image: 'https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=600&q=80'
 //     },
 //     { 
-//       name: 'Birmingham', 
-//       subtitle: 'Heart of England gateway', 
+//       name: 'Chicago', 
+//       subtitle: "Midwest's premier gateway", 
 //       popular: false, 
-//       image: birminghamImg 
+//       image: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80'
 //     },
 //     { 
-//       name: 'Edinburgh', 
-//       subtitle: "Scotland's capital departure point", 
+//       name: 'Los Angeles', 
+//       subtitle: 'West Coast departure point', 
 //       popular: false, 
-//       image: edinburghImg 
+//       image: 'https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&q=80'
 //     },
 //     { 
-//       name: 'Glasgow', 
-//       subtitle: 'West Scotland connections', 
+//       name: 'Dallas', 
+//       subtitle: 'South Central connections', 
 //       popular: false, 
-//       image: glasgowImg 
+//       image: 'https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=600&q=80'
 //     },
 //     { 
-//       name: 'Bradford', 
-//       subtitle: 'Yorkshire departure options', 
+//       name: 'Washington DC', 
+//       subtitle: 'East Coast departure options', 
 //       popular: false, 
-//       image: bradfordImg 
+//       image: 'https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=600&q=80'
 //     },
 //   ];
-
+// const goToPackages = () => {
+//   navigate('/packages');
+// };
 //   return (
-//     <section className="py-20 bg-white">
+//     <section className="py-12 sm:py-16 md:py-20 bg-white">
 //       <div className="max-w-7xl mx-auto px-4">
-//         <div className="text-center max-w-2xl mx-auto mb-12">
-//           <span className="inline-flex items-center gap-2 text-noor-green text-xs font-bold tracking-[0.15em] uppercase border border-gray-200 px-4 py-2 rounded-full mb-4">
-//             ✈ us DEPARTURE CITIES
+//         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+//           <span className="inline-flex items-center gap-2 text-noor-green text-xs font-bold tracking-[0.15em] uppercase border border-gray-200 px-3 sm:px-4 py-2 rounded-full mb-4">
+//             US DEPARTURE CITIES
 //           </span>
-//           <h2 className="text-4xl font-bold mb-4 font-display">
+//           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display">
 //             <span className="text-noor-green">Umrah Packages from </span>
-//             <span className="text-noor-gold">Major us Cities</span>
+//             <span className="text-noor-gold">Major US Cities</span>
 //           </h2>
-//           <p className="text-gray-500 leading-relaxed">
-//             Start your sacred journey from your nearest us airport. We offer comprehensive Umrah packages with flights from London, Manchester, Birmingham, and other major cities — complete with visa processing, premium hotels near Haram, and dedicated support throughout your pilgrimage.
+//           <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+//             Start your sacred journey from your nearest US airport. We offer comprehensive Umrah packages with flights from New York, Houston, Chicago, and other major cities — complete with visa processing, premium hotels near Haram, and dedicated support throughout your pilgrimage.
 //           </p>
 //         </div>
-        
+
 //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 //           {cities.map((city, index) => (
-//             <div key={index} className="relative rounded-2xl overflow-hidden h-64 group cursor-pointer">
-//               <img 
-//                 src={city.image} 
-//                 alt={city.name} 
-//                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+//             <div key={index} className="relative rounded-xl sm:rounded-2xl overflow-hidden h-56 sm:h-64 group cursor-pointer">
+//               <img
+//                 src={city.image}
+//                 alt={city.name}
+//                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
 //               />
 //               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              
-//               <div className="absolute top-4 left-4">
-//                 <span className="bg-noor-green/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide">
+
+//               <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+//                 <span className="bg-noor-green/80 backdrop-blur-sm text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full tracking-wide">
 //                   FROM {city.name.toUpperCase()}
 //                 </span>
 //               </div>
-              
+
 //               {city.popular && (
-//                 <div className="absolute top-4 right-4">
-//                   <span className="bg-noor-gold text-white text-xs font-bold px-3 py-1 rounded-full">
+//                 <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+//                   <span className="bg-noor-gold text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full">
 //                     MOST POPULAR
 //                   </span>
 //                 </div>
 //               )}
-              
-//               <div className="absolute bottom-4 left-4 right-4">
-//                 <h3 className="text-white font-bold text-lg">Umrah Packages from {city.name}</h3>
-//                 <p className="text-white/70 text-sm">{city.subtitle}</p>
-//                 <button className="mt-3 bg-white text-noor-green px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors">
-//                   View Packages <span className="bg-noor-green text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">→</span>
+
+//               <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+//                 <h3 className="text-white font-bold text-base sm:text-lg">Umrah Packages from {city.name}</h3>
+//                 <p className="text-white/70 text-xs sm:text-sm">{city.subtitle}</p>
+//                 <button
+//                   onClick={goToPackages}
+//                   className="mt-2 sm:mt-3 bg-white text-noor-green px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors"
+//                 >
+//                   View Packages <span className="bg-noor-green text-white w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-xs">→</span>
 //                 </button>
 //               </div>
 //             </div>
 //           ))}
 //         </div>
-        
-//         <div className="text-center mt-10">
-//           <p className="text-gray-500 mb-3">Can't find your city? We can arrange departures from any us airport.</p>
-//           <button className="text-noor-gold font-semibold flex items-center gap-2 mx-auto hover:gap-3 transition-all">
+
+//         <div className="text-center mt-8 sm:mt-10">
+//           <p className="text-gray-500 mb-3 text-sm sm:text-base">Can't find your city? We can arrange departures from any US airport.</p>
+//           <button
+//             onClick={() => navigate("/contact")}
+//             className="text-noor-gold font-semibold flex items-center gap-2 mx-auto hover:gap-3 transition-all text-sm sm:text-base"
+//           >
 //             <PhoneIcon className="w-4 h-4" />
 //             Contact Us for Custom Departures
 //           </button>
@@ -114,117 +117,257 @@
 // };
 
 // export default DepartureCities; 
-// DepartureCities.tsx
-import React from 'react';
+
+// components/sections/DepartureCities.tsx
+import React, { useState } from 'react';
 import { PhoneIcon } from '../icons/Icons';
 import { useNavigate } from 'react-router-dom';
 
 const DepartureCities: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const cities = [
     {
       name: 'Miami',
-      subtitle: 'Direct flights Miami International Airport.',
+      subtitle: 'Direct flights from Miami International Airport',
       popular: true,
-      image: 'https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&q=80'
+      image: 'https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&q=80',
     },
-    { 
-      name: 'New York', 
-      subtitle: 'Convenient Texas departures', 
-      popular: false, 
-      image: 'https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=600&q=80'
+    {
+      name: 'New York',
+      subtitle: 'JFK & Newark departures available',
+      popular: false,
+      image: 'https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=600&q=80',
     },
-    { 
-      name: 'Chicago', 
-      subtitle: "Midwest's premier gateway", 
-      popular: false, 
-      image: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80'
+    {
+      name: 'Chicago',
+      subtitle: "Midwest's premier gateway",
+      popular: false,
+      image: 'https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80',
     },
-    { 
-      name: 'Los Angeles', 
-      subtitle: 'West Coast departure point', 
-      popular: false, 
-      image: 'https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&q=80'
+    {
+      name: 'Los Angeles',
+      subtitle: 'West Coast departure point',
+      popular: false,
+      image: 'https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&q=80',
     },
-    { 
-      name: 'Dallas', 
-      subtitle: 'South Central connections', 
-      popular: false, 
-      image: 'https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=600&q=80'
+    {
+      name: 'Dallas',
+      subtitle: 'South Central connections',
+      popular: false,
+      image: 'https://images.unsplash.com/photo-1545194445-dddb8f4487c6?w=600&q=80',
     },
-    { 
-      name: 'Washington DC', 
-      subtitle: 'East Coast departure options', 
-      popular: false, 
-      image: 'https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=600&q=80'
+    {
+      name: 'Washington DC',
+      subtitle: 'East Coast departure options',
+      popular: false,
+      image: 'https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=600&q=80',
     },
   ];
-const goToPackages = () => {
-  navigate('/packages');
-};
+
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <span className="inline-flex items-center gap-2 text-noor-green text-xs font-bold tracking-[0.15em] uppercase border border-gray-200 px-3 sm:px-4 py-2 rounded-full mb-4">
-            US DEPARTURE CITIES
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display">
-            <span className="text-noor-green">Umrah Packages from </span>
-            <span className="text-noor-gold">Major US Cities</span>
+    <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        {/* Premium Header Section */}
+        <div className="text-center mb-10 sm:mb-12 md:mb-14">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="w-6 h-px bg-noor-gold"></span>
+            <span className="text-noor-gold text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase">
+              US Departure Cities
+            </span>
+            <span className="w-6 h-px bg-noor-gold"></span>
+          </div>
+
+          {/* Main Title */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display leading-[1.15] tracking-tight mb-4">
+            <span className="text-noor-green">Umrah Packages</span>
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            <span className="text-gray-900">from Major US Cities</span>
           </h2>
-          <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
-            Start your sacred journey from your nearest US airport. We offer comprehensive Umrah packages with flights from New York, Houston, Chicago, and other major cities — complete with visa processing, premium hotels near Haram, and dedicated support throughout your pilgrimage.
+
+          {/* Decorative Divider */}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-10 h-px bg-gradient-to-r from-transparent to-noor-green/40"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-noor-gold"></div>
+            <div className="w-10 h-px bg-gradient-to-l from-transparent to-noor-green/40"></div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-500 leading-relaxed text-xs sm:text-sm max-w-xl mx-auto mb-6">
+            Start your sacred journey from your nearest US airport with comprehensive packages including flights, visa, hotels, and dedicated support.
           </p>
+
+          {/* Contact CTA */}
+          <button
+            onClick={() => navigate('/contact')}
+            className="group inline-flex items-center gap-2.5 bg-noor-green/[0.06] hover:bg-noor-green/[0.1] border border-noor-green/10 hover:border-noor-green/20 text-gray-700 px-4 py-2 rounded-full transition-all duration-300"
+          >
+            <span className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center shadow-sm group-hover:shadow group-hover:border-noor-gold/30 transition-all">
+              <PhoneIcon className="w-3.5 h-3.5 text-noor-gold" />
+            </span>
+            <span className="flex flex-col items-start text-left">
+              <span className="text-[9px] sm:text-[10px] text-gray-400 leading-tight">Can't find your city?</span>
+              <span className="text-[11px] sm:text-xs font-semibold text-noor-green leading-tight">Contact Us</span>
+            </span>
+            <svg className="w-3.5 h-3.5 text-gray-400 group-hover:text-noor-green group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {cities.map((city, index) => (
-            <div key={index} className="relative rounded-xl sm:rounded-2xl overflow-hidden h-56 sm:h-64 group cursor-pointer">
+        {/* Premium Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-4">
+          {/* Featured Card - Miami */}
+          <div
+            className="lg:col-span-7 lg:row-span-2 relative group cursor-pointer"
+            onClick={() => navigate('/packages')}
+            onMouseEnter={() => setHoveredIndex(0)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <div className="relative h-64 sm:h-72 lg:h-full lg:min-h-[460px] rounded-2xl overflow-hidden">
               <img
-                src={city.image}
-                alt={city.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src={cities[0].image}
+                alt={cities[0].name}
+                className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-              <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                <span className="bg-noor-green/80 backdrop-blur-sm text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full tracking-wide">
-                  FROM {city.name.toUpperCase()}
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              
+              {/* Popular Badge */}
+              <div className="absolute top-4 sm:top-5 left-4 sm:left-5 flex items-center gap-3">
+                <span className="bg-noor-gold text-white text-[9px] sm:text-[10px] font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full tracking-wider flex items-center gap-1 shadow-lg">
+                  <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  MOST POPULAR
                 </span>
               </div>
 
-              {city.popular && (
-                <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
-                  <span className="bg-noor-gold text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full">
-                    MOST POPULAR
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 lg:p-8">
+                <div className="flex items-center gap-1.5 text-white/60 text-[10px] sm:text-xs mb-1.5">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {cities[0].subtitle}
+                </div>
+
+                <h3 className="text-white font-bold text-xl sm:text-2xl lg:text-3xl font-display mb-3 sm:mb-4">
+                  Umrah from {cities[0].name}
+                </h3>
+
+                <div className="flex items-center gap-4">
+                  <span className="inline-flex items-center gap-1.5 bg-white text-gray-900 text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full group-hover:bg-noor-gold group-hover:text-white transition-all duration-300">
+                    View Packages
+                    <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </span>
                 </div>
-              )}
+              </div>
+            </div>
+          </div>
 
-              <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
-                <h3 className="text-white font-bold text-base sm:text-lg">Umrah Packages from {city.name}</h3>
-                <p className="text-white/70 text-xs sm:text-sm">{city.subtitle}</p>
-                <button
-                  onClick={goToPackages}
-                  className="mt-2 sm:mt-3 bg-white text-noor-green px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors"
-                >
-                  View Packages <span className="bg-noor-green text-white w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-xs">→</span>
-                </button>
+          {/* Right side cards */}
+          {cities.slice(1, 3).map((city, idx) => (
+            <div
+              key={idx + 1}
+              className="lg:col-span-5 relative group cursor-pointer"
+              onClick={() => navigate('/packages')}
+              onMouseEnter={() => setHoveredIndex(idx + 1)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="relative h-48 sm:h-52 lg:h-[222px] rounded-2xl overflow-hidden">
+                <img
+                  src={city.image}
+                  alt={city.name}
+                  className={`w-full h-full object-cover transition-all duration-700 ease-out ${
+                    hoveredIndex === idx + 1 ? 'scale-110' : ''
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                  <p className="text-white/50 text-[10px] sm:text-xs mb-0.5">{city.subtitle}</p>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-white font-bold text-base sm:text-lg font-display">
+                      Umrah from {city.name}
+                    </h3>
+                    <div className={`w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${
+                      hoveredIndex === idx + 1 ? 'bg-noor-gold scale-110' : ''
+                    }`}>
+                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Bottom row - 3 cards */}
+          {cities.slice(3).map((city, idx) => (
+            <div
+              key={idx + 3}
+              className="lg:col-span-4 relative group cursor-pointer"
+              onClick={() => navigate('/packages')}
+              onMouseEnter={() => setHoveredIndex(idx + 3)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="relative h-44 sm:h-48 lg:h-[190px] rounded-2xl overflow-hidden">
+                <img
+                  src={city.image}
+                  alt={city.name}
+                  className={`w-full h-full object-cover transition-all duration-700 ease-out ${
+                    hoveredIndex === idx + 3 ? 'scale-110' : ''
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                {/* Hover Border Effect */}
+                <div className={`absolute inset-0 rounded-2xl border-2 transition-all duration-300 ${
+                  hoveredIndex === idx + 3 ? 'border-noor-gold/50' : 'border-transparent'
+                }`} />
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-3.5 sm:p-4">
+                  <p className="text-white/50 text-[9px] sm:text-[10px] mb-0.5">{city.subtitle}</p>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-white font-bold text-sm sm:text-base font-display">
+                      Umrah from {city.name}
+                    </h3>
+                    <div className={`w-7 h-7 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${
+                      hoveredIndex === idx + 3 ? 'bg-noor-gold scale-110' : ''
+                    }`}>
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-10">
-          <p className="text-gray-500 mb-3 text-sm sm:text-base">Can't find your city? We can arrange departures from any US airport.</p>
+        {/* Mobile CTA */}
+        <div className="lg:hidden text-center mt-8 sm:mt-10">
           <button
-            onClick={() => navigate("/contact")}
-            className="text-noor-gold font-semibold flex items-center gap-2 mx-auto hover:gap-3 transition-all text-sm sm:text-base"
+            onClick={() => navigate('/packages')}
+            className="inline-flex items-center gap-1.5 bg-noor-green text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full hover:bg-noor-green/90 transition-all shadow-lg shadow-noor-green/20"
           >
-            <PhoneIcon className="w-4 h-4" />
-            Contact Us for Custom Departures
+            View All Packages
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </button>
         </div>
       </div>
