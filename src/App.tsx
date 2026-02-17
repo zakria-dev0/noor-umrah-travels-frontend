@@ -60,11 +60,13 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import LegalCompliance from './pages/LegalCompliance';
 import ScrollToTop from './components/utils/ScrollToTop';
+import PromoPopup from './components/ui/PromoPopup';
 
 const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      <PromoPopup />
       <div className="min-h-screen bg-white">
         <TopBar />
         <Navigation />
