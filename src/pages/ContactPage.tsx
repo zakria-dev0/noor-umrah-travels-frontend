@@ -1,4 +1,4 @@
-// contactpage.tsx
+ // contactPage.tsx
 import React, { useState, useEffect } from 'react';
 import { 
   PhoneIcon, 
@@ -158,10 +158,10 @@ const ContactHero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-  src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=2070&auto=format&fit=crop"
-  alt="Kaaba"
-  className="w-full h-full object-cover"
-/>
+          src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=2070&auto=format&fit=crop"
+          alt="Kaaba"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-noor-green/95 via-noor-green/85 to-noor-green/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-noor-green/90 via-transparent to-transparent" />
       </div>
@@ -225,17 +225,8 @@ const ContactHero: React.FC = () => {
               personalized Umrah experiences with premium accommodations steps from the Haram.
             </p>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6 mb-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-noor-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                
-              </div>
-
+            {/* Trust Indicators - Removed protected icon and adjusted spacing */}
+            <div className="flex flex-wrap gap-8 mb-8">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-noor-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -372,7 +363,7 @@ interface StepIndicatorProps {
 }
 
 const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, completedSteps }) => (
-  <div className="flex items-center justify-between mb-8 md:mb-12">
+  <div className="flex items-center justify-between mb-6 md:mb-12 px-1">
     {STEPS.map((step, index) => {
       const isCompleted = completedSteps.includes(step.id);
       const isCurrent = currentStep === step.id;
@@ -380,43 +371,57 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, completedSte
       
       return (
         <React.Fragment key={step.id}>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center relative">
+            {/* Step Icon - Optimized for mobile */}
             <div
               className={`
-                w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center
+                w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center
                 transition-all duration-300 relative
                 ${isCompleted 
                   ? 'bg-noor-green text-white shadow-lg shadow-noor-green/30' 
                   : isCurrent 
-                    ? 'bg-noor-gold text-white shadow-lg shadow-noor-gold/30 ring-4 ring-noor-gold/20' 
+                    ? 'bg-noor-gold text-white shadow-lg shadow-noor-gold/30 ring-2 sm:ring-4 ring-noor-gold/20' 
                     : 'bg-gray-100 text-gray-400'
                 }
               `}
             >
               {isCompleted ? (
-                <CheckIcon className="w-5 h-5 md:w-6 md:h-6" />
+                <CheckIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
               ) : (
-                <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
               )}
+              
+              {/* Active step indicator dot */}
               {isCurrent && (
-                <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-noor-green rounded-full border-2 border-white" />
+                <span className="absolute -bottom-1 -right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-noor-green rounded-full border-2 border-white" />
               )}
             </div>
+
+            {/* Step Title - Mobile version always visible but text size adjusted */}
             <span 
               className={`
-                mt-2 text-xs md:text-sm font-medium text-center hidden sm:block
-                ${isCurrent ? 'text-noor-green' : isCompleted ? 'text-noor-green/70' : 'text-gray-400'}
+                mt-1.5 sm:mt-2 text-[10px] xs:text-xs sm:text-sm font-medium text-center
+                ${isCurrent ? 'text-noor-green font-semibold' : isCompleted ? 'text-noor-green/70' : 'text-gray-400'}
+                truncate max-w-[60px] xs:max-w-[70px] sm:max-w-none
               `}
             >
-              {step.title}
+              {step.title.split(' ')[0]} {/* Shows only first word on smallest screens */}
+              <span className="hidden xs:inline"> {/* Shows full title on xs screens and up */}
+                {step.title.includes(' ') && step.title.substring(step.title.indexOf(' '))}
+              </span>
             </span>
+
+            {/* Step number for accessibility */}
+            <span className="sr-only">Step {step.id}: {step.title}</span>
           </div>
+
+          {/* Connector Line - Optimized for mobile */}
           {index < STEPS.length - 1 && (
-            <div className="flex-1 mx-2 md:mx-4">
+            <div className="flex-1 mx-1 xs:mx-2 md:mx-4">
               <div className="h-1 rounded-full bg-gray-100 overflow-hidden">
                 <div 
                   className={`h-full rounded-full transition-all duration-500 ${
-                    isCompleted ? 'bg-noor-green w-full' : 'bg-gray-200 w-0'
+                    completedSteps.includes(step.id) ? 'bg-noor-green w-full' : 'bg-gray-200 w-0'
                   }`}
                 />
               </div>

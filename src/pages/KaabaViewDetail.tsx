@@ -1,202 +1,5 @@
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import Footer from '../components/layout/Footer';
-
-// // images
-// import heroBg from '../assets/images/packages/5-3_files/3-star-6955351e8eb2a.jpg';
-// import fairmontImg from '../assets/images/packages/5-3_files/imp-7.webp';
-// import movenpickImg from '../assets/images/packages/5-3_files/m2.webp';
-// import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
-// import visaImg from '../assets/images/packages/5-3_files/s-1.webp';
-
-// // Related package images
-// import p1 from '../assets/images/packages/5-3_files/p-1.webp';
-// import p2 from '../assets/images/packages/5-3_files/p-2.webp';
-// import p3 from '../assets/images/packages/5-3_files/p-3.webp';
-
-// const KaabaViewDetail: React.FC = () => {
-//   const { nights } = useParams();
-
-//   return (
-//     <div className="bg-white">
-
-//       {/* ================= HERO ================= */}
-//       <section
-//         className="relative bg-cover bg-center text-white"
-//         style={{ backgroundImage: `url(${heroBg})` }}
-//       >
-//         <div className="absolute inset-0 bg-black/70" />
-//         <div className="relative max-w-6xl mx-auto px-4 py-28 text-center">
-//           <p className="text-noor-gold uppercase tracking-widest mb-4 text-base md:text-lg">
-//             Welcome To Haram Umrah Travels
-//           </p>
-//           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-//             5 Star Kaaba View Package (5 Nights)
-//           </h1>
-//           <p className="text-noor-gold text-base md:text-lg">
-//             $990 - Based on Quad | $1190 - Based on Triple | $1290 - Based on Double
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* ================= CONTENT ================= */}
-//       <section className="max-w-7xl mx-auto px-4 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10">
-
-//         {/* ===== LEFT FORM ===== */}
-//         <div className="bg-[#1f1f1f] text-white p-6 md:p-8 lg:sticky lg:top-24 h-fit">
-//           <h2 className="text-2xl font-bold mb-4">Book Your Tour</h2>
-//           <p className="text-sm text-gray-300 mb-6">
-//             Fill Out The Form Below To Book Your Unforgettable Umrah Experience.
-//           </p>
-
-//           <form className="space-y-4">
-//             <input className="w-full bg-transparent border-b border-gray-500 py-2" placeholder="Full Name" />
-//             <input className="w-full bg-transparent border-b border-gray-500 py-2" placeholder="Phone Number" />
-//             <input className="w-full bg-transparent border-b border-gray-500 py-2" placeholder="Email Address" />
-//             <textarea className="w-full bg-transparent border-b border-gray-500 py-2" placeholder="Your Enquiry" />
-//             <button className="bg-noor-gold text-black w-full py-3 mt-4">
-//               Send A Message
-//             </button>
-//           </form>
-//         </div>
-
-//         {/* ===== RIGHT DETAILS ===== */}
-//         <div className="lg:col-span-2 space-y-8">
-//           <div>
-//             <h3 className="text-noor-gold font-semibold mb-3">OTHER BENEFITS INCLUDED:</h3>
-
-//             <h4 className="font-bold mb-2">PACKAGE DETAILS:</h4>
-//             <ul className="list-disc ml-5 text-gray-700 space-y-2">
-//               <li>$990 Quad | $1190 Triple | $1290 Double</li>
-//               <li>Mecca: 5 Star Fairmont Makkah Clock Tower (Kaaba View)</li>
-//               <li>Medina: Anwar Al Medina Movenpick (Haram View)</li>
-//               <li>Transportation: Jeddah – Mecca – Medina – Jeddah</li>
-//               <li>Sightseeing in Mecca & Medina</li>
-//               <li>Electronic Visa Processing</li>
-//             </ul>
-//           </div>
-
-//           <div>
-//             <h4 className="font-bold mb-2">PACKAGE FEATURES:</h4>
-//             <ul className="list-disc ml-5 text-gray-700 space-y-2">
-//               <li>Meet & Greet Service</li>
-//               <li>24 Hours Support</li>
-//               <li>Complimentary Umrah Material</li>
-//               <li>Online Umrah Preparation Session</li>
-//             </ul>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-//             <img src={fairmontImg} alt="Fairmont" className="w-full h-64 object-cover" />
-//             <img src={movenpickImg} alt="Movenpick" className="w-full h-64 object-cover" />
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= SERVICES DETAILS (UPDATED CONTENT) ================= */}
-//       <section className="bg-[#2b2b2b] py-20">
-//         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
-//           <ServiceCard
-//             img={transportImg}
-//             title="Transportation On Ground"
-//             subtitle="Transportation On Ground"
-//             desc="Quality service is our ambition. Enjoy complete ground service from Jeddah to Makkah, Makkah to airport with our experienced staff."
-//           />
-
-//           <ServiceCard
-//             img={visaImg}
-//             title="Saudi Tourist Visa"
-//             subtitle="Saudi Visa"
-//             desc="The E-Visa will be a one-year, multiple entry visa, allowing tourists to spend up to 90 days in the country. The tourist visa allows tourism activities, family visits, leisure and Umrah (excluding Hajj)."
-//           />
-
-//           <ServiceCard
-//             img={fairmontImg}
-//             title="Hotel In Makkah"
-//             subtitle="Fairmont Makkah Clock Tower"
-//             desc="Situated only 100 meters from Masjid al-Haram, this 76-storey luxury hotel offers Kaaba, Haram or Holy City views, fitness centre, spa facilities and 24-hour concierge service."
-//           />
-
-//           <ServiceCard
-//             img={movenpickImg}
-//             title="Hotel In Madina"
-//             subtitle="Anwar Al Medina Movenpick"
-//             desc="The 5-star offers elegant accommodation less than 5 minutes' walk from the Prophet's Mosque, with modern rooms and on-site restaurants."
-//           />
-
-//         </div>
-//       </section>
-
-//       {/* ================= RELATED PACKAGES (MISSING SECTION ADDED) ================= */}
-//       <section className="py-20 bg-gray-50">
-//         <div className="max-w-6xl mx-auto text-center px-4">
-//           <p className="text-noor-gold mb-2">Related Packages</p>
-//           <h2 className="text-3xl font-bold mb-12">
-//             Related packages, you might interest
-//           </h2>
-
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-//             <RelatedCard nights="05" price="990" img={p1} />
-//             <RelatedCard nights="07" price="1190" img={p2} />
-//             <RelatedCard nights="10" price="1390" img={p3} />
-//           </div>
-//         </div>
-//       </section>
-
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// const ServiceCard = ({
-//   img,
-//   title,
-//   subtitle,
-//   desc,
-// }: {
-//   img: string;
-//   title: string;
-//   subtitle: string;
-//   desc: string;
-// }) => (
-//   <div className="bg-white p-6">
-//     <div className="w-full h-56 overflow-hidden mb-4">
-//       <img src={img} alt={title} className="w-full h-full object-cover" />
-//     </div>
-//     <p className="text-noor-gold text-sm">{title}</p>
-//     <h4 className="font-bold mb-2">{subtitle}</h4>
-//     <p className="text-sm text-gray-600">{desc}</p>
-//   </div>
-// );
-
-// const RelatedCard = ({ nights, price, img }: { nights: string; price: string; img: string }) => (
-//   <div className="bg-white shadow p-5 text-left">
-//     <div className="w-full h-52 overflow-hidden mb-4">
-//       <img src={img} alt="Package" className="w-full h-full object-cover" />
-//     </div>
-//     <span className="inline-block bg-noor-gold text-white px-3 py-1 text-sm mb-3">
-//       Nights {nights}
-//     </span>
-//     <h4 className="font-bold">5 Star Kaaba View Package</h4>
-//     <p className="font-bold text-lg">${price} <span className="text-sm font-normal">/ Per Person</span></p>
-//     <ul className="text-sm text-gray-600 mt-3 space-y-1">
-//       <li>• Accommodations in Saudi Arabia</li>
-//       <li>• Air Ticket not included</li>
-//       <li>• Breakfast not included</li>
-//     </ul>
-//   </div>
-// );
-
-// export default KaabaViewDetail; 
-
-
-
-
-
-// KaabaViewDetail.tsx
+ // KaabaViewDetail.tsx
 import React, { useState } from 'react';
-import Footer from '../components/layout/Footer';
 
 // ── Shared images ─────────────────────────────────────────────
 import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
@@ -481,23 +284,41 @@ const KaabaViewDetail: React.FC = () => {
       </div>
 
       {/* ══════════════ INCLUDED SERVICES STRIP ══════════════ */}
-      <section className="bg-[#1a3c2a] py-10 md:py-12">
+      <section className="bg-[#1a3c2a] py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4">
-          <p className="text-center text-noor-gold uppercase tracking-widest text-xs mb-6">Also Included In Your Package</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <p className="text-center text-noor-gold uppercase tracking-widest text-xs mb-5 md:mb-6">
+            Also Included In Your Package
+          </p>
+          
+          {/* Mobile optimized grid */}
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[
               { img: transportImg, label: 'Ground Transportation', sub: 'Jeddah ↔ Makkah ↔ Madinah' },
               { img: visaImg,      label: 'Saudi Umrah e-Visa',    sub: 'Electronic processing' },
               { img: transportImg, label: 'Meet & Greet Service',  sub: 'Airport & hotel assistance' },
               { img: visaImg,      label: '24-Hour Support',       sub: 'Always available for you' },
             ].map((s) => (
-              <div key={s.label} className="flex items-center gap-3 bg-white/5 rounded-lg p-4">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                  <img src={s.img} alt={s.label} className="w-full h-full object-cover" />
+              <div 
+                key={s.label} 
+                className="flex items-center gap-2 sm:gap-3 bg-white/5 rounded-lg p-3 sm:p-4 hover:bg-white/10 transition-colors duration-200"
+              >
+                {/* Image container - responsive sizing */}
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <img 
+                    src={s.img} 
+                    alt={s.label} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div>
-                  <p className="text-white text-xs font-semibold leading-tight">{s.label}</p>
-                  <p className="text-white/50 text-xs mt-0.5">{s.sub}</p>
+                
+                {/* Text content */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-white text-xs sm:text-sm font-semibold leading-tight truncate">
+                    {s.label}
+                  </p>
+                  <p className="text-white/50 text-xs mt-0.5 truncate">
+                    {s.sub}
+                  </p>
                 </div>
               </div>
             ))}
@@ -505,7 +326,6 @@ const KaabaViewDetail: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
@@ -529,7 +349,7 @@ const HotelThumb = ({
     }`}
   >
     {/* Image */}
-    <div className="h-36 overflow-hidden">
+    <div className="h-32 sm:h-36 overflow-hidden">
       <img
         src={hotel.image}
         alt={hotel.name}
@@ -538,14 +358,14 @@ const HotelThumb = ({
     </div>
     {/* Overlay on selected */}
     {isSelected && (
-      <div className="absolute top-2 right-2 bg-noor-gold rounded-full w-6 h-6 flex items-center justify-center">
-        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+      <div className="absolute top-2 right-2 bg-noor-gold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
+        <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
         </svg>
       </div>
     )}
     {/* Text */}
-    <div className={`p-3 transition-colors ${isSelected ? 'bg-[#1a3c2a]' : 'bg-gray-50'}`}>
+    <div className={`p-2 sm:p-3 transition-colors ${isSelected ? 'bg-[#1a3c2a]' : 'bg-gray-50'}`}>
       <p className={`text-xs font-bold leading-tight ${isSelected ? 'text-white' : 'text-gray-800'}`}>
         {hotel.name}
       </p>
@@ -560,7 +380,7 @@ const HotelThumb = ({
 const HotelDetailCard = ({ hotel }: { hotel: Hotel }) => (
   <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-5">
     {/* Image — 2/5 width on desktop */}
-    <div className="md:col-span-2 h-64 md:h-auto overflow-hidden">
+    <div className="md:col-span-2 h-56 sm:h-64 md:h-auto overflow-hidden">
       <img
         src={hotel.image}
         alt={hotel.name}
@@ -569,34 +389,34 @@ const HotelDetailCard = ({ hotel }: { hotel: Hotel }) => (
     </div>
 
     {/* Content — 3/5 width on desktop */}
-    <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-between">
+    <div className="md:col-span-3 p-5 sm:p-6 md:p-8 flex flex-col justify-between">
       <div>
         {/* Tag + stars */}
         <div className="flex flex-wrap items-center gap-2 mb-3">
-          <span className="bg-noor-gold/10 text-noor-gold text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+          <span className="bg-noor-gold/10 text-noor-gold text-xs font-semibold uppercase tracking-wider px-2 sm:px-3 py-1 rounded-full">
             {hotel.tag}
           </span>
-          <span className="bg-gray-100 text-gray-500 text-xs px-3 py-1 rounded-full">
+          <span className="bg-gray-100 text-gray-500 text-xs px-2 sm:px-3 py-1 rounded-full">
             {hotel.distance}
           </span>
         </div>
 
         {/* Hotel name */}
-        <h3 className="text-xl md:text-2xl font-bold text-[#1a3c2a] mb-3">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1a3c2a] mb-3">
           {hotel.name}
         </h3>
 
         {/* 5 gold stars */}
         <div className="flex gap-0.5 mb-4">
           {[...Array(5)].map((_, i) => (
-            <svg key={i} className="w-4 h-4 text-noor-gold fill-current" viewBox="0 0 20 20">
+            <svg key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-noor-gold fill-current" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           ))}
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed mb-5">
+        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">
           {hotel.description}
         </p>
 
@@ -604,24 +424,24 @@ const HotelDetailCard = ({ hotel }: { hotel: Hotel }) => (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {hotel.highlights.map((hl) => (
             <div key={hl} className="flex items-start gap-2">
-              <svg className="w-4 h-4 text-noor-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-noor-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-sm text-gray-700">{hl}</span>
+              <span className="text-xs sm:text-sm text-gray-700">{hl}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* CTA */}
-      <div className="mt-6 pt-5 border-t border-gray-100">
+      <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-gray-100">
         <a
           href="https://wa.me/17866386022?text=Hi%2C%20I%27m%20interested%20in%20the%205-Star%20Kaaba%20View%20Package"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#1a3c2a] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#2a5c3a] transition-colors"
+          className="inline-flex items-center gap-2 bg-[#1a3c2a] text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#2a5c3a] transition-colors w-full sm:w-auto justify-center"
         >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
           Enquire About This Hotel
