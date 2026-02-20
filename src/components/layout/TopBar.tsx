@@ -47,8 +47,8 @@ const TopBar: React.FC = () => {
     <div className="bg-noor-green text-white">
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between">
         {/* Hijri Date */}
-        <div className="bg-noor-gold/15 text-noor-gold text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2 font-medium border border-noor-gold/10">
-          <CalendarIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 hidden sm:block" />
+        <div className="bg-noor-gold/15 text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2 font-medium border border-noor-gold/10">
+          <CalendarIcon className="text-noor-gold w-3 h-3 sm:w-3.5 sm:h-3.5 hidden sm:block" />
           <span dir="rtl" className="whitespace-nowrap">{hijriDate}</span>
         </div>
 

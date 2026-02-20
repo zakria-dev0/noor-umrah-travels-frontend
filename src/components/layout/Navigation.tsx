@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CalendarIcon } from '../icons/Icons';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo-new.png';
 
 type StarType = '5star' | '4star' | '3star';
 type FiveStarView = 'haram' | 'kaaba';
@@ -86,9 +86,9 @@ const Navigation: React.FC = () => {
           isScrolled ? 'shadow-md' : 'shadow-sm'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-1 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Haram Umrah Travels" className="h-14 md:h-20" />
+            <img src={logo} alt="Haram Umrah Travels" className="h-14 md:h-16 lg:h-20" />
           </Link>
 
           {/* Desktop Nav Links */}
