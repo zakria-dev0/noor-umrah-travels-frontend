@@ -43,6 +43,7 @@ import farajMadinahImg   from '../assets/images/packages/3-FarajAlmadinaHotel.jp
 import newMadinahImg     from '../assets/images/packages/3-newmidnahhotel.jpg';
 import zahaImg           from '../assets/images/packages/3-zahaalmunawwarah-midnah.webp';
 import grandPlazaImg     from '../assets/images/packages/3-GrandPlazaAlMadina.jpg';
+import ImageGallery from '../components/sections/ImageGallery';
 
 // ══════════════════════════════════════════════════════════════
 // TYPES
@@ -815,6 +816,7 @@ const UmrahPackagesCombined: React.FC = () => {
         {tier === '4star' && <DetailedPackagesSection packages={fourStarPackages} starLevel={4} />}
         {tier === '3star' && <DetailedPackagesSection packages={threeStarPackages} starLevel={3} />}
       </div>
+            <ImageGallery />
     </div>
   );
 };
