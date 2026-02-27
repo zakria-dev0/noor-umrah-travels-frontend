@@ -51,6 +51,12 @@ const TopBar: React.FC = () => {
           <CalendarIcon className="text-noor-gold w-3 h-3 sm:w-3.5 sm:h-3.5 hidden sm:block" />
           <span dir="rtl" className="whitespace-nowrap">{hijriDate}</span>
         </div>
+        <div className="hidden sm:flex items-center text-[11px] sm:text-xs text-white/80 font-medium tracking-wide font-bold italic">
+          <span className="border-l border-white/15 pl-3 ml-3">
+            Seller of Travel Registration License #: ST46359
+          </span>
+        </div>
+
 
         {/* Right Side */}
         <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
@@ -80,17 +86,7 @@ const TopBar: React.FC = () => {
             <span className="email-text select-all">info@haramumrahtravels.com</span>
           </button>
 
-          {/* Divider */}
-          <div className="hidden md:block w-px h-4 bg-white/10" />
-
-          {/* US Based Badge */}
-          <div className="flex items-center gap-1.5 bg-noor-gold/10 border border-noor-gold/15 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
-            </span>
-            <span className="font-semibold text-noor-gold tracking-wide">US BASED</span>
-          </div>
+        
         </div>
       </div>
     </div>

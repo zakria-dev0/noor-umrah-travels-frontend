@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
           <div className="col-span-2 sm:col-span-1">
             <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">About Us</h3>
             <p className="text-white/40 text-xs sm:text-sm leading-relaxed mb-6">
-              Your trusted US-based partner for blessed Umrah journeys to the Holy Land. We provide premium Umrah packages with exceptional service and care.
+              Your trusted US-based partner for blessed Umrah journeys to the Holy Land. We are registered as a Seller of Travel under license # ST46359. We provide premium Umrah packages with exceptional service and care.
             </p>
           </div>
 
