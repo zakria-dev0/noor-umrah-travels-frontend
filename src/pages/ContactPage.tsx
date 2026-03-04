@@ -937,17 +937,17 @@ const ContactInfoSidebar: React.FC = () => (
     <h3 className="text-xl font-bold font-display mb-6">Need Help?</h3>
     
     <div className="space-y-5">
-      <a href="tel:+13057768923" className="flex items-start gap-4 group">
+      <a href="tel: +1 786 9104615" className="flex items-start gap-4 group">
         <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
           <PhoneIcon className="w-5 h-5" />
         </div>
         <div>
           <p className="font-semibold">Call Us</p>
-          <p className="text-white/60 text-sm">+1 305 7768923</p>
+          <p className="text-white/60 text-sm">++1 786 9104615</p>
         </div>
       </a>
 
-      <a href="https://wa.me/17866386022" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+      <a href="https://wa.me/17869104615" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
         <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
           <WhatsAppIcon className="w-5 h-5" />
         </div>
@@ -1183,7 +1183,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: 'How do I book an Umrah package?',
-    answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +1 305 7768923, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
+    answer: 'You can book an Umrah package by filling out our inquiry form above, calling us directly at +1 786 9104615, or sending us a WhatsApp message. Our team will guide you through the entire booking process and help you choose the best package for your needs.',
   },
   {
     question: 'Do you offer payment plans?',

@@ -22,13 +22,13 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Phone */}
-            <a href="tel:+13057768923" className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity group">
+            <a href="tel:+1 786 9104615" className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity group">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/[0.06] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/[0.1] transition-colors">
                 <PhoneIcon className="w-4 h-4 sm:w-5 sm:h-5 text-noor-gold" />
               </div>
               <div>
                 <p className="text-white/30 text-[10px] sm:text-xs uppercase tracking-wider">Call Us</p>
-                <p className="font-bold text-sm sm:text-base">+1 (305) 776-8923</p>
+                <p className="font-bold text-sm sm:text-base">+1 786 9104615</p>
               </div>
             </a>
 

@@ -82,11 +82,11 @@ const HeroSection: React.FC = () => {
             </Link>
             
             <a
-              href="tel:+13057768923"
+              href="tel:+1 786 9104615"
               className="bg-white/[0.08] backdrop-blur-md border border-white/[0.15] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold hover:bg-white/15 transition-all text-sm sm:text-base inline-flex items-center justify-center gap-2.5"
             >
               <PhoneIcon className="w-4 h-4 text-noor-gold" />
-              +1 (305) 776-8923
+              +1 786 9104615
             </a>
           </div>
         </div>

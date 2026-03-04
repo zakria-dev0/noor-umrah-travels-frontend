@@ -31,11 +31,11 @@ const CTABanner: React.FC = () => (
         </Link>
         
         <a
-          href="tel:+13057768923"
+          href="tel:+1 786 9104615"
           className="bg-white/10 backdrop-blur-sm border border-white/25 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all text-base inline-flex items-center justify-center gap-2"
         >
           <PhoneIcon className="w-4 h-4 text-noor-gold" />
-          Call Now: +1 (305) 776-8923
+          Call Now: +1 786 9104615
         </a>
       </div>
     </div>

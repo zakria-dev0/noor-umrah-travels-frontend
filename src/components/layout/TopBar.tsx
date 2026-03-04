@@ -62,13 +62,13 @@ const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
           {/* Phone */}
           <a
-            href="tel:+13057768923"
+            href="tel:+1 786 9104615"
             className="hidden md:flex items-center gap-2 text-[11px] sm:text-xs text-white/80 hover:text-noor-gold transition-colors group"
           >
             <span className="w-6 h-6 rounded-full bg-noor-gold/10 flex items-center justify-center group-hover:bg-noor-gold/20 transition-colors">
               <PhoneIcon className="w-3 h-3 text-noor-gold" />
             </span>
-            <span>+1 (305) 776-8923</span>
+            <span>+1 1 786 9104615</span>
           </a>
 
           {/* Divider */}

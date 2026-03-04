@@ -111,7 +111,7 @@ const RefundPolicy: React.FC = () => {
                 <p className="text-gray-600">1395 Brickell Ave Suite 800</p>
                 <p className="text-gray-600">Miami, FL 33131</p>
                 <p className="text-gray-600 mt-2">Email: info@haramumrahtravels.com</p>
-                <p className="text-gray-600">Phone: +1 305 7768923</p>
+                <p className="text-gray-600">Phone: +1 786 9104615</p>
               </div>
             </div>
           </div>
