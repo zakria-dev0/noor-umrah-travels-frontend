@@ -155,7 +155,7 @@ const PromoPopup: React.FC = () => {
 
               {/* WhatsApp Link - Fixed anchor tag */}
               <a
-                href="https://wa.me/17866386022?text=Hi%2C%20I%27m%20interested%20in%20the%205%25%20Umrah%20discount%20offer"
+                href="https://wa.me/+17869104615?text=Hi%2C%20I%27m%20interested%20in%20the%205%25%20Umrah%20discount%20offer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 w-full bg-[#25D366]/10 text-[#25D366] py-2 rounded-lg font-semibold text-xs hover:bg-[#25D366]/20 transition-all duration-300"

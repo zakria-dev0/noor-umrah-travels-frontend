@@ -146,7 +146,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ days, stars, price, starLabel
           </button>
           
           <a
-            href="https://wa.me/17866386022"
+            href="https://wa.me/+17869104615"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 sm:w-11 sm:h-11 bg-green-500 text-white rounded-xl flex items-center justify-center hover:bg-green-600 transition-all hover:shadow-md flex-shrink-0"

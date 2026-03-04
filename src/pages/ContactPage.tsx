@@ -266,7 +266,7 @@ const ContactHero: React.FC = () => {
               </a>
               
               <a
-                href="https://wa.me/17866386022"
+                href="https://wa.me/+17869104615"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3.5 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"

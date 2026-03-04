@@ -436,7 +436,7 @@ const HotelDetailCard = ({ hotel }: { hotel: Hotel }) => (
       {/* CTA */}
       <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-gray-100">
         <a
-          href="https://wa.me/17866386022?text=Hi%2C%20I%27m%20interested%20in%20the%205-Star%20Kaaba%20View%20Package"
+          href="https://wa.me/+17869104615?text=Hi%2C%20I%27m%20interested%20in%20the%205-Star%20Kaaba%20View%20Package"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#1a3c2a] text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#2a5c3a] transition-colors w-full sm:w-auto justify-center"

@@ -751,7 +751,7 @@ const DetailedPackageCard = ({ pkg, starLevel }: { pkg: DetailedPackageItem; sta
       {/* WhatsApp CTA */}
       <div className="pt-2">
         <a
-          href={`https://wa.me/17866386022?text=Hi%2C%20I%27m%20interested%20in%20the%20${pkg.nights}-Night%20${starLevel}-Star%20Umrah%20Package`}
+          href={`https://wa.me/+17869104615?text=Hi%2C%20I%27m%20interested%20in%20the%20${pkg.nights}-Night%20${starLevel}-Star%20Umrah%20Package`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#1a3c2a] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#2a5c3a] transition-colors"
