@@ -2,6 +2,7 @@
 import React from 'react';
 import { PhoneIcon, MailIcon, LocationIcon, FacebookIcon, InstagramIcon, WhatsAppIcon } from '../icons/Icons';
 import { Link } from 'react-router-dom';
+import TrustLogo from '../../assets/images/true.jpg';
 
 const Footer: React.FC = () => {
   const handleCopyEmail = (e: React.MouseEvent) => {
@@ -157,14 +158,26 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-xs text-white/30">
-            <p>&copy; {new Date().getFullYear()} Haram Umrah Travels. All rights reserved.</p>
-            <p>Designed with care for the Muslim community</p>
+        <div className="border-t border-white/[0.06]">
+          <div className="max-w-7xl mx-auto px-4 py-4 sm:py-5">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] sm:text-xs text-white/30">
+              
+              <p>&copy; {new Date().getFullYear()} Haram Umrah Travels. All rights reserved.</p>
+
+              {/* Trust Logo */}
+              <div className="flex items-center gap-2">
+                <img 
+                  src={TrustLogo} 
+                  alt="Registered Travel Organization"
+                  className="h-8 sm:h-10 object-contain opacity-80 hover:opacity-100 transition"
+                />
+              </div>
+
+              <p>Designed with care for the Muslim community</p>
+
+            </div>
           </div>
         </div>
-      </div>
     </footer>
   );
 };
