@@ -62,11 +62,28 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-10 sm:py-12 md:py-14">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* About */}
-          <div className="col-span-2 sm:col-span-1">
-            <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">About Us</h3>
-            <p className="text-white/40 text-xs sm:text-sm leading-relaxed mb-6">
-              Your trusted US-based partner for blessed Umrah journeys to the Holy Land. We are registered as a Seller of Travel under license # ST46359. We provide premium Umrah packages with exceptional service and care.
+              <div className="col-span-2 sm:col-span-1">
+            <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-white/80">
+              About Us
+            </h3>
+
+            <p className="text-white/40 text-xs sm:text-sm leading-relaxed mb-4">
+              Your trusted US-based partner for blessed Umrah journeys to the Holy Land. 
+              We are registered as a Seller of Travel under license # ST46359. 
+              We provide premium Umrah packages with exceptional service and care.
+              <p className="text-[10px] sm:text-xs text-white/40 leading-tight italic font-bold">
+                Officially Registered Travel Organization
+              </p>
             </p>
+
+            {/* Trust Logo */}
+            <div className="flex items-center gap-3 mt-2">
+              <img
+                src={TrustLogo}
+                alt="Registered Travel Organization"
+                className="h-10 sm:h-12 object-contain opacity-80 hover:opacity-100 transition"
+              />
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -163,16 +180,6 @@ const Footer: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] sm:text-xs text-white/30">
               
               <p>&copy; {new Date().getFullYear()} Haram Umrah Travels. All rights reserved.</p>
-
-              {/* Trust Logo */}
-              <div className="flex items-center gap-2">
-                <img 
-                  src={TrustLogo} 
-                  alt="Registered Travel Organization"
-                  className="h-8 sm:h-10 object-contain opacity-80 hover:opacity-100 transition"
-                />
-              </div>
-
               <p>Designed with care for the Muslim community</p>
 
             </div>
