@@ -54,19 +54,28 @@ const HeroSection: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-noor-gold opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-noor-gold" />
             </span>
-            Trusted US-Based Umrah Specialists
+            {/* Trusted US-Based Umrah Specialists */}
+            Best Umrah Packages Tailored for Your Sacred Journey
           </div>
 
           {/* Headline */}
           <h1 className="text-[32px] sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white leading-[1.08] mb-5 sm:mb-6 font-display">
-            Your Sacred
-            <span className="block text-noor-gold mt-1 sm:mt-2">Umrah Journey</span>
-            <span className="block mt-1 sm:mt-2">Starts Here</span>
+            {/* Your Sacred */}
+            Get Cheap Umrah
+            <span className="block text-noor-gold mt-1 sm:mt-2">
+            {/* Umrah Journey */}
+            Packages from USA
+            </span>
+            <span className="block mt-1 sm:mt-2">
+              {/* Starts Here */}
+              without Compromising Comfort
+              </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-white/60 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 leading-relaxed max-w-lg">
-            Premium Umrah packages from major US cities. Luxury hotels steps from the Haram, seamless visa processing, and dedicated guidance every step of the way.
+            {/* Premium Umrah packages from major US cities. Luxury hotels steps from the Haram, seamless visa processing, and dedicated guidance every step of the way. */}
+            From seamless travel arrangements to trusted guidance and top-rated hotels near Haram, we handle everything to make your spiritual journey stress-free and memorable.
           </p>
 
           {/* CTA Buttons */}

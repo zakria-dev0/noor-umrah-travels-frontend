@@ -1,5 +1,6 @@
 // HaramViewDetail.tsx
 import React, { useState } from 'react';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 // ── Shared images ─────────────────────────────────────────────
 import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
@@ -18,6 +19,7 @@ import hiltonMadinahImg  from '../assets/images/packages/5-MadinahHiltonHotel.jp
 import intercontiImg     from '../assets/images/packages/5-InterContinentalDarAlImanMadinah.webp';
 import movenpickImg      from '../assets/images/packages/5-AnwarAlMadinahMövenpick.jpg';
 import sofitelImg        from '../assets/images/packages/5-SofitelShahdAlMadinah.jpg';
+import { ArrowRightIcon } from '../components/icons/Icons';
 
 // ── Types ─────────────────────────────────────────────────────
 interface Hotel {
@@ -29,6 +31,57 @@ interface Hotel {
   description: string;
   highlights: string[];
 }
+
+
+
+interface PackageIntroContent {
+  title: string;
+  intro: string;
+  benefitsTitle: string;
+  benefitsDescription: string;
+  highlights: string[];
+}
+
+interface PackageIntroSectionProps {
+  content: PackageIntroContent;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQContent {
+  title: string;
+  subtitle: string;
+  faqs: FAQItem[];
+}
+
+interface WhyBookSectionProps {
+  content: {
+    title: string;
+    description: string;
+    benefits: string[];
+  };
+}
+
+interface PackageClosingSectionProps {
+  content: {
+    title: string;
+    description: string;
+    buttonText: string;
+    benefits: string[];
+    bottomTitle: string;
+    bottomDescription: string;
+    includes?: {
+      title: string;
+      value: string;
+    }[];
+  };
+}
+
+type FiveStarView = 'haram' | 'kaaba';
+type StarType = '5star' | '4star' | '3star';
 
 // ── Hotel Data ────────────────────────────────────────────────
 const makkahHotels: Hotel[] = [
@@ -197,10 +250,762 @@ const madinahHotels: Hotel[] = [
   },
 ];
 
+
+
+const haramViewContent = {
+  "5": {
+    introSection: {
+      title: "Affordable 5 Star Umrah Package USA for Just $890",
+
+      intro:
+        "Your Dream Cheap 5 Star Umrah Package Awaits. Experience the perfect blend of comfort and affordability with our Budget Luxury Umrah Package. Enjoy 5-star hotels, Haram views, and seamless services without breaking the bank.",
+
+      benefitsTitle:
+        "5 Star Umrah Package Under $1000 – Luxury Within Your Budget",
+
+      benefitsDescription:
+        "Experience a spiritual journey without compromise on comfort with our Affordable 5 Star Umrah Package USA. Designed for travelers seeking a perfect balance of luxury and value, this Budget Luxury Umrah Package offers premium accommodations, convenient Haram access, and personalized services. Make your pilgrimage memorable, peaceful, and affordable with our expertly curated package.",
+
+      highlights: [
+        "Stay in 5-star hotels near the Haram with breathtaking views.",
+        "Enjoy premium facilities and opulent comforts throughout your stay.",
+        "Hassle-free visa processing with all documentation.",
+        "Delicious meals included for a comfortable stay.",
+        "Convenient transport and airport transfers.",
+        "Guided spiritual tours and expert assistance."
+      ]
+    },
+
+    whyBookSection: {
+      title:
+        "Budget Luxury Umrah Package – Comfort and Convenience Combined",
+
+      description:
+        "Our 5 Star Umrah Package Under $1000 is designed to make your pilgrimage smooth, enjoyable, and spiritually rewarding. Combining modern comforts with affordability, this package ensures you can focus entirely on your prayers while we handle every detail—from hotel bookings to transportation—so your journey remains peaceful, organized, and memorable.",
+
+      benefits: [
+        "Premium hotel stays with elegant rooms and modern facilities.",
+        "Reliable transportation between Makkah, Madinah, and key holy sites.",
+        "Complimentary Umrah essentials for a hassle-free experience.",
+        "Flexible itinerary to match your personal schedule.",
+        "Opportunities for guided historical and religious tours."
+      ]
+    },
+
+    closingSection: {
+      title:
+        "Cheap 5 Star Umrah Package – Your Dream Pilgrimage Made Easy",
+
+      description:
+        "Our 5 Star Umrah Package Under $1000 makes premium pilgrimage experiences accessible for all. Whether it’s your first Umrah or a repeated spiritual journey, this Cheap 5 Star Umrah Package ensures comfort, convenience, and a stress-free experience.",
+
+      buttonText: "Book Now",
+
+      benefits: [
+        "Affordable 5-star accommodations for ultimate comfort.",
+        "Steps away from Masjid al-Haram & Masjid ul Nabwi for easy access.",
+        "Round-trip flights from major US cities included.",
+        "Expert guides for religious and cultural insights.",
+        "Dedicated support throughout your pilgrimage.",
+        "Flexible schedules to match your preferences."
+      ],
+
+      includes: [
+        {
+          title: "Ground Transportation",
+          value: "Jeddah ↔ Makkah ↔ Madinah"
+        },
+        {
+          title: "Saudi Umrah e-Visa",
+          value: "Online visa processing"
+        },
+        {
+          title: "Meet & Greet Service",
+          value: "Airport & hotel assistance"
+        },
+        {
+          title: "24-Hour Support",
+          value: "Always available for you"
+        }
+      ],
+
+      bottomTitle: "Luxury, Comfort & Spiritual Peace",
+
+      bottomDescription:
+        "Everything needed for a seamless premium Umrah experience is already included."
+    }
+  },
+
+  "7": {
+    introSection: {
+      title: "5 Star Umrah Package with Haram View for Just $990",
+
+      intro:
+        "Experience True Comfort with Premium Luxury Umrah Package USA. Stay in premium 5 Star Umrah Hotels Makkah while enjoying our Haram View Umrah Package—where convenience, luxury, and spirituality meet perfectly.",
+
+      benefitsTitle:
+        "Experience Unmatched Comfort and Spirituality with Our Haram View Umrah Package",
+
+      benefitsDescription:
+        "Embark on a spiritually enriching journey with our 5 Star Umrah Package with Haram View. Tailored for pilgrims from the USA, this Luxury Umrah Package USA combines world-class accommodation, seamless travel arrangements, and a close, unobstructed view of the Holy Kaaba.",
+
+      highlights: [
+        "Stay in 5 Star Umrah Hotels Makkah & Madinah.",
+        "Enjoy an exclusive Haram View for spiritual closeness.",
+        "Hassle-free transportation between Makkah and Madinah.",
+        "Guided support from experienced travel coordinators.",
+        "Access to premium dining and leisure facilities.",
+        "Tailored itinerary ensuring a smooth pilgrimage."
+      ]
+    },
+
+    whyBookSection: {
+      title:
+        "Luxury Umrah Package USA: Your Gateway to a Blessed Journey",
+
+      description:
+        "Our Haram View Umrah Package is designed to provide unmatched comfort while keeping your spiritual journey central. With meticulous attention to detail, every aspect—from hotel selection to religious guidance—is crafted to ensure peace of mind.",
+
+      benefits: [
+        "Prime Haram View rooms just steps from the Kaaba.",
+        "Premium amenities in 5 Star Umrah Hotels Makkah & Madinah.",
+        "Guided tours of Makkah and Madinah landmarks.",
+        "Round-the-clock concierge and assistance.",
+        "Comfortable transport for all rituals and excursions.",
+        "Flexible scheduling to suit individual and group needs."
+      ]
+    },
+
+    closingSection: {
+      title:
+        "Luxury Stay at 5 Star Umrah Hotels Makkah & Madinah",
+
+      description:
+        "Enhance your pilgrimage with a stay in premium accommodations that combine comfort, convenience, and spiritual proximity. Our carefully selected hotels in both holy cities ensure you remain close to the sacred sites while enjoying modern luxury.",
+
+      buttonText: "Explore 5 Star Hotels",
+
+      benefits: [
+        "Elegant rooms with modern design and a relaxing atmosphere.",
+        "Close proximity to Haram and Masjid an-Nabawi.",
+        "Daily housekeeping and high-quality room service.",
+        "On-site dining options with international and local cuisine.",
+        "Peaceful environment designed for rest and worship.",
+        "Dedicated staff providing personalized support."
+      ],
+
+      includes: [
+        {
+          title: "Ground Transportation",
+          value: "Jeddah ↔ Makkah ↔ Madinah"
+        },
+        {
+          title: "Saudi Umrah e-Visa",
+          value: "Online visa processing"
+        },
+        {
+          title: "Meet & Greet Service",
+          value: "Airport & hotel assistance"
+        },
+        {
+          title: "24-Hour Support",
+          value: "Always available for you"
+        }
+      ],
+
+      bottomTitle: "Premium Haram View Experience",
+
+      bottomDescription:
+        "Enjoy comfort, convenience, and exceptional hospitality throughout your Umrah journey."
+    }
+  },
+
+  "10": {
+    introSection: {
+      title:
+        "Luxury 5 Star Umrah Package with Kaaba View for Just $1190",
+
+      intro:
+        "Experience A Premium Spiritual Journey with Our Exclusive VIP Umrah Package USA. Book your dream Kaaba View Umrah Package today and enjoy luxury accommodation, seamless travel, guided services, and unforgettable views of the Holy Kaaba.",
+
+      benefitsTitle:
+        "VIP Umrah Package USA for a Comfortable Spiritual Journey",
+
+      benefitsDescription:
+        "Perform your Umrah with complete peace of mind while enjoying unmatched comfort and convenience. This premium Umrah Package USA is designed to enhance your spiritual focus by minimizing travel stress and maximizing ease throughout your stay.",
+
+      highlights: [
+        "5-star Hotels located just steps away from Masjid al-Haram.",
+        "Easy access to prayer areas for all daily prayers.",
+        "Smooth check-in and check-out experience at hotels.",
+        "Group coordination for a well-organized pilgrimage.",
+        "Assistance for elderly travelers and families.",
+        "Peaceful environment ideal for prayers and reflection."
+      ]
+    },
+
+    whyBookSection: {
+      title:
+        "Everything You Get with Our All-Inclusive Premium Umrah Package USA",
+
+      description:
+        "Our VIP Umrah Package USA is thoughtfully designed for US citizens to provide a seamless and spiritually fulfilling journey. From premium accommodations with stunning Kaaba views to complete travel arrangements, every detail is managed with care.",
+
+      benefits: [
+        "5-star luxury hotels a short walk from Masjid al-Haram.",
+        "Direct Kaaba view rooms available.",
+        "Premium hotel stay near Masjid ul Nabwi in Madinah.",
+        "Round-trip flights from major USA cities included.",
+        "Daily breakfast and selected meal options.",
+        "Personalized concierge and dedicated butler service."
+      ]
+    },
+
+    closingSection: {
+      title:
+        "Secure & Hassle-Free Booking for Your Kaaba View Umrah Package",
+
+      description:
+        "Our luxury 5 Star Umrah Package with Kaaba View combines affordability with luxury. We make booking your Umrah journey simple, transparent, and secure.",
+
+      buttonText: "Book Now",
+
+      benefits: [
+        "Clear pricing with no hidden fees or extra charges.",
+        "Easy online booking process with quick confirmation.",
+        "Trusted by hundreds of satisfied Umrah travelers.",
+        "Flexible payment options for your convenience.",
+        "Dedicated customer support before and during travel.",
+        "Limited-time offer—lock your package at $1190 today."
+      ],
+
+      includes: [
+        {
+          title: "Ground Transportation",
+          value: "Jeddah ↔ Makkah ↔ Madinah"
+        },
+        {
+          title: "Saudi Umrah e-Visa",
+          value: "Online visa processing"
+        },
+        {
+          title: "Meet & Greet Service",
+          value: "Airport & hotel assistance"
+        },
+        {
+          title: "24-Hour Support",
+          value: "Always available for you"
+        }
+      ],
+
+      bottomTitle: "Exclusive VIP Kaaba View Experience",
+
+      bottomDescription:
+        "A premium Umrah journey combining luxury, convenience, and spiritual fulfillment."
+    }
+  }
+};
+
+
+export const haramViewFaqData = {
+  5: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our Affordable 5 Star Umrah Package USA.",
+
+    faqs: [
+      {
+        question: "What is included in the Budget Luxury Umrah Package?",
+        answer:
+          "Our package includes 5-star hotel accommodations, guided tours, airport transfers, transportation between Makkah and Madinah, meals, visa assistance, and personalized support throughout your pilgrimage."
+      },
+      {
+        question: "How close are the hotels to the Haram in this package?",
+        answer:
+          "The hotels are located just steps away from Masjid al-Haram, allowing easy access for prayers and spiritual activities without long walks."
+      },
+      {
+        question: "Can families and elderly travelers join this package?",
+        answer:
+          "Yes, our Budget Luxury Umrah Package is designed for all travelers, including families and seniors, with comfortable accommodations, easy access to holy sites, and personalized support for a safe and convenient journey."
+      },
+      {
+        question: "Can I customize my itinerary?",
+        answer:
+          "Yes! Our Budget Luxury Umrah Package offers flexibility to adjust schedules for prayers, sightseeing, and personal spiritual activities."
+      },
+      {
+        question: "Is visa assistance provided?",
+        answer:
+          "Absolutely. We handle all visa requirements and documentation to ensure a smooth and hassle-free travel experience."
+      },
+      {
+        question: "Are meals included in this package?",
+        answer:
+          "Yes, you will enjoy a variety of delicious meals during your stay, designed for comfort and convenience."
+      },
+      {
+        question: "What kind of support is available during the pilgrimage?",
+        answer:
+          "Our dedicated team provides 24/7 assistance for transportation, hotel services, guidance, and any emergencies, ensuring a stress-free spiritual journey."
+      }
+    ]
+  },
+
+  7: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Learn more about our 5 Star Umrah Package with Haram View.",
+
+    faqs: [
+      {
+        question: "What is included in the 5 Star Umrah Package with Haram View $990?",
+        answer:
+          "This package includes accommodation in 5-star hotels with Haram view, airport transfers, intercity transport, and complete travel assistance for a smooth Umrah journey."
+      },
+      {
+        question: "Are flights included in this Luxury Umrah Package USA?",
+        answer:
+          "Flights may or may not be included depending on the deal. It's best to confirm with the travel provider for exact inclusions and pricing details."
+      },
+      {
+        question: "What is the distance between the hotels and the Haram?",
+        answer:
+          "The hotels are ideally located just steps away or within a short walking distance, offering easy access and direct Haram views for added convenience."
+      },
+      {
+        question: "Is this package suitable for families and elderly pilgrims?",
+        answer:
+          "Yes, this package is designed for comfort and ease, making it ideal for families, seniors, and first-time travelers seeking a hassle-free experience."
+      },
+      {
+        question: "Do you provide visa assistance with this Umrah package?",
+        answer:
+          "Yes, visa processing assistance is typically included to ensure a smooth and stress-free travel preparation process."
+      },
+      {
+        question: "Can I customize my Umrah package?",
+        answer:
+          "Yes, we allow customization based on your travel dates, duration, and accommodation preferences to better suit your needs."
+      },
+      {
+        question: "What kind of support is available during the trip?",
+        answer:
+          "You will receive 24/7 on-ground support, guidance for rituals, and assistance throughout your stay to ensure a comfortable and worry-free pilgrimage."
+      }
+    ]
+  },
+
+  10: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Everything you need to know about our Luxury 5 Star Kaaba View Umrah Package.",
+
+    faqs: [
+      {
+        question: "What is included in the Luxury 5 Star Umrah Package?",
+        answer:
+          "This package includes 5-star hotel accommodation with a Kaaba view, round-trip flights, visa processing, airport transfers, and full on-ground support."
+      },
+      {
+        question: "How close are the hotels to Masjid al-Haram?",
+        answer:
+          "The hotels are located just a short walking distance away, providing easy access to the Haram for daily prayers and Umrah rituals."
+      },
+      {
+        question: "Is this package suitable for families and elderly travelers?",
+        answer:
+          "Yes, the package is designed for comfort and convenience, making it ideal for families and elderly pilgrims."
+      },
+      {
+        question: "How can I book this Umrah package?",
+        answer:
+          "You can easily book online or contact our support team for quick and secure booking assistance."
+      },
+      {
+        question: "Are there any hidden charges in the $1190 package?",
+        answer:
+          "No, the package offers transparent pricing with no hidden fees or unexpected costs."
+      },
+      {
+        question: "Will I receive support during the journey?",
+        answer:
+          "Yes, 24/7 customer support is available to assist you throughout your entire Umrah trip."
+      },
+      {
+        question: "Why should I choose this Umrah package?",
+        answer:
+          "It offers a perfect balance of affordability, luxury, and convenience, ensuring a comfortable and spiritually fulfilling journey."
+      }
+    ]
+  }
+};
+
+const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+          {/* LEFT CONTENT */}
+          <div>
+            <span className="inline-block mb-3 text-sm font-semibold text-noor-gold tracking-wide uppercase">
+              Overview
+            </span>
+
+            <h2 className="text-4xl font-extrabold text-noor-green leading-tight mb-5">
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-lg">
+              {content.intro}
+            </p>
+
+            {/* subtle decorative line */}
+            <div className="mt-6 w-24 h-1 bg-noor-gold rounded-full opacity-70" />
+          </div>
+
+          {/* RIGHT CARD */}
+          <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+
+            {/* soft glow accent */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-noor-gold/10 rounded-full blur-2xl" />
+
+            <h3 className="text-2xl font-bold text-noor-green mb-3">
+              {content.benefitsTitle}
+            </h3>
+
+            <p className="text-gray-600 mb-6 leading-7">
+              {content.benefitsDescription}
+            </p>
+
+            {/* highlights as better chips */}
+            <div className="space-y-3">
+              {content.highlights.map((item: any) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-noor-light/50 hover:bg-noor-light transition"
+                >
+                  <span className="text-noor-gold font-bold mt-0.5">✓</span>
+                  <span className="text-sm text-gray-700 leading-6">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* optional CTA hint */}
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs font-semibold text-black">
+                Get More Details!
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+const WhyBookSection = ({ content }: WhyBookSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+
+          {/* LEFT - STORY / VALUE */}
+          <div className="relative bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition">
+
+            {/* subtle accent */}
+            <div className="absolute -top-6 -left-6 w-28 h-28 bg-noor-green/5 rounded-full blur-2xl" />
+
+            <span className="inline-block text-xs font-semibold text-noor-gold uppercase tracking-widest mb-3">
+              Smart Choice
+            </span>
+
+            <h2 className="text-3xl font-extrabold text-noor-green leading-snug mb-5">
+              {/* Best Budget Umrah Package from USA for Smart Travelers */}
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-[15.5px]">
+              {/* Choosing a budget-friendly Umrah package allows pilgrims to focus
+              on their spiritual journey without financial stress. Our packages
+              combine affordability, comfort, and convenience — ensuring peace
+              of mind from departure to return. */}
+                {content.description}
+
+            </p>
+
+            {/* mini highlight */}
+            {/* <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+              <span className="w-2 h-2 bg-noor-gold rounded-full"></span>
+              Trusted by thousands of pilgrims worldwide
+            </div> */}
+          </div>
+
+          {/* RIGHT - BENEFITS */}
+          <div className="relative bg-noor-green text-white rounded-3xl p-10 shadow-sm overflow-hidden">
+
+            {/* decorative glow */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-noor-gold/20 rounded-full blur-3xl" />
+
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-noor-gold mb-3">
+              Why Choose Us
+            </span>
+
+            <h3 className="text-2xl font-bold mb-6">
+              Why Book These Packages?
+            </h3>
+
+            <ul className="space-y-4">
+              {content.benefits.map((item) => (
+  <li
+    key={item}
+    className="flex items-start gap-3 text-sm leading-6"
+  >
+    <span className="text-noor-gold font-bold mt-0.5">✓</span>
+    <span className="text-white/90">{item}</span>
+  </li>
+))}
+            </ul>
+
+            {/* CTA hint */}
+            <div className="mt-8 pt-5 semi-bold border-t border-white/10 text-lg text-white">
+              Book Now!
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+const PackageClosingSection = ({
+  content,
+}: PackageClosingSectionProps) => {
+  return (
+    <section className="py-16 bg-gradient-to-b from-white to-noor-light">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+
+          <div className="grid lg:grid-cols-2">
+
+            {/* LEFT */}
+            <div className="bg-white p-8 lg:p-10">
+
+              <span className="inline-block mb-3 text-noor-gold font-semibold uppercase tracking-widest text-xs">
+                Why Choose Us
+              </span>
+
+              <h2 className="text-3xl font-bold text-noor-green mb-5">
+                {content.title}
+              </h2>
+
+              <p className="text-gray-600 leading-8 mb-6">
+                {content.description}
+              </p>
+
+              <div className="space-y-3">
+                {content.benefits.map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 items-start"
+                  >
+                    <span className="text-noor-gold font-bold">
+                      ✓
+                    </span>
+
+                    <span className="text-gray-700">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.me/+17869104615"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-8 bg-noor-green text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90"
+              >
+                {content.buttonText}
+                <ArrowRightIcon className="w-4 h-4" />
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+            <div className="bg-noor-green text-white p-8 lg:p-10">
+
+              <h3 className="text-2xl font-bold mb-6">
+                {content.bottomTitle}
+              </h3>
+
+              <p className="text-white/80 mb-8 leading-7">
+                {content.bottomDescription}
+              </p>
+
+              {content.includes && (
+                <div className="grid gap-4">
+                  {content.includes.map((item) => (
+                    <div
+                      key={item.title}
+                      className="bg-white/10 rounded-xl p-4"
+                    >
+                      <h4 className="font-semibold text-noor-gold">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-sm text-white/90 mt-1">
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+
+
+const FAQSection = ({ content }: { content: FAQContent }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="bg-noor-green/10 text-noor-green text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full inline-block mb-4">
+            FAQ
+          </span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green font-display">
+            {content.title}
+          </h2>
+
+          {content.subtitle && (
+            <p className="text-gray-500 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
+              {content.subtitle}
+            </p>
+          )}
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-3">
+          {content.faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={faq.question}
+                className={`rounded-2xl overflow-hidden transition-all duration-300 border ${
+                  isOpen
+                    ? 'border-noor-green/20 bg-white shadow-md'
+                    : 'border-gray-100 bg-gray-50 hover:border-noor-green/10'
+                }`}
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
+                  className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left"
+                >
+                  <h3
+                    className={`font-semibold text-sm sm:text-base pr-4 transition-colors ${
+                      isOpen
+                        ? 'text-noor-green'
+                        : 'text-gray-800'
+                    }`}
+                  >
+                    {faq.question}
+                  </h3>
+
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-noor-green text-white rotate-180'
+                        : 'bg-white border border-gray-200 text-gray-400'
+                    }`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-5 sm:px-6 pb-5">
+                    <div className="h-px bg-gray-100 mb-4" />
+
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ── Main Component ────────────────────────────────────────────
 const HaramViewDetail: React.FC = () => {
   const [selectedMakkah, setSelectedMakkah]   = useState(0);
   const [selectedMadinah, setSelectedMadinah] = useState(0);
+    const [searchParams] = useSearchParams();
+
+const { nights } = useParams<{ nights: string }>();
+
+const packageNights = Number(nights);
+
+const pageContent =
+  haramViewContent[packageNights as 5 | 7 | 10] ||
+  haramViewContent[5];
+
+console.log("nights", packageNights);
+console.log("pageContent", pageContent);
+
+  const faqContent =  haramViewFaqData[packageNights as 5 | 7 | 10] ||
+  haramViewFaqData[5];
+
 
   return (
     <div className="bg-white">
@@ -217,6 +1022,7 @@ const HaramViewDetail: React.FC = () => {
           Select your preferred luxury hotel for each city. All properties are situated within walking distance or a short drive from the Holy Mosques.
         </p>
       </div>
+        <PackageIntroSection content={pageContent.introSection} />
 
       {/* ══════════════ HOTEL SECTIONS ══════════════ */}
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16">
@@ -252,7 +1058,9 @@ const HaramViewDetail: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-dashed border-gray-200" />
+        {/* <div className="border-t border-dashed border-gray-200" /> */}
+
+      <WhyBookSection content={pageContent.whyBookSection}/>
 
         {/* ── Madinah ── */}
         <div>
@@ -282,6 +1090,13 @@ const HaramViewDetail: React.FC = () => {
         </div>
 
       </div>
+
+      <PackageClosingSection
+  content={pageContent.closingSection}
+/>
+
+      <FAQSection content={faqContent} />
+
 
       {/* ══════════════ INCLUDED SERVICES STRIP ══════════════ */}
       <section className="bg-[#1a3c2a] py-8 md:py-12">

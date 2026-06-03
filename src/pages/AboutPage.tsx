@@ -29,10 +29,10 @@ const AboutHero: React.FC = () => (
         ABOUT US
       </span>
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-display leading-tight max-w-2xl">
-        Haram Umrah Travels
+        Your Trusted Partner for a Blessed Umrah Journey
       </h1>
       <p className="text-white/70 mt-4 max-w-2xl text-base sm:text-lg leading-relaxed">
-        A trusted and reliable Umrah travel agency in the US dedicated to providing seamless, affordable, and spiritually enriching journeys to Makkah.
+        At Haram Umrah Travels, we are committed to serving the guests of Allah with care, sincerity, and excellence. Our mission is to make every blessed journey to Makkah and Madinah smooth, spiritually enriching, and completely stress-free for pilgrims across the United States.
       </p>
     </div>
   </section>
@@ -97,7 +97,7 @@ const UmrahSpecialists: React.FC = () => (
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
         {/* Content */}
-        <div className="order-2 lg:order-1">
+        {/* <div className="order-2 lg:order-1">
           <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">WHO WE ARE</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green mt-3 mb-4 sm:mb-6 leading-tight font-display">
             US-Based Umrah Specialists
@@ -107,15 +107,66 @@ const UmrahSpecialists: React.FC = () => (
           </p>
           <p className="text-gray-500 leading-relaxed mb-6 text-sm sm:text-base">
             With in-depth knowledge of Saudi travel regulations, Umrah visa requirements, and accommodation standards, we ensure every pilgrim enjoys a smooth and well-organized experience. From economy Umrah packages to luxury 5-star options, we provide solutions for every budget without compromising on comfort or service quality.
-          </p>
+          </p> */}
+
+          <div className="order-2 lg:order-1">
+  <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+    OUR STORY
+  </span>
+
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green mt-3 mb-2 leading-tight font-display">
+    Who We Are
+  </h2>
+
+  <h3 className="text-lg sm:text-xl font-semibold text-noor-gold mb-4">
+    Serving Pilgrims with Care, Faith, & Trust
+  </h3>
+
+  <p className="text-gray-500 leading-relaxed mb-4 text-sm sm:text-base">
+    In [Founding Year], Haram Umrah Travels was established in the United States
+    with the simple yet impactful purpose of helping Muslims in fulfilling their
+    sacred obligation and spiritual aspirations by providing reliable,
+    affordable, and expertly managed Umrah services.
+  </p>
+
+  <p className="text-gray-500 leading-relaxed mb-4 text-sm sm:text-base">
+    What started out as a modest endeavor to help families and community members
+    organize their pilgrimage has developed into a reputable Umrah travel agency
+    that serves pilgrims from all over the United States. Over the years, we
+    have helped thousands of travellers with carefully planned Umrah packages,
+    visa processing, flights, accommodation, and guided religious support.
+  </p>
+
+  <p className="text-gray-500 leading-relaxed mb-6 text-sm sm:text-base">
+    Our passion stems from understanding that Umrah is a transformative act of
+    worship rather than just a trip. Every booking we handle, every visa we
+    process, and every query we respond to is guided by our dedication to
+    serving the guests of Allah with honesty, sincerity, and professionalism.
+    This commitment has enabled us to build lasting relationships with families,
+    groups, and individuals seeking a memorable and rewarding Umrah experience.
+  </p>
+
+  <div className="bg-noor-green/5 border-l-4 border-noor-gold p-4 rounded-r-xl">
+    <p className="text-gray-600 text-sm sm:text-base">
+      At Haram Umrah Travels, we are honored to serve the guests of Allah and
+      help make their journey one of faith, comfort, and tranquility.
+    </p>
+  </div>
 
           {/* Checklist */}
           <div className="space-y-4">
-            {[
-              'Expert knowledge of Saudi travel regulations',
-              'Umrah visa processing & documentation',
-              'Solutions for every budget',
-            ].map((item, index) => (
+            {
+            // [
+            //   'Expert knowledge of Saudi travel regulations',
+            //   'Umrah visa processing & documentation',
+            //   'Solutions for every budget',
+            // ]
+            [
+  'Thousands of pilgrims successfully served',
+  'Complete visa processing & travel support',
+  'Trusted by families, groups & individuals',
+]
+            .map((item, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-noor-green/10 flex items-center justify-center flex-shrink-0">
                   <CheckShieldIcon className="w-4 h-4 text-noor-green" />
@@ -164,41 +215,69 @@ const OurMission: React.FC = () => (
 
         {/* Content */}
         <div>
-          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">OUR PURPOSE</span>
+          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">Mission & Vision</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green mt-3 mb-4 sm:mb-6 leading-tight font-display">
-            Our Mission
+           Our Mission
           </h2>
-          <p className="text-gray-500 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-            Our mission is to make Umrah accessible, stress-free, and spiritually fulfilling for Muslims across the US. We strive to offer:
-          </p>
+          <p className="text-gray-500 leading-relaxed mb-6 text-sm sm:text-base">
+  To offer accessible, affordable Umrah experiences that enable every Muslim individual, family, and group to confidently and easily perform their sacred journey.
+</p>
+
+<p className="text-gray-500 leading-relaxed mb-8 text-sm sm:text-base">
+  We aim to make every journey stress-free and spiritually rewarding with professional planning, reliable visa assistance, premium-quality accommodations, and dedicated support.
+</p>
 
           {/* Feature Items - Updated to grid layout with responsive gaps */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {[
+              // {
+              //   icon: '💰',
+              //   title: 'Competitive Pricing',
+              //   desc: 'No hidden charges — transparent pricing always',
+              //   color: 'bg-noor-gold/10',
+              // },
+              // {
+              //   icon: '🏨',
+              //   title: 'Comfortable Hotels',
+              //   desc: 'Close proximity to Haram for your convenience',
+              //   color: 'bg-noor-green/10',
+              // },
+              // {
+              //   icon: '✈️',
+              //   title: 'Reliable Travel',
+              //   desc: 'Well-organized travel arrangements',
+              //   color: 'bg-noor-gold/10',
+              // },
+              // {
+              //   icon: '🤝',
+              //   title: 'Friendly Support',
+              //   desc: 'Knowledgeable customer service team',
+              //   color: 'bg-noor-green/10',
+              // },
               {
-                icon: '💰',
-                title: 'Competitive Pricing',
-                desc: 'No hidden charges — transparent pricing always',
-                color: 'bg-noor-gold/10',
-              },
-              {
-                icon: '🏨',
-                title: 'Comfortable Hotels',
-                desc: 'Close proximity to Haram for your convenience',
-                color: 'bg-noor-green/10',
-              },
-              {
-                icon: '✈️',
-                title: 'Reliable Travel',
-                desc: 'Well-organized travel arrangements',
-                color: 'bg-noor-gold/10',
-              },
-              {
-                icon: '🤝',
-                title: 'Friendly Support',
-                desc: 'Knowledgeable customer service team',
-                color: 'bg-noor-green/10',
-              },
+    icon: '🕋',
+    title: 'Accessible Umrah',
+    desc: 'Making Umrah easier and more attainable for every Muslim.',
+    color: 'bg-noor-gold/10',
+  },
+  {
+    icon: '🤝',
+    title: 'Dedicated Support',
+    desc: 'Professional assistance before, during, and after travel.',
+    color: 'bg-noor-green/10',
+  },
+  {
+    icon: '📄',
+    title: 'Reliable Visa Help',
+    desc: 'Complete guidance throughout the visa process.',
+    color: 'bg-noor-gold/10',
+  },
+  {
+    icon: '🏨',
+    title: 'Quality Accommodation',
+    desc: 'Comfortable stays selected for convenience and peace of mind.',
+    color: 'bg-noor-green/10',
+  },
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-3 sm:gap-4">
                 <div className={`w-10 h-10 rounded-lg ${item.color} flex items-center justify-center flex-shrink-0 text-lg`}>
@@ -213,16 +292,336 @@ const OurMission: React.FC = () => (
           </div>
 
           {/* Quote */}
-          <div className="mt-6 sm:mt-8 border-l-4 border-noor-gold pl-4">
+          {/* <div className="mt-6 sm:mt-8 border-l-4 border-noor-gold pl-4">
             <p className="text-gray-500 italic text-sm sm:text-base">
               Every journey we organize is handled with sincerity, respect, and professionalism.
             </p>
-          </div>
+          </div> */}
+          <div className="mt-8 bg-noor-green/5 border border-noor-green/10 rounded-2xl p-6">
+  <h4 className="font-bold text-noor-green mb-3">
+    Our Vision
+  </h4>
+
+  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+    To help more Muslims fulfill their dream of seeing the House of Allah and
+    the blessed city of Madinah while becoming the best Umrah travel company
+    USA by establishing the highest standards of service, integrity, and
+    customer care.
+  </p>
+</div>
         </div>
       </div>
     </div>
   </section>
 );
+
+// ==================== WHY CHOOSE US ====================
+const WhyChooseUs: React.FC = () => {
+  const features = [
+    {
+      title: 'ATOL/IATA Certified',
+      description:
+        'Offering professional travel services that meet global standards.',
+    },
+    {
+      title: 'Ministry of Hajj & Umrah Approved Partners',
+      description:
+        'Collaborating with trusted service providers and authorized operators in Saudi Arabia.',
+    },
+    {
+      title: 'Complete Visa Assistance',
+      description:
+        'We streamline the entire visa process, from application assistance to documentation guidance.',
+    },
+    {
+      title: 'Premium Makkah Hotels & Madinah Stays',
+      description:
+        'Carefully selected accommodations near Haram for greater comfort and convenience.',
+    },
+    {
+      title: '24/7 Customer Support',
+      description:
+        'Our staff is always ready to serve you before, during, and after your Umrah trip.',
+    },
+    {
+      title: 'Flexible Travel Options',
+      description:
+        'We provide the best solutions that are suited to your specific needs, whether you seek luxury, economy, or affordable Umrah packages.',
+    },
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-noor-light">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+            WHY CHOOSE US
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-noor-green mt-3 mb-4 font-display">
+            Why Choose Haram Umrah Travels?
+          </h2>
+
+          <p className="text-gray-500 leading-relaxed">
+            Choosing the appropriate travel partner for your pilgrimage is crucial.
+            At Haram Umrah Travels, we focus on delivering convenience,
+            reliability, and spiritual comfort every step of the way.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div className="w-12 h-12 bg-noor-green/10 rounded-xl flex items-center justify-center mb-4">
+                <CheckShieldIcon className="w-6 h-6 text-noor-green" />
+              </div>
+
+              <h3 className="font-bold text-noor-green mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-500 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+// ==================== OUR TEAM ====================
+const OurTeamSection: React.FC = () => {
+  const team = [
+    {
+      title: 'Religious Scholars & Advisors',
+      description:
+        'Our experienced scholars offer complete guidance on Umrah rituals, preparation, and spiritual etiquette.',
+      quote:
+        'Every pilgrim deserves the confidence to perform Umrah correctly and peacefully.',
+    },
+    {
+      title: 'Experienced Travel Guides',
+      description:
+        'Our pilgrims receive assistance from our experienced guides throughout their journey, assisting them in visiting significant sites in Makkah and Madinah ziyarat places.',
+      quote:
+        'We are here to support your journey every step of the way.',
+    },
+    {
+      title: 'Customer Care Specialists',
+      description:
+        'With professionalism and consideration, our support staff manages reservations, travel arrangements, hotel coordination, and visa assistance.',
+      quote:
+        'Your comfort and peace of mind are our priority.',
+    },
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+            OUR TEAM
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-noor-green mt-3 mb-4 font-display">
+            Our Team, Scholars, & Guides
+          </h2>
+
+          <p className="text-gray-500 leading-relaxed">
+            Behind every successful pilgrimage is a committed team to serve you with genuine services.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid lg:grid-cols-3 gap-6">
+          {team.map((member, index) => (
+            <div
+              key={index}
+              className="bg-noor-light rounded-2xl p-8 hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-bold text-noor-green text-xl mb-4">
+                {member.title}
+              </h3>
+
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                {member.description}
+              </p>
+
+              <div className="border-l-4 border-noor-gold pl-4">
+                <p className="italic text-gray-600">
+                  "{member.quote}"
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Closing line (important part of your content) */}
+        <p className="text-center text-gray-500 mt-10 max-w-3xl mx-auto leading-relaxed">
+          Together, we work with one goal: to ensure a meaningful and memorable pilgrimage for every traveler.
+        </p>
+
+      </div>
+    </section>
+  );
+};
+
+// ==================== ACHIEVEMENTS ====================
+const AchievementsSection: React.FC = () => {
+  const stats = [
+    {
+      value: '10,000+',
+      title: 'Pilgrims Served',
+      desc: 'Helping Muslims fulfill their sacred journey with confidence.',
+    },
+    {
+      value: '10+',
+      title: 'Years of Experience',
+      desc: 'Trusted expertise in organizing private Umrah, group Umrah, and family Umrah packages.',
+    },
+    {
+      value: '25+',
+      title: 'States Served Across the USA',
+      desc: 'Supporting pilgrims from communities nationwide.',
+    },
+    {
+      value: '98%',
+      title: 'Customer Satisfaction Rate',
+      desc: 'Built through transparency, reliability, and exceptional service.',
+    },
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-noor-green">
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+            OUR NUMBERS & ACHIEVEMENTS
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 font-display">
+            Trusted By Thousands of Pilgrims
+          </h2>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-colors"
+            >
+              <h3 className="text-4xl font-bold text-noor-gold mb-3">
+                {item.value}
+              </h3>
+
+              <h4 className="text-white font-semibold mb-2">
+                {item.title}
+              </h4>
+
+              <p className="text-white/70 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+// ==================== TRUST & COMPLIANCE ====================
+const TrustCompliance: React.FC = () => {
+  const items = [
+    'IATA License Number: [Insert Number]',
+    'ATOL License Number: [Insert Number]',
+    'Ministry of Hajj & Umrah Approval: [Insert Details]',
+    'Registered Business Number: [Insert Number]',
+    'Office Address: [Insert Full USA Office Address]',
+    'Affiliated with recognized Saudi Umrah operators and hospitality partners',
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="max-w-5xl mx-auto px-4">
+
+        <div className="text-center mb-12">
+          <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+            TRUST & COMPLIANCE
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-noor-green mt-3 font-display">
+            Licensed, Trusted & Compliant
+          </h2>
+        </div>
+
+        <div className="bg-noor-light rounded-3xl p-8">
+          <div className="space-y-5">
+            {items.map((item, index) => (
+              <div key={index} className="flex gap-3 items-start">
+                <CheckShieldIcon className="w-5 h-5 text-noor-green mt-1 flex-shrink-0" />
+                <span className="text-gray-600">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ==================== CTA ====================
+const CallToActionSection: React.FC = () => {
+  return (
+    <section className="py-16 md:py-24 bg-noor-green">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+
+        <span className="text-noor-gold text-sm font-bold tracking-[0.15em] uppercase">
+          BEGIN YOUR JOURNEY
+        </span>
+
+        <h2 className="text-3xl md:text-5xl font-bold text-white mt-4 mb-6 font-display">
+          Begin Your Blessed Journey Today
+        </h2>
+
+        <p className="text-white/80 leading-relaxed mb-8">
+          Haram Umrah Travels is always honored to assist you, whether you are preparing for your first Umrah or going for another spiritual experience. While you focus on worship, reflection, and drawing closer to Allah (SWT), let us take care of your travel arrangements.
+        <b>So, View Packages or Contact Us right now!</b>
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/packages"
+            className="bg-noor-gold text-white px-8 py-4 rounded-xl font-semibold"
+          >
+            View Packages
+          </a>
+
+          <a
+            href="/contact"
+            className="border border-white text-white px-8 py-4 rounded-xl font-semibold"
+          >
+            Contact Us
+          </a>
+        </div>
+
+        <p className="text-white/60 mt-8 text-sm">
+          May Allah accept your intentions, bless your journey, and grant you a rewarding and memorable Umrah experience. Ameen.
+        </p>
+      </div>
+    </section>
+  );
+};
 
 // ==================== SERVING PILGRIMS ACROSS US ====================
 const ServingPilgrims: React.FC = () => {
@@ -296,7 +695,16 @@ const AboutPage: React.FC = () => {
       <SpiritualJourney />
       <UmrahSpecialists />
       <OurMission />
+
+       <WhyChooseUs />
+      <OurTeamSection />
+      <AchievementsSection />
+      {/* <TrustCompliance /> */}
+
       <ServingPilgrims />
+
+      <CallToActionSection />
+
     </>
   );
 };

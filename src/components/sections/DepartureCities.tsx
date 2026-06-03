@@ -56,17 +56,24 @@ const DepartureCities: React.FC = () => {
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-6 h-px bg-noor-gold"></span>
             <span className="text-noor-gold text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase">
-              US Departure Cities
+              {/* US Departure Cities */}
+              Cheap Umrah Package from USA Cities
             </span>
             <span className="w-6 h-px bg-noor-gold"></span>
           </div>
 
           {/* Main Title */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display leading-[1.15] tracking-tight mb-4">
-            <span className="text-noor-green">Umrah Packages</span>
+            <span className="text-noor-green">
+              {/* Umrah Packages */}
+              Perfect Balance of Comfort,
+              </span>
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            <span className="text-gray-900">from Major US Cities</span>
+            <span className="text-gray-900">
+              {/* from Major US Cities */}
+              Quality, and Value for Pilgrims
+              </span>
           </h2>
 
           {/* Decorative Divider */}
@@ -78,8 +85,18 @@ const DepartureCities: React.FC = () => {
 
           {/* Description */}
           <p className="text-gray-500 leading-relaxed text-xs sm:text-sm max-w-xl mx-auto mb-6">
-            Start your sacred journey from your nearest US airport with comprehensive packages including flights, visa, hotels, and dedicated support.
+            {/* Start your sacred journey from your nearest US airport with comprehensive packages including flights, visa, hotels, and dedicated support. */}
+            Haram Umrah Travels makes it easy to plan your <b>Umrah package from USA</b>. Our services are reliable, cheap, and comfortable travel solutions for every pilgrim. Our expert team makes sure you have a smooth journey from your nearest US airport, so that you can concentrate on your spiritual experience with complete peace of mind and convenience from start to finish. 
           </p>
+          <ul className="text-gray-500 text-left inline-block mb-6">
+            <li>• Flights from major US cities</li>
+            <li>• Fast and reliable visa processing</li>
+            <li>• Hotels close to Haram</li>
+            <li>• Comfortable transport arrangements</li>
+            <li>• Flexible travel dates</li>
+            <li>• Expert customer support</li>
+          </ul>
+          <br/>
 
           {/* Contact CTA */}
           <button
@@ -91,7 +108,7 @@ const DepartureCities: React.FC = () => {
             </span>
             <span className="flex flex-col items-start text-left">
               <span className="text-[9px] sm:text-[10px] text-gray-400 leading-tight">Can't find your city?</span>
-              <span className="text-[11px] sm:text-xs font-semibold text-noor-green leading-tight">Contact Us</span>
+              <span className="text-[11px] sm:text-xs font-semibold text-noor-green leading-tight">Call Now!</span>
             </span>
             <svg className="w-3.5 h-3.5 text-gray-400 group-hover:text-noor-green group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

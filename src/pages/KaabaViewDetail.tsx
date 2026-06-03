@@ -1,5 +1,6 @@
  // KaabaViewDetail.tsx
 import React, { useState } from 'react';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 // ── Shared images ─────────────────────────────────────────────
 import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
@@ -18,6 +19,7 @@ import hiltonMadinahImg  from '../assets/images/packages/5-MadinahHiltonHotel.jp
 import intercontiImg     from '../assets/images/packages/5-InterContinentalDarAlImanMadinah.webp';
 import movenpickImg      from '../assets/images/packages/5-AnwarAlMadinahMövenpick.jpg';
 import sofitelImg        from '../assets/images/packages/5-SofitelShahdAlMadinah.jpg';
+import { ArrowRightIcon } from '../components/icons/Icons';
 
 // ── Types ─────────────────────────────────────────────────────
 interface Hotel {
@@ -29,6 +31,57 @@ interface Hotel {
   description: string;
   highlights: string[];
 }
+
+
+interface PackageIntroContent {
+  title: string;
+  intro: string;
+  benefitsTitle: string;
+  benefitsDescription: string;
+  highlights: string[];
+}
+
+interface PackageIntroSectionProps {
+  content: PackageIntroContent;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQContent {
+  title: string;
+  subtitle: string;
+  faqs: FAQItem[];
+}
+
+interface WhyBookSectionProps {
+  content: {
+    title: string;
+    description: string;
+    benefits: string[];
+  };
+}
+
+interface PackageClosingSectionProps {
+  content: {
+    title: string;
+    description: string;
+    buttonText: string;
+    benefits: string[];
+    bottomTitle: string;
+    bottomDescription: string;
+    includes?: {
+      title: string;
+      value: string;
+    }[];
+  };
+}
+
+type FiveStarView = 'haram' | 'kaaba';
+type StarType = '5star' | '4star' | '3star';
+
 
 // ── Hotel Data ────────────────────────────────────────────────
 const makkahHotels: Hotel[] = [
@@ -197,11 +250,755 @@ const madinahHotels: Hotel[] = [
   },
 ];
 
+
+
+const kaabaViewContent = {
+ "5": {
+  introSection: {
+    title: "5 Star Kaaba View Umrah Package 5 Nights for Just $990",
+
+    intro:
+      "Choose a Premium Short Umrah Package with Kaaba View for a Peaceful Pilgrimage. Enjoy the Affordable Kaaba View Umrah Package with top-tier accommodation, prime location near the Kaaba, and a deeply enriching spiritual experience.",
+
+    benefitsTitle:
+      "Short Umrah Package with Kaaba View for Peaceful 5-star Stay",
+
+    benefitsDescription:
+      "Experience a spiritually uplifting journey with our 5 Star Kaaba View Umrah Package 5 Nights, designed for pilgrims who seek comfort, convenience, and proximity to the Holy Kaaba. This exclusive 5 Night Umrah Package USA combines luxury accommodation, seamless travel arrangements, and essential services to ensure a peaceful and meaningful Umrah experience. It ensures that every moment of your pilgrimage remains focused on worship, ease, and spiritual connection.",
+
+    highlights: [
+      "5-night stay in a premium 5-star Kaaba-view hotel.",
+      "Daily breakfast with high-quality dining options.",
+      "Private airport pickup and drop-off service.",
+      "Guided assistance for Umrah rituals and procedures.",
+      "Walking distance access to Masjid al-Haram.",
+      "24/7 customer support and on-ground assistance."
+    ]
+  },
+
+  whyBookSection: {
+    title:
+      "5 Night Umrah Package USA for Peaceful Pilgrimage Experience",
+
+    description:
+      "Our short Umrah Package with Kaaba View is tailored for travelers seeking a short yet complete spiritual journey from the United States. It offers a perfect balance of affordability, comfort, and premium services, ensuring a smooth pilgrimage experience without stress. It is ideal for families, professionals, and first-time Umrah travelers. This 5 Star Kaaba View Umrah Package 5 Nights is designed to eliminate travel complications while maximizing your spiritual experience in Makkah with comfort and ease.",
+
+    benefits: [
+      "Direct support for pilgrims traveling from the USA.",
+      "Short 5-night stay ideal for busy schedules.",
+      "Luxury 5-star accommodation with Kaaba view.",
+      "Hassle-free visa processing assistance included.",
+      "Convenient flight coordination options available.",
+      "Perfect for first-time and repeat Umrah travelers."
+    ]
+  },
+
+  closingSection: {
+    title:
+      "Trusted Choice for Affordable Kaaba View Umrah Package Travel",
+
+    description:
+      "The 5 Night Umrah Package USA offers a rare opportunity to stay close to the Holy Kaaba without exceeding your budget. Designed for pilgrims who value both luxury and affordability, this Short Umrah Package with Kaaba View ensures premium services, spiritual comfort, and unforgettable views of Masjid al-Haram at an exceptional price of just $990. Choose us for a spiritually enriching Umrah experience that blends affordability, luxury, and devotion in the heart of Makkah.",
+
+    buttonText: "Contact Us",
+
+    benefits: [
+      "Best price guarantee at only $990 for 5 nights.",
+      "Premium 5-star Kaaba view hotel accommodation.",
+      "Trusted and experienced Umrah service provider.",
+      "Transparent pricing with no hidden charges.",
+      "Personalized support throughout your journey.",
+      "High-quality service focused on pilgrim satisfaction."
+    ],
+
+    includes: [
+      {
+        title: "Ground Transportation",
+        value: "Jeddah ↔ Makkah ↔ Madinah"
+      },
+      {
+        title: "Saudi Umrah e-Visa",
+        value: "Online visa processing"
+      },
+      {
+        title: "Meet & Greet Service",
+        value: "Airport & hotel assistance"
+      },
+      {
+        title: "24-Hour Support",
+        value: "Always available for you"
+      }
+    ],
+
+    bottomTitle: "Affordable Kaaba View Umrah Experience",
+
+    bottomDescription:
+      "Enjoy premium accommodation, spiritual comfort, and exceptional value with our 5 Night Umrah Package USA."
+  }
+},
+
+  "7": {
+  introSection: {
+    title: "5 Star Kaaba View Umrah Package 7 Nights for Just $1190",
+
+    intro:
+      "Experience Spiritual Comfort with Our Luxury Umrah Package 7 Days USA. Stay steps away from the Holy Kaaba with our premium Haram Facing Hotel Umrah Package, combining luxury, convenience, and unforgettable devotion.",
+
+    benefitsTitle:
+      "7 Night Umrah Package with Kaaba View– Comfort Meets Spiritual Excellence",
+
+    benefitsDescription:
+      "Our 5 Star Kaaba View Umrah Package 7 Nights offers the perfect balance of comfort and devotion. Designed for pilgrims who want a peaceful and convenient stay, this package places you close to the Holy Kaaba while ensuring premium hospitality. Every detail is managed to help you focus on your worship without distractions.",
+
+    highlights: [
+      "7-night stay in a 5-star hotel overlooking the Kaaba.",
+      "Daily breakfast and selected meals included.",
+      "Round-trip airfare with reputable international airlines.",
+      "Comfortable ground transport with air-conditioned vehicles.",
+      "Professional guidance for Umrah rituals and ziyarat tours.",
+      "24/7 customer support throughout your journey."
+    ]
+  },
+
+  whyBookSection: {
+    title:
+      "Haram Facing Hotel Umrah Package– Stay Closest to the Holy Haram",
+
+    description:
+      "The 7 Night Umrah Package with Kaaba View is designed for those who want unmatched convenience and proximity. Staying just steps away from Masjid al-Haram allows you to attend prayers effortlessly and spend more time in worship. This luxury Umrah Package 7 Days USA is the perfect choice for families, elderly pilgrims, and anyone seeking ease during their journey.",
+
+    benefits: [
+      "Direct or partial Kaaba view rooms for a unique experience.",
+      "Walking distance access to Masjid al-Haram entrances.",
+      "Save time and energy with no long commutes.",
+      "Access to premium hotel facilities and services.",
+      "Safe, secure, and family-friendly accommodation.",
+      "Perfect for maximizing time in prayers and Tawaf."
+    ]
+  },
+
+  closingSection: {
+    title:
+      "Premium 5 Star Kaaba View Umrah Package– Exclusive Luxury Within Reach",
+
+    description:
+      "Our Haram Facing Hotel Umrah Package is tailored for travelers seeking a high-end experience at a reasonable price. Combining quality services with affordability, this 5 Star Kaaba View Umrah Package 7 Nights ensures a smooth and memorable journey. From travel arrangements to accommodation, everything is handled professionally for a stress-free Umrah experience.",
+
+    buttonText: "Contact Us",
+
+    benefits: [
+      "Budget-friendly pricing with no hidden costs.",
+      "Flexible travel options to suit your schedule.",
+      "Visa processing assistance and documentation support.",
+      "Well-planned itinerary for a smooth journey.",
+      "Dedicated customer support before and during travel.",
+      "Perfect mix of luxury, comfort, and convenience."
+    ],
+
+    includes: [
+      {
+        title: "Ground Transportation",
+        value: "Jeddah ↔ Makkah ↔ Madinah"
+      },
+      {
+        title: "Saudi Umrah e-Visa",
+        value: "Online visa processing"
+      },
+      {
+        title: "Meet & Greet Service",
+        value: "Airport & hotel assistance"
+      },
+      {
+        title: "24-Hour Support",
+        value: "Always available for you"
+      }
+    ],
+
+    bottomTitle: "Luxury Kaaba View Stay Near Haram",
+
+    bottomDescription:
+      "Enjoy premium hospitality, unmatched convenience, and breathtaking Kaaba views throughout your Umrah journey."
+  }
+},
+
+  "10": {
+  introSection: {
+    title: "5 Star Kaaba View Umrah Package 10 Nights for Just $1390",
+
+    intro:
+      "Experience the Ultimate Comfort with Our VIP Kaaba View Umrah Package. Embark on a spiritual journey like no other with our 10 Night Luxury Umrah Package, offering premium accommodations and exclusive Kaaba views.",
+
+    benefitsTitle:
+      "VIP Kaaba View Umrah Package – Luxury and Comfort at Its Best",
+
+    benefitsDescription:
+      "Experience unmatched luxury with the 5 Star Kaaba View Umrah Package 10 Nights, designed for pilgrims seeking both spiritual fulfillment and premium comfort. Stay in top-tier 5-star hotels just steps from the Haram, enjoy exceptional amenities, and let our dedicated team manage every detail. Every aspect, from check-in to departure, is handled with care, allowing you to focus solely on your prayers and reflection. This 10 Night Luxury Umrah Package ensures a smooth, stress-free journey tailored for convenience, comfort, and an unforgettable Umrah experience.",
+
+    highlights: [
+      "5-star hotels with modern facilities and comfort.",
+      "Exclusive Kaaba-view rooms for a serene experience.",
+      "Close proximity to Masjid al-Haram & Masjid ul Nabwi for easy access.",
+      "VIP services, including private transport and guided rituals.",
+      "Gourmet halal dining with diverse options.",
+      "24/7 concierge service for personalized assistance."
+    ]
+  },
+
+  whyBookSection: {
+    title:
+      "10 Night Luxury Umrah Package – Spiritual Bliss and Convenience",
+
+    description:
+      "Our Extended Stay Umrah Package USA combines devotion with exceptional comfort. Enjoy well-planned itineraries, seamless travel arrangements, close proximity to Haram, and exclusive conveniences designed to maximize your spiritual experience. With our attentive staff and premium services, your pilgrimage becomes a memorable and spiritually fulfilling journey. This VIP Kaaba View Umrah Package caters to every need, making it perfect for families, solo travelers, or groups seeking a luxurious and spiritually rewarding pilgrimage.",
+
+    benefits: [
+      "Priority check-in and hotel services for a smooth accommodation.",
+      "Exclusive VIP Kaaba view rooms for an unforgettable stay.",
+      "Round-trip airport transfers and luxury transportation.",
+      "Complimentary gifts and Umrah essentials for travelers.",
+      "Hassle-free Umrah visa processing included.",
+      "Guided excursions to historical Islamic sites."
+    ]
+  },
+
+  closingSection: {
+    title:
+      "Extended Stay Umrah Package USA – Extra Comfort & Spiritual Flexibility",
+
+    description:
+      "Enhance your pilgrimage with our 5 Star Kaaba View Umrah Package 10 Nights, designed for travelers who wish to spend more time in the holy cities. This package allows for a longer, more relaxed journey, giving you extra time to perform Umrah rituals, explore historical Islamic sites, and enjoy the spiritual atmosphere at your own pace. With premium 5-star accommodations, private transfers, and personalized assistance, every aspect of your extended stay is handled with care. Ideal for families, seniors, or anyone seeking a deeper connection with their faith, this package ensures comfort, convenience, and spiritual enrichment throughout your journey.",
+
+    buttonText: "Contact Us",
+
+    benefits: [
+      "Flexible stay options to extend your pilgrimage.",
+      "Additional guided tours of Makkah and Madinah.",
+      "Private prayer spaces in hotels for convenience.",
+      "Extended hotel amenities, including spa and relaxation zones.",
+      "Special family-friendly services and childcare support.",
+      "Personalized itinerary planning for maximum spiritual benefit."
+    ],
+
+    includes: [
+      {
+        title: "Ground Transportation",
+        value: "Jeddah ↔ Makkah ↔ Madinah"
+      },
+      {
+        title: "Saudi Umrah e-Visa",
+        value: "Online visa processing"
+      },
+      {
+        title: "Meet & Greet Service",
+        value: "Airport & hotel assistance"
+      },
+      {
+        title: "24-Hour Support",
+        value: "Always available for you"
+      }
+    ],
+
+    bottomTitle: "Exclusive VIP Kaaba View Experience",
+
+    bottomDescription:
+      "A luxurious extended Umrah journey combining premium accommodation, spiritual comfort, and unforgettable views of the Holy Kaaba."
+  }
+}
+};
+
+const kaabaViewFaq = {
+  5: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Kaaba View Umrah Package 5 Nights.",
+
+    faqs: [
+      {
+        question:
+          "What is included in the 5 Star Kaaba View Umrah Package 5 Nights?",
+        answer:
+          "This package includes 5 nights' stay in a 5-star hotel with Kaaba view, visa assistance, airport transfers, breakfast, and basic Umrah guidance. It is designed to provide comfort, convenience, and a spiritually fulfilling experience close to Masjid al-Haram."
+      },
+      {
+        question:
+          "Is this Short Umrah Package with Kaaba View suitable for families?",
+        answer:
+          "Yes, this Short Umrah Package with Kaaba View is ideal for families, couples, and individuals. The accommodation is comfortable, safe, and located near the Holy Kaaba, making it easy for all age groups to perform Umrah with ease."
+      },
+      {
+        question: "Does the package include flights from the USA?",
+        answer:
+          "The 5 Night Umrah Package USA may or may not include flights depending on the selected option. We offer flexible packages where travelers can choose land-only or full packages including international flights from the USA."
+      },
+      {
+        question: "How close is the hotel to the Kaaba?",
+        answer:
+          "The hotel included in this Affordable Kaaba View Umrah Package is located within walking distance of Masjid al-Haram, offering direct or partial views of the Kaaba, ensuring easy access for prayers and rituals."
+      },
+      {
+        question: "Can I customize the Umrah package?",
+        answer:
+          "Yes, customization options are available. You can upgrade hotel category, extend your stay, or add extra services based on your preferences to make your Umrah journey more comfortable and personalized."
+      },
+      {
+        question:
+          "How can I book this Affordable Kaaba View Umrah Package?",
+        answer:
+          "You can easily book the package by contacting our travel consultants online or via phone. Our team will guide you through the booking process, visa requirements, and travel arrangements step by step."
+      }
+    ]
+  },
+
+  7: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Kaaba View Umrah Package 7 Nights.",
+
+    faqs: [
+      {
+        question:
+          "What is included in the 5 Star Kaaba View Umrah Package 7 Nights?",
+        answer:
+          "This package typically includes 5-star accommodation with Kaaba view, 7-night stay, daily breakfast, visa assistance, ground transport, and basic Umrah guidance. Some packages may also include airfare, depending on availability."
+      },
+      {
+        question:
+          "Is this Luxury Umrah Package 7 Days USA suitable for families?",
+        answer:
+          "Yes, it is ideal for families, couples, and elderly pilgrims. The close proximity to Masjid al-Haram ensures easy access, reducing walking distance and making it comfortable for all age groups."
+      },
+      {
+        question: "How close is the hotel to the Haram?",
+        answer:
+          "The hotel is located just steps away from Masjid al-Haram, offering direct or partial views of the Kaaba. This allows quick access to prayers and Tawaf without long commutes."
+      },
+      {
+        question: "Are there any hidden charges in this package?",
+        answer:
+          "No, the 7 Night Umrah Package with Kaaba View is designed to be transparent and budget-friendly. All major services are included upfront, but optional add-ons like extra meals or upgrades may cost extra."
+      },
+      {
+        question: "Do you provide visa processing assistance?",
+        answer:
+          "Yes, full support for Umrah visa processing and documentation is included to ensure a smooth and hassle-free travel experience."
+      },
+      {
+        question:
+          "How can I book this Haram Facing Hotel Umrah Package?",
+        answer:
+          "You can book by contacting our team directly, filling out the inquiry form, or requesting a callback. Early booking is recommended to secure the best rates and availability."
+      }
+    ]
+  },
+
+  10: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Kaaba View Umrah Package 10 Nights.",
+
+    faqs: [
+      {
+        question:
+          "What does the 5 Star Kaaba View Umrah Package 10 Nights include?",
+        answer:
+          "This package includes premium 5-star Kaaba-view hotel accommodations, daily guided Umrah services, private transportation, halal meals, and 24/7 assistance to ensure a comfortable and spiritually fulfilling pilgrimage."
+      },
+      {
+        question: "How close are the hotels to Masjid al-Haram?",
+        answer:
+          "Our carefully selected hotels are just steps away from Haram, allowing easy access for prayers and rituals without long commutes."
+      },
+      {
+        question: "Is visa assistance provided?",
+        answer:
+          "Yes, hassle-free Umrah visa processing is included, making your journey smooth from start to finish."
+      },
+      {
+        question:
+          "Can families and seniors travel comfortably with this package?",
+        answer:
+          "Absolutely. The package caters to all travelers with family-friendly amenities, flexible schedules, and dedicated support for seniors or those needing extra assistance."
+      },
+      {
+        question: "Are meals included in the package?",
+        answer:
+          "Yes, daily halal meals are provided, featuring diverse and nutritious options to keep you energized throughout your pilgrimage."
+      },
+      {
+        question:
+          "What makes this package different from standard Umrah packages?",
+        answer:
+          "With exclusive Kaaba views, 5-star luxury accommodations, and personalized services, this package combines devotion with comfort and convenience for a truly memorable experience."
+      }
+    ]
+  }
+};
+
+
+const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+          {/* LEFT CONTENT */}
+          <div>
+            <span className="inline-block mb-3 text-sm font-semibold text-noor-gold tracking-wide uppercase">
+              Overview
+            </span>
+
+            <h2 className="text-4xl font-extrabold text-noor-green leading-tight mb-5">
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-lg">
+              {content.intro}
+            </p>
+
+            {/* subtle decorative line */}
+            <div className="mt-6 w-24 h-1 bg-noor-gold rounded-full opacity-70" />
+          </div>
+
+          {/* RIGHT CARD */}
+          <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+
+            {/* soft glow accent */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-noor-gold/10 rounded-full blur-2xl" />
+
+            <h3 className="text-2xl font-bold text-noor-green mb-3">
+              {content.benefitsTitle}
+            </h3>
+
+            <p className="text-gray-600 mb-6 leading-7">
+              {content.benefitsDescription}
+            </p>
+
+            {/* highlights as better chips */}
+            <div className="space-y-3">
+              {content.highlights.map((item: any) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-noor-light/50 hover:bg-noor-light transition"
+                >
+                  <span className="text-noor-gold font-bold mt-0.5">✓</span>
+                  <span className="text-sm text-gray-700 leading-6">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* optional CTA hint */}
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs font-semibold text-black">
+                Get More Details!
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+const WhyBookSection = ({ content }: WhyBookSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+
+          {/* LEFT - STORY / VALUE */}
+          <div className="relative bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition">
+
+            {/* subtle accent */}
+            <div className="absolute -top-6 -left-6 w-28 h-28 bg-noor-green/5 rounded-full blur-2xl" />
+
+            <span className="inline-block text-xs font-semibold text-noor-gold uppercase tracking-widest mb-3">
+              Smart Choice
+            </span>
+
+            <h2 className="text-3xl font-extrabold text-noor-green leading-snug mb-5">
+              {/* Best Budget Umrah Package from USA for Smart Travelers */}
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-[15.5px]">
+              {/* Choosing a budget-friendly Umrah package allows pilgrims to focus
+              on their spiritual journey without financial stress. Our packages
+              combine affordability, comfort, and convenience — ensuring peace
+              of mind from departure to return. */}
+                {content.description}
+
+            </p>
+
+            {/* mini highlight */}
+            {/* <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+              <span className="w-2 h-2 bg-noor-gold rounded-full"></span>
+              Trusted by thousands of pilgrims worldwide
+            </div> */}
+          </div>
+
+          {/* RIGHT - BENEFITS */}
+          <div className="relative bg-noor-green text-white rounded-3xl p-10 shadow-sm overflow-hidden">
+
+            {/* decorative glow */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-noor-gold/20 rounded-full blur-3xl" />
+
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-noor-gold mb-3">
+              Why Choose Us
+            </span>
+
+            <h3 className="text-2xl font-bold mb-6">
+              Why Book These Packages?
+            </h3>
+
+            <ul className="space-y-4">
+              {content.benefits.map((item) => (
+  <li
+    key={item}
+    className="flex items-start gap-3 text-sm leading-6"
+  >
+    <span className="text-noor-gold font-bold mt-0.5">✓</span>
+    <span className="text-white/90">{item}</span>
+  </li>
+))}
+            </ul>
+
+            {/* CTA hint */}
+            <div className="mt-8 pt-5 semi-bold border-t border-white/10 text-lg text-white">
+              Book Now!
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+const PackageClosingSection = ({
+  content,
+}: PackageClosingSectionProps) => {
+  return (
+    <section className="py-16 bg-gradient-to-b from-white to-noor-light">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+
+          <div className="grid lg:grid-cols-2">
+
+            {/* LEFT */}
+            <div className="bg-white p-8 lg:p-10">
+
+              <span className="inline-block mb-3 text-noor-gold font-semibold uppercase tracking-widest text-xs">
+                Why Choose Us
+              </span>
+
+              <h2 className="text-3xl font-bold text-noor-green mb-5">
+                {content.title}
+              </h2>
+
+              <p className="text-gray-600 leading-8 mb-6">
+                {content.description}
+              </p>
+
+              <div className="space-y-3">
+                {content.benefits.map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 items-start"
+                  >
+                    <span className="text-noor-gold font-bold">
+                      ✓
+                    </span>
+
+                    <span className="text-gray-700">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.me/+17869104615"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-8 bg-noor-green text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90"
+              >
+                {content.buttonText}
+                <ArrowRightIcon className="w-4 h-4" />
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+            <div className="bg-noor-green text-white p-8 lg:p-10">
+
+              <h3 className="text-2xl font-bold mb-6">
+                {content.bottomTitle}
+              </h3>
+
+              <p className="text-white/80 mb-8 leading-7">
+                {content.bottomDescription}
+              </p>
+
+              {content.includes && (
+                <div className="grid gap-4">
+                  {content.includes.map((item) => (
+                    <div
+                      key={item.title}
+                      className="bg-white/10 rounded-xl p-4"
+                    >
+                      <h4 className="font-semibold text-noor-gold">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-sm text-white/90 mt-1">
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+
+
+const FAQSection = ({ content }: { content: FAQContent }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="bg-noor-green/10 text-noor-green text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full inline-block mb-4">
+            FAQ
+          </span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green font-display">
+            {content.title}
+          </h2>
+
+          {content.subtitle && (
+            <p className="text-gray-500 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
+              {content.subtitle}
+            </p>
+          )}
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-3">
+          {content.faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={faq.question}
+                className={`rounded-2xl overflow-hidden transition-all duration-300 border ${
+                  isOpen
+                    ? 'border-noor-green/20 bg-white shadow-md'
+                    : 'border-gray-100 bg-gray-50 hover:border-noor-green/10'
+                }`}
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
+                  className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left"
+                >
+                  <h3
+                    className={`font-semibold text-sm sm:text-base pr-4 transition-colors ${
+                      isOpen
+                        ? 'text-noor-green'
+                        : 'text-gray-800'
+                    }`}
+                  >
+                    {faq.question}
+                  </h3>
+
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-noor-green text-white rotate-180'
+                        : 'bg-white border border-gray-200 text-gray-400'
+                    }`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-5 sm:px-6 pb-5">
+                    <div className="h-px bg-gray-100 mb-4" />
+
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ── Main Component ────────────────────────────────────────────
 const KaabaViewDetail: React.FC = () => {
   const [selectedMakkah, setSelectedMakkah]   = useState(0);
   const [selectedMadinah, setSelectedMadinah] = useState(0);
 
+  
+  const { nights } = useParams<{ nights: string }>();
+  
+  const packageNights = Number(nights);
+  
+  const pageContent =
+    kaabaViewContent[packageNights as 5 | 7 | 10] ||
+    kaabaViewContent[5];
+  
+  console.log("nights", packageNights);
+  console.log("pageContent", pageContent);
+  
+    const faqContent =  kaabaViewFaq[packageNights as 5 | 7 | 10] ||
+    kaabaViewFaq[5];
   return (
     <div className="bg-white">
 
@@ -217,6 +1014,7 @@ const KaabaViewDetail: React.FC = () => {
           Select your preferred luxury hotel for each city. All properties are situated within walking distance or a short drive from the Holy Mosques.
         </p>
       </div>
+        <PackageIntroSection content={pageContent.introSection} />
 
       {/* ══════════════ HOTEL SECTIONS ══════════════ */}
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 space-y-16">
@@ -252,7 +1050,8 @@ const KaabaViewDetail: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-dashed border-gray-200" />
+        {/* <div className="border-t border-dashed border-gray-200" /> */}
+      <WhyBookSection content={pageContent.whyBookSection}/>
 
         {/* ── Madinah ── */}
         <div>
@@ -283,6 +1082,12 @@ const KaabaViewDetail: React.FC = () => {
 
       </div>
 
+      <PackageClosingSection
+  content={pageContent.closingSection}
+/>
+
+      <FAQSection content={faqContent} />
+      
       {/* ══════════════ INCLUDED SERVICES STRIP ══════════════ */}
       <section className="bg-[#1a3c2a] py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4">

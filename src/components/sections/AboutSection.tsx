@@ -4,29 +4,80 @@ import { StarIconSolid, HeadsetIcon, CompassIcon, MailIcon } from '../icons/Icon
 import { Link } from 'react-router-dom';
 
 const AboutSection: React.FC = () => {
+  // const features = [
+  //   {
+  //     icon: <StarIconSolid className="w-5 h-5 text-white" />,
+  //     title: 'Luxury Hotels Near the Haram',
+  //     description: 'Carefully selected 4-star and 5-star hotels within walking distance of Masjid al-Haram and Masjid an-Nabawi.',
+  //     accent: 'bg-noor-gold',
+  //     accentLight: 'bg-noor-gold/10',
+  //   },
+  //   {
+  //     icon: <HeadsetIcon className="w-5 h-5 text-white" />,
+  //     title: '24/7 Dedicated Pilgrim Support',
+  //     description: 'Our experienced support team is available around the clock before, during, and after your Umrah journey.',
+  //     accent: 'bg-noor-green',
+  //     accentLight: 'bg-noor-green/10',
+  //   },
+  //   {
+  //     icon: <CompassIcon className="w-5 h-5 text-white" />,
+  //     title: 'Expert Umrah Guidance',
+  //     description: 'Trusted spiritual and logistical guidance to help you perform your Umrah with confidence and clarity.',
+  //     accent: 'bg-noor-gold',
+  //     accentLight: 'bg-noor-gold/10',
+  //   },
+  // ];
+
   const features = [
-    {
-      icon: <StarIconSolid className="w-5 h-5 text-white" />,
-      title: 'Luxury Hotels Near the Haram',
-      description: 'Carefully selected 4-star and 5-star hotels within walking distance of Masjid al-Haram and Masjid an-Nabawi.',
-      accent: 'bg-noor-gold',
-      accentLight: 'bg-noor-gold/10',
-    },
-    {
-      icon: <HeadsetIcon className="w-5 h-5 text-white" />,
-      title: '24/7 Dedicated Pilgrim Support',
-      description: 'Our experienced support team is available around the clock before, during, and after your Umrah journey.',
-      accent: 'bg-noor-green',
-      accentLight: 'bg-noor-green/10',
-    },
-    {
-      icon: <CompassIcon className="w-5 h-5 text-white" />,
-      title: 'Expert Umrah Guidance',
-      description: 'Trusted spiritual and logistical guidance to help you perform your Umrah with confidence and clarity.',
-      accent: 'bg-noor-gold',
-      accentLight: 'bg-noor-gold/10',
-    },
-  ];
+  {
+    icon: <CompassIcon className="w-5 h-5 text-white" />,
+    title: 'Qualified Teams',
+    description:
+      'Our seasoned leaders and staff members help and guide you throughout your Umrah journey.',
+    accent: 'bg-noor-gold',
+    accentLight: 'bg-noor-gold/10',
+  },
+  {
+    icon: <MailIcon className="w-5 h-5 text-white" />,
+    title: 'Quick Visa Assistance',
+    description:
+      'We offer quick and hassle-free visa services to avoid delays and ensure timely travel.',
+    accent: 'bg-noor-green',
+    accentLight: 'bg-noor-green/10',
+  },
+  {
+    icon: <StarIconSolid className="w-5 h-5 text-white" />,
+    title: 'Luxury & Affordable Hotels',
+    description:
+      'Get premium and affordable accommodation at top-rated hotels in Makkah and Madina.',
+    accent: 'bg-noor-gold',
+    accentLight: 'bg-noor-gold/10',
+  },
+  {
+    icon: <CompassIcon className="w-5 h-5 text-white" />,
+    title: 'Smooth Travel Arrangements',
+    description:
+      'From flights to transport, we professionally handle everything from start to finish.',
+    accent: 'bg-noor-green',
+    accentLight: 'bg-noor-green/10',
+  },
+  {
+    icon: <StarIconSolid className="w-5 h-5 text-white" />,
+    title: 'Customized Umrah Packages',
+    description:
+      'We provide personalized packages to fit your budget, schedule, and preferences.',
+    accent: 'bg-noor-gold',
+    accentLight: 'bg-noor-gold/10',
+  },
+  {
+    icon: <HeadsetIcon className="w-5 h-5 text-white" />,
+    title: '24/7 Dedicated Pilgrim Support',
+    description:
+      'Our team is available 24/7 to assist you at any time throughout your Umrah trip.',
+    accent: 'bg-noor-green',
+    accentLight: 'bg-noor-green/10',
+  },
+];
 
   return (
     <section className="relative py-16 sm:py-20 md:py-28 bg-white overflow-hidden">
@@ -49,7 +100,8 @@ const AboutSection: React.FC = () => {
             </span>
 
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] xl:text-[46px] font-bold text-noor-green mt-4 sm:mt-5 lg:mt-6 mb-5 sm:mb-6 leading-[1.12] font-display tracking-tight">
-              Your Trusted US Umrah Travel Partner
+              {/* Your Trusted US Umrah Travel Partner */}
+              Start Your Blessed Journey with the Most Perfect Umrah Packages
             </h2>
 
             {/* Decorative divider */}
@@ -59,7 +111,11 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="text-gray-500 leading-relaxed mb-10 sm:mb-12 text-sm sm:text-[15px] lg:text-base">
-              We blend spiritual insight with professional travel expertise to deliver a smooth and memorable Umrah journey from the US, focused on comfort and care.
+              {/* We blend spiritual insight with professional travel expertise to deliver a smooth and memorable Umrah journey from the US, focused on comfort and care. */}
+              Haram Umrah Travels is a fully registered organization, committed to assisting US muslims with its comprehensive 5 star umarh packages to offer ultimate comfort and peace of mind. 
+              <br/>
+              With professional planning, premium services, and dedicated support, we guarantee a stress-free, spiritually satisfying, and smooth Umrah experience to all pilgrims. 
+
             </p>
 
             {/* Feature Cards */}
@@ -95,7 +151,7 @@ const AboutSection: React.FC = () => {
                 className="group/btn relative bg-noor-green text-white px-7 sm:px-9 py-3.5 sm:py-4 rounded-full inline-flex items-center gap-2.5 text-sm font-semibold hover:bg-[#234d33] transition-all duration-300 hover:shadow-xl hover:shadow-noor-green/20 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <MailIcon className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300" />
-                Contact Us for Free Quote
+                Contact Us for A Free Quote
                 <svg className="w-4 h-4 opacity-0 -ml-2 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

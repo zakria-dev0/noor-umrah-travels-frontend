@@ -68,10 +68,17 @@ const Footer: React.FC = () => {
             </h3>
 
             <p className="text-white/40 text-xs sm:text-sm leading-relaxed mb-4">
-              Your trusted US-based partner for blessed Umrah journeys to the Holy Land. 
+              {/* Your trusted US-based partner for blessed Umrah journeys to the Holy Land. 
               We are registered as a Seller of Travel under license # ST46359. 
               We provide premium Umrah packages with exceptional service and care.
               <p className="text-[10px] sm:text-xs text-white/40 leading-tight italic font-bold">
+                Officially Registered Travel Organization
+              </p> */}
+
+              Haram Umrah Travels is a trusted US-based partner for blessed Hajj and Umrah journeys. 
+              Officially registered under license #ST46359, we offer premium Umrah packages with exceptional service,
+               care, and personalized support for a spiritually fulfilling experience.
+               <p className="text-[10px] sm:text-xs text-white/40 leading-tight italic font-bold">
                 Officially Registered Travel Organization
               </p>
             </p>

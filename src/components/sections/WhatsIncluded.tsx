@@ -1,31 +1,71 @@
 // components/sections/WhatsIncluded.tsx
 import React from 'react';
-import { HotelIcon, CarIcon, VisaIcon, SupportIcon } from '../icons/Icons';
+import { HotelIcon, CarIcon, VisaIcon, SupportIcon, CalendarIcon } from '../icons/Icons';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
+// const items = [
+//   {
+//     icon: <HotelIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+//     title: 'Hotel Accommodation',
+//     desc: 'Quality hotels in Makkah & Madinah with breakfast included',
+//     number: '01',
+//   },
+//   {
+//     icon: <CarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+//     title: 'Airport Transfers',
+//     desc: 'Private transfers from Jeddah to Makkah and between cities',
+//     number: '02',
+//   },
+//   {
+//     icon: <VisaIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+//     title: 'Visa Assistance',
+//     desc: 'Complete Umrah visa processing and documentation support',
+//     number: '03',
+//   },
+//   {
+//     icon: <SupportIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+//     title: '24/7 Support',
+//     desc: 'Dedicated support team available before and during your trip',
+//     number: '04',
+//   },
+// ];
 
 const items = [
   {
-    icon: <HotelIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
-    title: 'Hotel Accommodation',
-    desc: 'Quality hotels in Makkah & Madinah with breakfast included',
+    icon: <VisaIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+    title: 'Entry Visa',
+    desc: 'Including full-fledged medical insurance for a secure and hassle-free Umrah trip.',
     number: '01',
   },
   {
     icon: <CarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
-    title: 'Airport Transfers',
-    desc: 'Private transfers from Jeddah to Makkah and between cities',
+    title: 'Flight Tickets',
+    desc: 'Round-trip flights departing from your nearest US airport.',
     number: '02',
   },
   {
-    icon: <VisaIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
-    title: 'Visa Assistance',
-    desc: 'Complete Umrah visa processing and documentation support',
+    icon: <HotelIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+    title: 'Top-Rated Hotels',
+    desc: '3, 4, and 5-star hotel accommodations in Makkah & Madinah with breakfast included.',
     number: '03',
   },
   {
-    icon: <SupportIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
-    title: '24/7 Support',
-    desc: 'Dedicated support team available before and during your trip',
+    icon: <CarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+    title: 'Luxury Transport',
+    desc: 'Enjoy comfortable travel through AC buses and high-speed trains.',
     number: '04',
+  },
+  {
+    icon: <SupportIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+    title: 'Ziyarah Trips',
+    desc: 'Guided tours to discover the sacred places of Madinah and Makkah.',
+    number: '05',
+  },
+  {
+    icon: <SupportIcon className="w-6 h-6 sm:w-7 sm:h-7 text-noor-green" />,
+    title: 'Pre-Departure Seminars',
+    desc: 'Attend expert-guided seminars to learn Umrah rituals and prepare for a meaningful pilgrimage.',
+    number: '06',
   },
 ];
 
@@ -45,12 +85,13 @@ const WhatsIncluded: React.FC = () => (
           <span className="text-noor-gold">Your Package</span>
         </h2>
         <p className="text-gray-400 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-          Everything you need for a peaceful, spiritually-focused journey
+          {/* Everything you need for a peaceful, spiritually-focused journey */}
+          At Haram Umrah Travels, we offer comprehensive Umrah packages that include all essential services to make your Umrah experience smooth, convenient, and spiritually satisfying.
         </p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {items.map((item, index) => (
           <div
             key={index}
@@ -81,6 +122,17 @@ const WhatsIncluded: React.FC = () => (
           </div>
         ))}
       </div>
+    <br />
+
+<div className="flex justify-center">
+  <Link
+    to="/packages"
+    className="bg-noor-green text-white px-6 py-2.5 rounded-full inline-flex items-center gap-2 text-sm font-semibold hover:bg-[#2a5c3a] transition-colors"
+  >
+    <CalendarIcon className="w-4 h-4" />
+    Buy an Umrah Package now!
+  </Link>
+</div>
     </div>
   </section>
 );

@@ -85,6 +85,51 @@ interface DetailedPackageItem {
   madinahHotels: HotelInfo[];
 }
 
+interface PackageIntroContent {
+  title: string;
+  intro: string;
+  benefitsTitle: string;
+  benefitsDescription: string;
+  highlights: string[];
+}
+
+interface PackageIntroSectionProps {
+  content: PackageIntroContent;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQContent {
+  title: string;
+  subtitle: string;
+  faqs: FAQItem[];
+}
+
+interface WhyBookSectionProps {
+  content: {
+    title: string;
+    description: string;
+    benefits: string[];
+  };
+}
+
+interface PackageClosingSectionProps {
+  content: {
+    title: string;
+    description: string;
+    buttonText: string;
+    benefits: string[];
+    bottomTitle: string;
+    bottomDescription: string;
+    includes?: {
+      title: string;
+      value: string;
+    }[];
+  };
+}
 type StarType = '5star' | '4star' | '3star';
 type FiveStarView = 'haram' | 'kaaba';
 
@@ -784,6 +829,713 @@ const DetailedPackagesSection = ({ packages, starLevel }: { packages: DetailedPa
   </section>
 );
 
+
+const seoData = {
+  "3star": {
+    introSection: {
+      title: "Affordable 3 Star Umrah Packages from USA for Every Traveler",
+      intro:
+        "Get Complete Peace of Mind and Save More with Our Cheap Umrah Packages USA Offers. Our Budget Umrah Package from USA offers convenient travel, comfortable stays, and guided services—ensuring a meaningful Umrah experience without financial stress.",
+
+      benefitsTitle:
+        "Cheap Umrah Packages USA with Comfort and Convenience Options",
+
+      benefitsDescription:
+        "Our 3 Star Umrah Packages from USA are thoughtfully designed for pilgrims seeking affordability without compromising essential comfort. These Economy Umrah Packages USA ensure a smooth and spiritually fulfilling journey with reliable services, convenient travel arrangements, and comfortable accommodations close to holy sites, making your Umrah experience peaceful and stress-free.",
+
+      highlights: [
+        "Comfortable 3-star hotels located near Haram for easy access.",
+        "Round-trip flights from major USA cities with flexible schedules.",
+        "Ground transportation between the airport, hotel, and holy sites is included.",
+        "Assistance with Umrah visa processing and travel documentation.",
+        "24/7 customer support, ensuring guidance throughout your journey."
+      ]
+    },
+
+    whyBookSection: {
+      title: "Best Budget Umrah Package from USA for Smart Travelers",
+
+      description:
+        "Choosing a budget-friendly Umrah package allows pilgrims to focus on their spiritual journey without financial stress. These Cheap Umrah Packages USA are ideal for individuals and families seeking value-driven options, combining affordability with essential services to ensure a smooth, organized, and rewarding Umrah experience.",
+
+      benefits: [
+        "Cost-effective plans designed to fit various budgets and preferences.",
+        "Carefully selected accommodations offering comfort at reasonable prices.",
+        "Group and private package options for flexible travel experiences.",
+        "Expert planning that minimizes hassle and saves valuable time.",
+        "Transparent pricing with no hidden charges or unexpected costs."
+      ]
+    },
+
+    closingSection: {
+  title: "Reliable Economy Umrah Packages USA for Affordable Spiritual Travel",
+  description:
+    "Our Budget Umrah Package from USA is perfect for travelers looking for dependable services at affordable rates. We prioritize convenience, comfort, and spiritual focus by offering well-organized travel plans, ensuring that every pilgrim enjoys a meaningful and worry-free journey from departure to return.",
+
+  buttonText: "Contact Us",
+
+  benefits: [
+    "Experienced travel consultants specializing in Umrah package planning.",
+    "Strong partnerships with trusted hotels and airline providers.",
+    "Personalized assistance tailored to your travel needs and schedule.",
+    "Dedicated support team available before, during, and after Umrah.",
+    "Commitment to delivering value, comfort, and customer satisfaction."
+  ],
+
+  bottomTitle: "Our Exclusive 3 Star Umrah Packages from USA",
+  bottomDescription:
+    "Choose one package that meets your needs and confirm your booking today."
+}
+  },
+
+  "4star": {
+    introSection: {
+      title: "4 Star Umrah Packages from USA",
+      intro:
+        "Explore Our Affordable Umrah Packages USA for a Stress-Free Pilgrimage Experience. Enjoy a seamless spiritual journey with our premium 4 Star Umrah Package USA, offering carefully selected 4 Star Hotels in Makkah for Umrah to ensure comfort, convenience, and proximity to the Holy Kaaba.",
+
+      benefitsTitle:
+        "4 Star Umrah Package USA Offering Complete Comfort Travel Experience",
+
+      benefitsDescription:
+        "Our 4 Star Umrah Packages from USA are designed for pilgrims seeking comfort, convenience, and a well-organized journey. From flights and visa processing to hotel stays and transport, everything is professionally managed.This package ensures a smooth and stress-free experience, allowing you to focus on your spiritual journey in Makkah and Madinah with complete peace of mind.",
+
+      highlights: [
+        "4-star hotels near Haram for easy prayer access.",
+        "Return flights from major USA cities with trusted airlines.",
+        "Fast visa processing with complete documentation support.",
+        "Air-conditioned transport for all travel and transfers.",
+        "Guided Ziyarat tours in Makkah and Madinah."
+      ]
+    },
+
+    whyBookSection: {
+      title: "4 Star Hotels in Makkah for Umrah Providing Comfort Near Haram",
+
+      description:
+        "Our 4 Star Hotels in Makkah for Umrah offer comfort, convenience, and close proximity to Masjid al-Haram. These hotels are carefully selected to provide modern amenities and a peaceful stay.Ideal for families and individuals, these affordable Umrah Packages USA ensure easy access to prayers while maintaining a comfortable environment throughout your Umrah journey.",
+
+      benefits: [
+        "Hotels located close to Haram for quick access.",
+        "Clean rooms with modern facilities and comfort.",
+        "Suitable for families, groups, and elderly pilgrims.",
+        "24-hour service and on-site dining options.",
+        "Pre-arranged stays for a hassle-free experience."
+      ]
+    },
+    closingSection: {
+  title: "Affordable Umrah Packages USA Delivering Value, Ease, and Trusted Services",
+
+  description:
+    "Our 4 Star Umrah Package USA provides excellent value without compromising comfort or service quality. We offer complete travel solutions with reliable support at every step. With careful planning and trusted partnerships, these packages ensure a smooth, affordable, and spiritually fulfilling Umrah journey for travelers from the United States.",
+
+  buttonText: "Contact Us",
+
+  benefits: [
+    "Competitive pricing with no hidden costs.",
+    "Experienced team managing all travel arrangements.",
+    "24/7 customer support during the journey.",
+    "Trusted hotels and airline partnerships.",
+    "Personalized service for all travelers."
+  ],
+
+  bottomTitle: "Our Exclusive 4 Star Umrah Packages from USA",
+
+  bottomDescription:
+    "Choose one package that meets your needs and confirm your booking today."
+}
+  },
+
+//   "5star": {
+//     introSection: {
+//       title: "Affordable 5 Star Umrah Package USA for Just $890",
+
+//       intro:
+//         "Your Dream Cheap 5 Star Umrah Package Awaits. Experience the perfect blend of comfort and affordability with our Budget Luxury Umrah Package. Enjoy 5-star hotels, Haram views, and seamless services without breaking the bank.",
+
+//       benefitsTitle:
+//         "5 Star Umrah Package Under $1000 – Luxury Within Your Budget",
+
+//       benefitsDescription:
+//         "Experience a spiritual journey without compromise on comfort with our Affordable 5 Star Umrah Package USA. Designed for travelers seeking a perfect balance of luxury and value.",
+
+//       highlights: [
+//         "Stay in 5-star hotels near the Haram with breathtaking views.",
+//         "Enjoy premium facilities and opulent comforts.",
+//         "Hassle-free visa processing with all documentation.",
+//         "Delicious meals included.",
+//         "Convenient transport and airport transfers.",
+//         "Guided spiritual tours and expert assistance."
+//       ]
+//     },
+
+//     whyBookSection: {
+//       title:
+//         "Budget Luxury Umrah Package – Comfort and Convenience Combined",
+
+//       description:
+//         "Our 5 Star Umrah Package Under $1000 is designed to make your pilgrimage smooth, enjoyable, and spiritually rewarding.",
+
+//       benefits: [
+//         "Premium hotel stays with elegant rooms and modern facilities.",
+//         "Reliable transportation between Makkah and Madinah.",
+//         "Complimentary Umrah essentials.",
+//         "Flexible itinerary options.",
+//         "Guided historical and religious tours."
+//       ]
+//     },
+//     closingSection: {
+//   title: "Cheap 5 Star Umrah Package – Your Dream Pilgrimage Made Easy",
+
+//   description:
+//     "Our 5 Star Umrah Package Under $1000 makes premium pilgrimage experiences accessible for all. Whether it’s your first Umrah or a repeated spiritual journey, this package ensures comfort, convenience, and a stress-free experience.",
+
+//   buttonText: "Book Now",
+
+//   benefits: [
+//     "Affordable 5-star accommodations for ultimate comfort.",
+//     "Steps away from Masjid al-Haram and Masjid al-Nabawi.",
+//     "Round-trip flights from major US cities included.",
+//     "Expert guides for religious and cultural insights.",
+//     "Dedicated support throughout your pilgrimage.",
+//     "Flexible schedules to match your preferences."
+//   ],
+
+//   includes: [
+//     {
+//       title: "Ground Transportation",
+//       value: "Jeddah ↔ Makkah ↔ Madinah"
+//     },
+//     {
+//       title: "Saudi Umrah e-Visa",
+//       value: "Online visa processing"
+//     },
+//     {
+//       title: "Meet & Greet Service",
+//       value: "Airport & hotel assistance"
+//     },
+//     {
+//       title: "24-Hour Support",
+//       value: "Always available for you"
+//     }
+//   ],
+
+//   bottomTitle: "Luxury, Comfort & Spiritual Peace",
+
+//   bottomDescription:
+//     "Everything needed for a seamless premium Umrah experience is already included."
+// }
+//   }
+};
+
+
+const faqData= {
+  "3star": {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers to common questions about our affordable 3 Star Umrah Packages from USA.",
+
+    faqs: [
+      {
+        question: "What is included in 3 Star Umrah Packages from USA?",
+        answer:
+          "These packages typically include return airfare, 3-star hotel accommodation, Umrah visa processing, and ground transportation for a hassle-free journey."
+      },
+      {
+        question: "Are these Cheap Umrah Packages USA suitable for families?",
+        answer:
+          "Yes, these packages are ideal for families, offering comfortable stays, flexible travel options, and essential services at affordable prices."
+      },
+      {
+        question: "How much does an Economy Umrah Package from USA usually cost?",
+        answer:
+          "Prices vary depending on travel dates, duration, and availability, but these packages are specifically designed to remain affordable for most pilgrims."
+      },
+      {
+        question: "How early should I book a Budget Umrah Package from USA?",
+        answer:
+          "It’s recommended to book at least 4–8 weeks in advance to secure better prices and availability, especially during peak seasons."
+      },
+      {
+        question: "Can I customize my Umrah package?",
+        answer:
+          "Yes, most providers offer customization options such as hotel upgrades, extended stays, or tailored travel dates."
+      },
+      {
+        question: "Do Economy Umrah Packages USA include meals?",
+        answer:
+          "Some packages may include breakfast or partial meal plans, but it depends on the selected package and hotel."
+      },
+      {
+        question: "Is visa processing included in these packages?",
+        answer:
+          "Yes, Umrah visa assistance is usually included to ensure a smooth and stress-free application process."
+      },
+      {
+        question: "Are hotels close to Haram included in these packages?",
+        answer:
+          "Most 3-star packages offer hotels within a reasonable distance from Haram, ensuring convenience for pilgrims."
+      },
+      {
+        question: "Are there any hidden charges in these packages?",
+        answer:
+          "We offer transparent pricing, but it’s always best to confirm inclusions before booking."
+      },
+      {
+        question: "Are these Cheap Umrah Packages USA reliable and safe?",
+        answer:
+          "Yes, they are designed with trusted hotels and verified travel arrangements to ensure safety, comfort, and peace of mind throughout your trip."
+      }
+    ]
+  },
+
+  "4star": {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Everything you need to know about our 4 Star Umrah Packages from USA.",
+
+    faqs: [
+      {
+        question: "What is included in a 4 Star Umrah Package USA?",
+        answer:
+          "It typically includes return flights, visa processing, 4-star hotel accommodation, airport transfers, and guided Ziyarat tours in Makkah and Madinah."
+      },
+      {
+        question: "How much does a 4 Star Umrah Package from USA cost?",
+        answer:
+          "Prices vary depending on travel dates, duration, and hotel distance from Haram, but these packages are designed to offer a balance between affordability and comfort."
+      },
+      {
+        question: "How close are the 4-star hotels to Haram?",
+        answer:
+          "Most 4-star hotels are located within walking distance or a short shuttle ride from Masjid al-Haram for easy access."
+      },
+      {
+        question: "Are these packages suitable for families and elderly travelers?",
+        answer:
+          "Yes, these packages are designed for comfort and convenience, making them ideal for families, seniors, and group travelers."
+      },
+      {
+        question: "Can I customize my Umrah package from the USA?",
+        answer:
+          "Many providers allow customization, including travel dates, hotel upgrades, and additional services based on your needs."
+      },
+      {
+        question: "How long does the Umrah visa process take?",
+        answer:
+          "The visa process is usually quick and handled by the agency, often completed within a few days if documents are ready."
+      },
+      {
+        question: "Are meals included in 4-star Umrah packages?",
+        answer:
+          "Some packages include breakfast or half-board options, while others offer flexible meal plans depending on your preference."
+      },
+      {
+        question: "What type of transportation is provided during Umrah?",
+        answer:
+          "Air-conditioned vehicles are arranged for airport transfers, hotel transport, and Ziyarat tours in both holy cities."
+      },
+      {
+        question: "Is travel insurance included in the package?",
+        answer:
+          "Travel insurance may or may not be included, but it is often available as an optional add-on for extra security."
+      },
+      {
+        question: "When is the best time to book affordable Umrah packages USA?",
+        answer:
+          "Booking in advance or during off-peak seasons can help secure better prices and availability."
+      }
+    ]
+  },
+
+  // "5star": {
+  //   title: "Frequently Asked Questions",
+  //   subtitle:
+  //     "Learn more about our luxury 5 Star Haram View and Kaaba View Umrah Packages.",
+
+  //   faqs: [
+  //     {
+  //       question: "What is included in the Budget Luxury Umrah Package?",
+  //       answer:
+  //         "Our package includes 5-star hotel accommodations, guided tours, airport transfers, transportation between Makkah and Madinah, meals, visa assistance, and personalized support throughout your pilgrimage."
+  //     },
+  //     {
+  //       question: "How close are the hotels to the Haram in this package?",
+  //       answer:
+  //         "The hotels are located just steps away from Masjid al-Haram, allowing easy access for prayers and spiritual activities without long walks."
+  //     },
+  //     {
+  //       question: "Can families and elderly travelers join this package?",
+  //       answer:
+  //         "Yes, our Budget Luxury Umrah Package is designed for all travelers, including families and seniors, with comfortable accommodations, easy access to holy sites, and personalized support for a safe and convenient journey."
+  //     },
+  //     {
+  //       question: "Can I customize my itinerary?",
+  //       answer:
+  //         "Yes. Our Budget Luxury Umrah Package offers flexibility to adjust schedules for prayers, sightseeing, and personal spiritual activities."
+  //     },
+  //     {
+  //       question: "Is visa assistance provided?",
+  //       answer:
+  //         "Absolutely. We handle all visa requirements and documentation to ensure a smooth and hassle-free travel experience."
+  //     },
+  //     {
+  //       question: "Are meals included in this package?",
+  //       answer:
+  //         "Yes, you will enjoy a variety of delicious meals during your stay, designed for comfort and convenience."
+  //     },
+  //     {
+  //       question: "What kind of support is available during the pilgrimage?",
+  //       answer:
+  //         "Our dedicated team provides 24/7 assistance for transportation, hotel services, guidance, and any emergencies, ensuring a stress-free spiritual journey."
+  //     }
+  //   ]
+  // }
+};
+
+const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+
+          {/* LEFT CONTENT */}
+          <div>
+            <span className="inline-block mb-3 text-sm font-semibold text-noor-gold tracking-wide uppercase">
+              Overview
+            </span>
+
+            <h2 className="text-4xl font-extrabold text-noor-green leading-tight mb-5">
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-lg">
+              {content.intro}
+            </p>
+
+            {/* subtle decorative line */}
+            <div className="mt-6 w-24 h-1 bg-noor-gold rounded-full opacity-70" />
+          </div>
+
+          {/* RIGHT CARD */}
+          <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+
+            {/* soft glow accent */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-noor-gold/10 rounded-full blur-2xl" />
+
+            <h3 className="text-2xl font-bold text-noor-green mb-3">
+              {content.benefitsTitle}
+            </h3>
+
+            <p className="text-gray-600 mb-6 leading-7">
+              {content.benefitsDescription}
+            </p>
+
+            {/* highlights as better chips */}
+            <div className="space-y-3">
+              {content.highlights.map((item: any) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-noor-light/50 hover:bg-noor-light transition"
+                >
+                  <span className="text-noor-gold font-bold mt-0.5">✓</span>
+                  <span className="text-sm text-gray-700 leading-6">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* optional CTA hint */}
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs font-semibold text-black">
+                Get More Details!
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+const WhyBookSection = ({ content }: WhyBookSectionProps) => {
+  return (
+    <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+
+          {/* LEFT - STORY / VALUE */}
+          <div className="relative bg-white rounded-3xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition">
+
+            {/* subtle accent */}
+            <div className="absolute -top-6 -left-6 w-28 h-28 bg-noor-green/5 rounded-full blur-2xl" />
+
+            <span className="inline-block text-xs font-semibold text-noor-gold uppercase tracking-widest mb-3">
+              Smart Choice
+            </span>
+
+            <h2 className="text-3xl font-extrabold text-noor-green leading-snug mb-5">
+              {/* Best Budget Umrah Package from USA for Smart Travelers */}
+              {content.title}
+            </h2>
+
+            <p className="text-gray-600 leading-8 text-[15.5px]">
+              {/* Choosing a budget-friendly Umrah package allows pilgrims to focus
+              on their spiritual journey without financial stress. Our packages
+              combine affordability, comfort, and convenience — ensuring peace
+              of mind from departure to return. */}
+                {content.description}
+
+            </p>
+
+            {/* mini highlight */}
+            {/* <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+              <span className="w-2 h-2 bg-noor-gold rounded-full"></span>
+              Trusted by thousands of pilgrims worldwide
+            </div> */}
+          </div>
+
+          {/* RIGHT - BENEFITS */}
+          <div className="relative bg-noor-green text-white rounded-3xl p-10 shadow-sm overflow-hidden">
+
+            {/* decorative glow */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-noor-gold/20 rounded-full blur-3xl" />
+
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-noor-gold mb-3">
+              Why Choose Us
+            </span>
+
+            <h3 className="text-2xl font-bold mb-6">
+              Why Book These Packages?
+            </h3>
+
+            <ul className="space-y-4">
+              {content.benefits.map((item) => (
+  <li
+    key={item}
+    className="flex items-start gap-3 text-sm leading-6"
+  >
+    <span className="text-noor-gold font-bold mt-0.5">✓</span>
+    <span className="text-white/90">{item}</span>
+  </li>
+))}
+            </ul>
+
+            {/* CTA hint */}
+            <div className="mt-8 pt-5 semi-bold border-t border-white/10 text-lg text-white">
+              Book Now!
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+const PackageClosingSection = ({
+  content,
+}: PackageClosingSectionProps) => {
+  return (
+    <section className="py-16 bg-gradient-to-b from-white to-noor-light">
+      <div className="max-w-6xl mx-auto px-4">
+
+        <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+
+          <div className="grid lg:grid-cols-2">
+
+            {/* LEFT */}
+            <div className="bg-white p-8 lg:p-10">
+
+              <span className="inline-block mb-3 text-noor-gold font-semibold uppercase tracking-widest text-xs">
+                Why Choose Us
+              </span>
+
+              <h2 className="text-3xl font-bold text-noor-green mb-5">
+                {content.title}
+              </h2>
+
+              <p className="text-gray-600 leading-8 mb-6">
+                {content.description}
+              </p>
+
+              <div className="space-y-3">
+                {content.benefits.map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 items-start"
+                  >
+                    <span className="text-noor-gold font-bold">
+                      ✓
+                    </span>
+
+                    <span className="text-gray-700">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.me/+17869104615"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-8 bg-noor-green text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90"
+              >
+                {content.buttonText}
+                <ArrowRightIcon className="w-4 h-4" />
+              </a>
+
+            </div>
+
+            {/* RIGHT */}
+            <div className="bg-noor-green text-white p-8 lg:p-10">
+
+              <h3 className="text-2xl font-bold mb-6">
+                {content.bottomTitle}
+              </h3>
+
+              <p className="text-white/80 mb-8 leading-7">
+                {content.bottomDescription}
+              </p>
+
+              {content.includes && (
+                <div className="grid gap-4">
+                  {content.includes.map((item) => (
+                    <div
+                      key={item.title}
+                      className="bg-white/10 rounded-xl p-4"
+                    >
+                      <h4 className="font-semibold text-noor-gold">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-sm text-white/90 mt-1">
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+const FAQSection = ({ content }: { content: FAQContent }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="bg-noor-green/10 text-noor-green text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full inline-block mb-4">
+            FAQ
+          </span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-noor-green font-display">
+            {content.title}
+          </h2>
+
+          {content.subtitle && (
+            <p className="text-gray-500 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
+              {content.subtitle}
+            </p>
+          )}
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-3">
+          {content.faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={faq.question}
+                className={`rounded-2xl overflow-hidden transition-all duration-300 border ${
+                  isOpen
+                    ? 'border-noor-green/20 bg-white shadow-md'
+                    : 'border-gray-100 bg-gray-50 hover:border-noor-green/10'
+                }`}
+              >
+                <button
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
+                  className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left"
+                >
+                  <h3
+                    className={`font-semibold text-sm sm:text-base pr-4 transition-colors ${
+                      isOpen
+                        ? 'text-noor-green'
+                        : 'text-gray-800'
+                    }`}
+                  >
+                    {faq.question}
+                  </h3>
+
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-noor-green text-white rotate-180'
+                        : 'bg-white border border-gray-200 text-gray-400'
+                    }`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-5 sm:px-6 pb-5">
+                    <div className="h-px bg-gray-100 mb-4" />
+
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ══════════════════════════════════════════════════════════════
 // MAIN PAGE
 // ══════════════════════════════════════════════════════════════
@@ -791,6 +1543,21 @@ const UmrahPackagesCombined: React.FC = () => {
   const [searchParams] = useSearchParams();
   const tier = (searchParams.get('tier') as StarType) || '5star';
   const view = (searchParams.get('view') as FiveStarView) || 'haram';
+
+  // const content = seoData[tier];
+  // const pageContent = seoData[tier];
+
+  // const faqContent = faqData[tier];
+
+  const pageContent =
+  tier === '5star'
+    ? null
+    : seoData[tier as '3star' | '4star'];
+
+const faqContent =
+  tier === '5star'
+    ? null
+    : faqData[tier as '3star' | '4star'];
 
   const currentLabel =
     tier === '5star'
@@ -808,15 +1575,30 @@ const UmrahPackagesCombined: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{currentLabel}</h1>
           <div className="w-16 h-0.5 bg-noor-gold/40 mx-auto mt-4" />
         </div>
+
       </div>
 
+{pageContent && (
+  <PackageIntroSection content={pageContent.introSection} />
+)}
       <div>
         {tier === '5star' && view === 'kaaba' && <PackageCategorySection category={kaabaViewData} />}
         {tier === '5star' && view === 'haram'  && <PackageCategorySection category={haramViewData} />}
         {tier === '4star' && <DetailedPackagesSection packages={fourStarPackages} starLevel={4} />}
         {tier === '3star' && <DetailedPackagesSection packages={threeStarPackages} starLevel={3} />}
       </div>
-            <ImageGallery />
+{pageContent && (
+  <WhyBookSection content={pageContent.whyBookSection} />
+)}      <ImageGallery />
+
+      {pageContent && (
+  <PackageClosingSection
+    content={pageContent.closingSection}
+  />
+)}
+{faqContent && (
+  <FAQSection content={faqContent} />
+)}
     </div>
   );
 };

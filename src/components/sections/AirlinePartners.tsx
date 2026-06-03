@@ -64,8 +64,10 @@ const AirlinePartners: React.FC = () => {
           </div>
 
           <p className="text-gray-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            We work with trusted airline partners to offer convenient departures,
-            reliable connections, and flexible options for US pilgrims.
+            {/* We work with trusted airline partners to offer convenient departures,
+            reliable connections, and flexible options for US pilgrims. */}
+            We work with reputable airlines to offer US pilgrims convenient flights, 
+            smooth transit, and flexible travel options to experience a hassle-free sacred journey.
           </p>
         </div>
 
