@@ -636,6 +636,8 @@ const kaabaViewFaq = {
 
 
 const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
+    const [showDetails, setShowDetails] = useState(false);
+  
   return (
     <section className="relative py-16 bg-gradient-to-b from-noor-light to-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -673,8 +675,18 @@ const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
             <p className="text-gray-600 mb-6 leading-7">
               {content.benefitsDescription}
             </p>
+             {/* Show More Button */}
+            <div className="mt-6">
+              <button
+                onClick={() => setShowDetails(!showDetails)}
+                className="text-sm font-semibold text-noor-green hover:text-noor-gold transition"
+              >
+                {showDetails ? "Hide Details" : "Show More Details"}
+              </button>
+            </div>
 
             {/* highlights as better chips */}
+              {showDetails && (
             <div className="space-y-3">
               {content.highlights.map((item: any) => (
                 <div
@@ -688,13 +700,7 @@ const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
                 </div>
               ))}
             </div>
-
-            {/* optional CTA hint */}
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <p className="text-xs font-semibold text-black">
-                Get More Details!
-              </p>
-            </div>
+             )}
 
           </div>
         </div>

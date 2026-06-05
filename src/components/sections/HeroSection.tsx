@@ -49,8 +49,7 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 sm:py-16 md:py-24 w-full">
         <div className="max-w-2xl">
           {/* Top Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-md border border-white/[0.12] text-white text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2.5 rounded-full mb-6 sm:mb-8">
-            <span className="relative flex h-2 w-2">
+            <div className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-md border border-white/[0.12] text-white text-[10px] sm:text-[11px] md:text-xs font-semibold tracking-[0.15em] uppercase px-3 py-2 rounded-full mb-6 sm:mb-8">            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-noor-gold opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-noor-gold" />
             </span>
@@ -59,34 +58,42 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-[32px] sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white leading-[1.08] mb-5 sm:mb-6 font-display">
-            {/* Your Sacred */}
-            Get Cheap Umrah
-            <span className="block text-noor-gold mt-1 sm:mt-2">
-            {/* Umrah Journey */}
-            Packages from USA
-            </span>
-            <span className="block mt-1 sm:mt-2">
-              {/* Starts Here */}
-              without Compromising Comfort
+            <h1 className="text-[32px] sm:text-[40px] md:text-[44px] lg:text-[46px] xl:text-[48px] font-bold text-white leading-[1.1] mb-5 sm:mb-6 font-display">
+              Get Cheap Umrah
+
+              <span className="block text-noor-gold mt-1 sm:mt-2">
+                Packages from USA
               </span>
-          </h1>
+
+              <span className="block mt-1 sm:mt-2">
+                without Compromising Comfort
+              </span>
+            </h1>
 
           {/* Subtitle */}
-          <p className="text-white/60 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 leading-relaxed max-w-lg">
-            {/* Premium Umrah packages from major US cities. Luxury hotels steps from the Haram, seamless visa processing, and dedicated guidance every step of the way. */}
+          <p className="text-white/60 text-xs sm:text-sm md:text-base mb-8 sm:mb-10 leading-relaxed max-w-lg">
             From seamless travel arrangements to trusted guidance and top-rated hotels near Haram, we handle everything to make your spiritual journey stress-free and memorable.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+           <Link
               to="/packages"
-              className="group bg-noor-gold text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold hover:bg-[#b89a3e] transition-all text-sm sm:text-base inline-flex items-center justify-center gap-2.5 shadow-lg shadow-noor-gold/20 hover:shadow-xl hover:shadow-noor-gold/30 hover:-translate-y-0.5"
+              className="group bg-noor-gold text-white px-5 sm:px-6 py-3 rounded-full font-semibold hover:bg-[#b89a3e] transition-all text-xs sm:text-sm inline-flex items-center justify-center gap-2 shadow-lg shadow-noor-gold/20 hover:shadow-xl hover:shadow-noor-gold/30 hover:-translate-y-0.5"
             >
               Explore Packages
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </Link>
             
