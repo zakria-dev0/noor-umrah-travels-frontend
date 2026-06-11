@@ -46,8 +46,8 @@ const RefundPolicy: React.FC = () => {
             <div className="mb-10">
               <h2 className="text-2xl font-bold text-noor-green mb-4 font-display">Refund Processing</h2>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                <li>Refunds are only issued after funds are received back from suppliers.</li>
-                <li>Refund timelines may take 4-8 weeks depending on the airline or hotel.</li>
+                <li>Refund eligibility and refund amounts are determined based on the applicable supplier terms, cancellation policies, and the customer's booking conditions. Approved refunds are processed by Haram Umrah Travels to the original payment method once the refund amount has been confirmed.</li>
+                <li>Approved refunds are generally processed within 4-8 weeks, although processing times may vary depending on supplier confirmation and settlement procedures.</li>
                 <li>Administrative fees may apply.</li>
               </ul>
             </div>
