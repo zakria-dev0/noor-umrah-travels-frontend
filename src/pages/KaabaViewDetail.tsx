@@ -1,6 +1,7 @@
  // KaabaViewDetail.tsx
 import React, { useState } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 // ── Shared images ─────────────────────────────────────────────
 import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
@@ -1005,8 +1006,29 @@ const KaabaViewDetail: React.FC = () => {
   
     const faqContent =  kaabaViewFaq[packageNights as 5 | 7 | 10] ||
     kaabaViewFaq[5];
+  const kaabaMeta: Record<number, { title: string; description: string }> = {
+    10: {
+      title: '5 Star Kaaba View Umrah Package 10 Nights | VIP USA Offer',
+      description: 'Book a 5 Star Kaaba View Umrah Package 10 Nights. Enjoy a 10 Night Luxury Umrah Package, VIP Kaaba View Umrah Package, and Extended Stay Umrah Package USA.',
+    },
+    7: {
+      title: '5 Star Kaaba View Umrah Package 7 Nights | Luxury Deal USA',
+      description: 'Book a 5 Star Kaaba View Umrah Package 7 Nights. Enjoy a 7 Night Umrah Package with Kaaba View, Luxury Umrah Package 7 Days USA, and Haram Facing Hotel Umrah Package.',
+    },
+    5: {
+      title: '5 Star Kaaba View Umrah Package 5 Nights | Best Deal $990',
+      description: 'Book a 5 Star Kaaba View Umrah Package 5 Nights from USA. Enjoy a Short Umrah Package with Kaaba View and an Affordable Kaaba View Umrah Package.',
+    },
+  };
+
+  const meta = kaabaMeta[packageNights] || kaabaMeta[5];
+
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Helmet>
 
       {/* ══════════════ PAGE HEADER ══════════════ */}
       <div className="bg-[#1a3c2a] py-12 md:py-16 text-center px-4">
