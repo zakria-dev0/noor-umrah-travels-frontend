@@ -1,6 +1,7 @@
   // UmrahPackagesCombined.tsx
 import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRightIcon } from '../components/icons/Icons';
 
 // ── 5-Star images ─────────────────────────────────────────────
@@ -1570,8 +1571,27 @@ const faqContent =
       ? '4 Star Packages'
       : '3 Star Packages';
 
+  const combinedMeta: Partial<Record<StarType, { title: string; description: string }>> = {
+    '4star': {
+      title: '4 Star Umrah Packages from USA | Affordable Umrah Deals',
+      description: 'Book 4 Star Umrah Packages from USA with premium comfort. Explore Umrah Package USA featuring Affordable Umrah Packages USA and 4 Star Hotels in Makkah for Umrah.',
+    },
+    '3star': {
+      title: '3 Star Umrah Packages from USA | Cheap & Budget Deals',
+      description: 'Book 3 Star Umrah Packages from USA with affordable rates. Explore Cheap Umrah Packages USA, Budget Umrah Package from USA, and Economy Umrah Packages USA.',
+    },
+  };
+
+  const pageMeta = combinedMeta[tier];
+
   return (
     <div className="min-h-screen bg-white">
+      {pageMeta && (
+        <Helmet>
+          <title>{pageMeta.title}</title>
+          <meta name="description" content={pageMeta.description} />
+        </Helmet>
+      )}
       {/* Fixed: Responsive header padding and text size */}
       <div className="bg-noor-green py-8 sm:py-10">
         <div className="max-w-4xl mx-auto px-4 text-center">

@@ -1,6 +1,7 @@
 // HaramViewDetail.tsx
 import React, { useState } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 // ── Shared images ─────────────────────────────────────────────
 import transportImg from '../assets/images/packages/5-3_files/t-1.webp';
@@ -1012,8 +1013,29 @@ console.log("pageContent", pageContent);
   haramViewFaqData[5];
 
 
+  const haramMeta: Record<number, { title: string; description: string }> = {
+    10: {
+      title: 'Luxury 5 Star Umrah Package with Kaaba View | VIP Deal USA',
+      description: 'Book a Luxury 5 Star Umrah Package with Kaaba View. Enjoy a VIP Umrah Package USA, Kaaba View Umrah Package, and Premium Umrah Package USA.',
+    },
+    7: {
+      title: '5 Star Umrah Package with Haram View | Luxury USA Deal',
+      description: 'Book a 5 Star Umrah Package with Haram View. Enjoy a Haram View Umrah Package with 5 Star Umrah Hotels Makkah and a Luxury Umrah Package USA.',
+    },
+    5: {
+      title: 'Affordable 5 Star Umrah Package USA Under $1000 | Budget Deal',
+      description: 'Book an Affordable 5 Star Umrah Package USA. Enjoy a Cheap 5 Star Umrah Package, Budget Luxury Umrah Package, and 5 Star Umrah Package Under $1000.',
+    },
+  };
+
+  const meta = haramMeta[packageNights] || haramMeta[5];
+
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Helmet>
 
       {/* ══════════════ PAGE HEADER ══════════════ */}
       <div className="bg-[#1a3c2a] py-12 md:py-16 text-center px-4">
