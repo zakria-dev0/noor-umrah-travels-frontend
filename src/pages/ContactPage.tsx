@@ -338,9 +338,9 @@ const ContactHero: React.FC = () => {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 bg-noor-gold text-noor-green px-4 py-2 rounded-full font-bold text-sm shadow-lg animate-bounce">
+              {/* <div className="absolute -top-4 -right-4 bg-noor-gold text-noor-green px-4 py-2 rounded-full font-bold text-sm shadow-lg animate-bounce">
                 🌙 Ramadan 2026 Open!
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

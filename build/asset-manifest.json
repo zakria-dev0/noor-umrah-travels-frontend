@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.43384f09.css",
-    "main.js": "/static/js/main.507cb324.js",
+    "main.css": "/static/css/main.e7d9e4eb.css",
+    "main.js": "/static/js/main.09fd685e.js",
     "static/media/haram-17.jpeg": "/static/media/haram-17.818e670f6f67a8c5a077.jpeg",
     "static/media/ziyarat-2.jpeg": "/static/media/ziyarat-2.ffb8d06214009313f4bd.jpeg",
     "static/media/5-2.jpg": "/static/media/5-2.0be12174330f8317d257.jpg",
@@ -106,11 +106,11 @@
     "static/media/5.svg": "/static/media/5.56f7405e69d47a8b45142950978583d0.svg",
     "static/media/3.svg": "/static/media/3.c5603ea20a027605643d981a0a210bc5.svg",
     "index.html": "/index.html",
-    "main.43384f09.css.map": "/static/css/main.43384f09.css.map",
-    "main.507cb324.js.map": "/static/js/main.507cb324.js.map"
+    "main.e7d9e4eb.css.map": "/static/css/main.e7d9e4eb.css.map",
+    "main.09fd685e.js.map": "/static/js/main.09fd685e.js.map"
   },
   "entrypoints": [
-    "static/css/main.43384f09.css",
-    "static/js/main.507cb324.js"
+    "static/css/main.e7d9e4eb.css",
+    "static/js/main.09fd685e.js"
   ]
 }

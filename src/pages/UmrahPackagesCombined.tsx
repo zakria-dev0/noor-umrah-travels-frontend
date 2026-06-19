@@ -1,4 +1,4 @@
-  // UmrahPackagesCombined.tsx
+// src/pages/UmrahPackagesCombined.tsx
 import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -88,6 +88,7 @@ interface DetailedPackageItem {
 
 interface PackageIntroContent {
   title: string;
+  tagline?: string;
   intro: string;
   benefitsTitle: string;
   benefitsDescription: string;
@@ -114,6 +115,7 @@ interface WhyBookSectionProps {
     title: string;
     description: string;
     benefits: string[];
+    ctaText?: string;
   };
 }
 
@@ -141,7 +143,7 @@ const getKaabaImages = () => ({ img1: makkah1, img2: kaabaClose, img3: madinah1 
 const getHaramImages = () => ({ img1: haramImg1, img2: haramImg2, img3: haramImg3 });
 
 const kaabaViewData: PackageCategory = {
-  name: '5 Star Kaaba View Umrah Packages',
+  name: '5 Star Umrah Packages with Kaaba View',
   subtitle: 'Haram Umrah Travels',
   packages: [
     {
@@ -163,7 +165,7 @@ const kaabaViewData: PackageCategory = {
 };
 
 const haramViewData: PackageCategory = {
-  name: '5 Star Haram View Umrah Packages',
+  name: 'Exclusive 5 Star Haram View Umrah Packages',
   subtitle: 'Haram Umrah Travels',
   packages: [
     {
@@ -947,86 +949,133 @@ const seoData = {
 }
   },
 
-//   "5star": {
-//     introSection: {
-//       title: "Affordable 5 Star Umrah Package USA for Just $890",
+  "5star-haram": {
+    introSection: {
+      title: "Luxury 5 Star Haram View Packages",
 
-//       intro:
-//         "Your Dream Cheap 5 Star Umrah Package Awaits. Experience the perfect blend of comfort and affordability with our Budget Luxury Umrah Package. Enjoy 5-star hotels, Haram views, and seamless services without breaking the bank.",
+      tagline: "Pray Closer, Stay Luxuriously, Experience Umrah Beautifully",
 
-//       benefitsTitle:
-//         "5 Star Umrah Package Under $1000 – Luxury Within Your Budget",
+      intro:
+        "Combine spiritual fulfillment and world-class luxury while staying near the Holy Haram for an unforgettable Umrah journey.",
 
-//       benefitsDescription:
-//         "Experience a spiritual journey without compromise on comfort with our Affordable 5 Star Umrah Package USA. Designed for travelers seeking a perfect balance of luxury and value.",
+      benefitsTitle:
+        "Perform Umrah with Comfort and Peace",
 
-//       highlights: [
-//         "Stay in 5-star hotels near the Haram with breathtaking views.",
-//         "Enjoy premium facilities and opulent comforts.",
-//         "Hassle-free visa processing with all documentation.",
-//         "Delicious meals included.",
-//         "Convenient transport and airport transfers.",
-//         "Guided spiritual tours and expert assistance."
-//       ]
-//     },
+      benefitsDescription:
+        "Our 5 Star Haram View Packages are designed for pilgrims who want both spiritual fulfillment and modern comfort. Staying in a Haram-view hotel allows you to enjoy easy access to prayers, reduced travel time, and breathtaking views of the sacred surroundings. These packages are ideal for families, couples, and senior pilgrims seeking convenience throughout their Umrah journey.",
 
-//     whyBookSection: {
-//       title:
-//         "Budget Luxury Umrah Package – Comfort and Convenience Combined",
+      highlights: [
+        "5-star accommodation with Haram views",
+        "Comfortable and spacious rooms",
+        "Easy access to Masjid al-Haram",
+        "Professional travel assistance",
+        "Affordable luxury for every pilgrim"
+      ]
+    },
 
-//       description:
-//         "Our 5 Star Umrah Package Under $1000 is designed to make your pilgrimage smooth, enjoyable, and spiritually rewarding.",
+    whyBookSection: {
+      title: "Why Choose Our 5 Star Haram View Packages?",
 
-//       benefits: [
-//         "Premium hotel stays with elegant rooms and modern facilities.",
-//         "Reliable transportation between Makkah and Madinah.",
-//         "Complimentary Umrah essentials.",
-//         "Flexible itinerary options.",
-//         "Guided historical and religious tours."
-//       ]
-//     },
-//     closingSection: {
-//   title: "Cheap 5 Star Umrah Package – Your Dream Pilgrimage Made Easy",
+      description:
+        "At Haram Umrah Travels, we focus on creating a smooth and spiritually rewarding journey for pilgrims from the USA. Our team carefully selects premium hotels that offer excellent service, cleanliness, and close proximity to the Haram. We also provide support throughout your trip to ensure a hassle-free experience from departure to return.",
 
-//   description:
-//     "Our 5 Star Umrah Package Under $1000 makes premium pilgrimage experiences accessible for all. Whether it’s your first Umrah or a repeated spiritual journey, this package ensures comfort, convenience, and a stress-free experience.",
+      benefits: [
+        "Premium hotel options",
+        "Convenient Haram access",
+        "Comfortable transportation arrangements",
+        "Family-friendly accommodations",
+        "Reliable customer support"
+      ],
 
-//   buttonText: "Book Now",
+      ctaText: "Contact our Umrah specialists now!"
+    },
 
-//   benefits: [
-//     "Affordable 5-star accommodations for ultimate comfort.",
-//     "Steps away from Masjid al-Haram and Masjid al-Nabawi.",
-//     "Round-trip flights from major US cities included.",
-//     "Expert guides for religious and cultural insights.",
-//     "Dedicated support throughout your pilgrimage.",
-//     "Flexible schedules to match your preferences."
-//   ],
+    closingSection: {
+      title: "Experience Luxury, Convenience, and Spiritual Connection",
 
-//   includes: [
-//     {
-//       title: "Ground Transportation",
-//       value: "Jeddah ↔ Makkah ↔ Madinah"
-//     },
-//     {
-//       title: "Saudi Umrah e-Visa",
-//       value: "Online visa processing"
-//     },
-//     {
-//       title: "Meet & Greet Service",
-//       value: "Airport & hotel assistance"
-//     },
-//     {
-//       title: "24-Hour Support",
-//       value: "Always available for you"
-//     }
-//   ],
+      description:
+        "Performing Umrah becomes more meaningful when you can focus on worship instead of travel logistics. Our Haram View packages provide the ideal balance of comfort and devotion, allowing you to spend more time in prayer and reflection. Whether you are traveling during Ramadan or planning a regular Umrah trip, our packages offer exceptional value and convenience.",
 
-//   bottomTitle: "Luxury, Comfort & Spiritual Peace",
+      buttonText: "Reserve Now",
 
-//   bottomDescription:
-//     "Everything needed for a seamless premium Umrah experience is already included."
-// }
-//   }
+      benefits: [
+        "Haram-view hotel stays",
+        "Comfortable room options",
+        "Assistance with Umrah arrangements",
+        "Guidance for first-time pilgrims",
+        "Competitive pricing"
+      ],
+
+      bottomTitle: "Reserve Your Luxury Haram View Package Today",
+
+      bottomDescription:
+        "Reserve your luxury Haram View package today and experience Umrah with comfort, ease, and spiritual tranquility."
+    }
+  },
+
+  "5star-kaaba": {
+    introSection: {
+      title: "5 Star Kaaba View Packages",
+
+      tagline: "A Sacred Journey Enhanced by Exclusive Kaaba Views",
+
+      intro:
+        "Immerse yourself in worship while enjoying luxury accommodations with stunning views of Islam's holiest sanctuary.",
+
+      benefitsTitle:
+        "Luxury 5 Star Kaaba View Umrah Experience",
+
+      benefitsDescription:
+        "Perform your Umrah while enjoying the comfort and convenience of staying in premium hotels overlooking the Holy Kaaba. Our 5 Star Kaaba View Packages are designed for pilgrims who seek a spiritually enriching journey combined with exceptional hospitality. Wake up to stunning Haram views, easy access to prayers, and world-class amenities that make every moment of your pilgrimage memorable.",
+
+      highlights: [
+        "Direct Kaaba or Haram view rooms",
+        "Walking distance to Masjid Al Haram",
+        "Luxury 5-star accommodations",
+        "Comfortable and family-friendly environment",
+        "Personalized customer support"
+      ]
+    },
+
+    whyBookSection: {
+      title: "Why Choose Haram Umrah Travels?",
+
+      description:
+        "At Haram Umrah Travels, we understand that every pilgrim deserves a comfortable and stress-free Umrah experience. Our carefully selected Kaaba view hotels provide unmatched convenience, allowing you to spend more time in worship and less time traveling. We work with trusted hospitality partners to ensure exceptional service throughout your journey. Whether traveling alone, with family, or in a group, our packages are tailored to meet your spiritual and travel needs.",
+
+      benefits: [
+        "Competitive package pricing",
+        "Trusted Umrah travel specialists",
+        "Flexible travel dates",
+        "Secure and hassle-free booking process",
+        "Dedicated customer assistance before and during travel"
+      ],
+
+      ctaText: "Contact Us right now!"
+    },
+
+    closingSection: {
+      title: "Premium Comfort Near the Holy Kaaba",
+
+      description:
+        "A Kaaba view room offers more than luxury, it provides a unique spiritual connection throughout your stay in Makkah. Imagine witnessing the beauty of the Holy Kaaba from your hotel room while enjoying premium facilities and outstanding service. Our packages are ideal for pilgrims who value comfort, accessibility, and unforgettable memories during their sacred journey. Every detail is planned to help you focus on your worship and devotion.",
+
+      buttonText: "Book Now",
+
+      benefits: [
+        "Spectacular Kaaba-facing rooms",
+        "Elegant hotel facilities",
+        "High-quality dining options",
+        "Easy access for elderly pilgrims",
+        "Comfortable transportation arrangements"
+      ],
+
+      bottomTitle: "Secure Your Luxury Umrah Package Today",
+
+      bottomDescription:
+        "Secure Your Luxury Umrah Package Today and Enjoy an Unforgettable Pilgrimage Experience."
+    }
+  }
 };
 
 
@@ -1149,49 +1198,73 @@ const faqData= {
     ]
   },
 
-  // "5star": {
-  //   title: "Frequently Asked Questions",
-  //   subtitle:
-  //     "Learn more about our luxury 5 Star Haram View and Kaaba View Umrah Packages.",
+  "5star-haram": {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Haram View Umrah Packages.",
 
-  //   faqs: [
-  //     {
-  //       question: "What is included in the Budget Luxury Umrah Package?",
-  //       answer:
-  //         "Our package includes 5-star hotel accommodations, guided tours, airport transfers, transportation between Makkah and Madinah, meals, visa assistance, and personalized support throughout your pilgrimage."
-  //     },
-  //     {
-  //       question: "How close are the hotels to the Haram in this package?",
-  //       answer:
-  //         "The hotels are located just steps away from Masjid al-Haram, allowing easy access for prayers and spiritual activities without long walks."
-  //     },
-  //     {
-  //       question: "Can families and elderly travelers join this package?",
-  //       answer:
-  //         "Yes, our Budget Luxury Umrah Package is designed for all travelers, including families and seniors, with comfortable accommodations, easy access to holy sites, and personalized support for a safe and convenient journey."
-  //     },
-  //     {
-  //       question: "Can I customize my itinerary?",
-  //       answer:
-  //         "Yes. Our Budget Luxury Umrah Package offers flexibility to adjust schedules for prayers, sightseeing, and personal spiritual activities."
-  //     },
-  //     {
-  //       question: "Is visa assistance provided?",
-  //       answer:
-  //         "Absolutely. We handle all visa requirements and documentation to ensure a smooth and hassle-free travel experience."
-  //     },
-  //     {
-  //       question: "Are meals included in this package?",
-  //       answer:
-  //         "Yes, you will enjoy a variety of delicious meals during your stay, designed for comfort and convenience."
-  //     },
-  //     {
-  //       question: "What kind of support is available during the pilgrimage?",
-  //       answer:
-  //         "Our dedicated team provides 24/7 assistance for transportation, hotel services, guidance, and any emergencies, ensuring a stress-free spiritual journey."
-  //     }
-  //   ]
-  // }
+    faqs: [
+      {
+        question: "What is included in the 5 Star Haram View Package?",
+        answer:
+          "The package includes 5-star accommodation with Haram views and essential Umrah travel arrangements."
+      },
+      {
+        question: "Are these packages suitable for families?",
+        answer:
+          "Yes, our packages are designed for families, couples, and individual pilgrims."
+      },
+      {
+        question: "How close are the hotels to the Haram?",
+        answer:
+          "The hotels are located within walking distance or very close to Masjid al-Haram."
+      },
+      {
+        question: "Can I choose my travel dates?",
+        answer:
+          "Yes, we offer flexible travel dates based on availability."
+      },
+      {
+        question: "How do I book a package?",
+        answer:
+          "Simply contact Haram Umrah Travels through our website or customer support team to reserve your package."
+      }
+    ]
+  },
+
+  "5star-kaaba": {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Kaaba View Umrah Packages.",
+
+    faqs: [
+      {
+        question: "What is included in a 5 Star Kaaba View Package?",
+        answer:
+          "The package typically includes luxury accommodation with Kaaba views and essential Umrah travel arrangements."
+      },
+      {
+        question: "Are Kaaba view rooms guaranteed?",
+        answer:
+          "Yes, rooms are selected based on package availability and confirmed during booking."
+      },
+      {
+        question: "Can families book these packages?",
+        answer:
+          "Absolutely. Family-friendly room options are available for most packages."
+      },
+      {
+        question: "How far are the hotels from Masjid Al Haram?",
+        answer:
+          "The hotels are located within walking distance of the Haram."
+      },
+      {
+        question: "How early should I book my Umrah package?",
+        answer:
+          "Booking several weeks or months in advance helps secure the best rates and room availability."
+      }
+    ]
+  }
 };
 
 const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
@@ -1208,9 +1281,15 @@ const PackageIntroSection = ({ content }: PackageIntroSectionProps) => {
               Overview
             </span>
 
-            <h2 className="text-4xl font-extrabold text-noor-green leading-tight mb-5">
+            <h2 className="text-4xl font-extrabold text-noor-green leading-tight mb-3">
               {content.title}
             </h2>
+
+            {content.tagline && (
+              <p className="text-noor-gold font-semibold text-lg italic mb-4">
+                {content.tagline}
+              </p>
+            )}
 
             <p className="text-gray-600 leading-8 text-lg">
               {content.intro}
@@ -1333,7 +1412,7 @@ const WhyBookSection = ({ content }: WhyBookSectionProps) => {
 
             {/* CTA hint */}
             <div className="mt-8 pt-5 semi-bold border-t border-white/10 text-lg text-white">
-              Book Now!
+              {content.ctaText || "Book Now!"}
             </div>
           </div>
 
@@ -1554,15 +1633,9 @@ const UmrahPackagesCombined: React.FC = () => {
 
   // const faqContent = faqData[tier];
 
-  const pageContent =
-  tier === '5star'
-    ? null
-    : seoData[tier as '3star' | '4star'];
-
-const faqContent =
-  tier === '5star'
-    ? null
-    : faqData[tier as '3star' | '4star'];
+  const contentKey = tier === '5star' ? `5star-${view}` : tier;
+  const pageContent = (seoData as any)[contentKey] ?? null;
+  const faqContent = (faqData as any)[contentKey] ?? null;
 
   const currentLabel =
     tier === '5star'
@@ -1571,7 +1644,7 @@ const faqContent =
       ? '4 Star Packages'
       : '3 Star Packages';
 
-  const combinedMeta: Partial<Record<StarType, { title: string; description: string }>> = {
+  const combinedMeta: Record<string, { title: string; description: string }> = {
     '4star': {
       title: '4 Star Umrah Packages from USA | Affordable Umrah Deals',
       description: 'Book 4 Star Umrah Packages from USA with premium comfort. Explore Umrah Package USA featuring Affordable Umrah Packages USA and 4 Star Hotels in Makkah for Umrah.',
@@ -1580,9 +1653,17 @@ const faqContent =
       title: '3 Star Umrah Packages from USA | Cheap & Budget Deals',
       description: 'Book 3 Star Umrah Packages from USA with affordable rates. Explore Cheap Umrah Packages USA, Budget Umrah Package from USA, and Economy Umrah Packages USA.',
     },
+    '5star-haram': {
+      title: '5 Star Haram View Umrah Packages | Haram Umrah Travels',
+      description: 'Experience premium Umrah with 5-star Haram-view hotels, exceptional service, and affordable packages designed for pilgrims from the USA.',
+    },
+    '5star-kaaba': {
+      title: '5 Star Kaaba View Packages | Luxury Umrah Travel Deals',
+      description: 'Book luxury 5 Star Kaaba View Packages with premium hotels near Haram. Enjoy comfort, convenience, and breathtaking Kaaba views.',
+    },
   };
 
-  const pageMeta = combinedMeta[tier];
+  const pageMeta = combinedMeta[contentKey];
 
   return (
     <div className="min-h-screen bg-white">
@@ -1599,7 +1680,6 @@ const faqContent =
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{currentLabel}</h1>
           <div className="w-16 h-0.5 bg-noor-gold/40 mx-auto mt-4" />
         </div>
-
       </div>
 
 {pageContent && (
