@@ -143,7 +143,7 @@ const getKaabaImages = () => ({ img1: makkah1, img2: kaabaClose, img3: madinah1 
 const getHaramImages = () => ({ img1: haramImg1, img2: haramImg2, img3: haramImg3 });
 
 const kaabaViewData: PackageCategory = {
-  name: '5 Star Kaaba View Umrah Packages',
+  name: '5 Star Umrah Packages with Kaaba View',
   subtitle: 'Haram Umrah Travels',
   packages: [
     {
@@ -1011,6 +1011,70 @@ const seoData = {
       bottomDescription:
         "Reserve your luxury Haram View package today and experience Umrah with comfort, ease, and spiritual tranquility."
     }
+  },
+
+  "5star-kaaba": {
+    introSection: {
+      title: "5 Star Kaaba View Packages",
+
+      tagline: "A Sacred Journey Enhanced by Exclusive Kaaba Views",
+
+      intro:
+        "Immerse yourself in worship while enjoying luxury accommodations with stunning views of Islam's holiest sanctuary.",
+
+      benefitsTitle:
+        "Luxury 5 Star Kaaba View Umrah Experience",
+
+      benefitsDescription:
+        "Perform your Umrah while enjoying the comfort and convenience of staying in premium hotels overlooking the Holy Kaaba. Our 5 Star Kaaba View Packages are designed for pilgrims who seek a spiritually enriching journey combined with exceptional hospitality. Wake up to stunning Haram views, easy access to prayers, and world-class amenities that make every moment of your pilgrimage memorable.",
+
+      highlights: [
+        "Direct Kaaba or Haram view rooms",
+        "Walking distance to Masjid Al Haram",
+        "Luxury 5-star accommodations",
+        "Comfortable and family-friendly environment",
+        "Personalized customer support"
+      ]
+    },
+
+    whyBookSection: {
+      title: "Why Choose Haram Umrah Travels?",
+
+      description:
+        "At Haram Umrah Travels, we understand that every pilgrim deserves a comfortable and stress-free Umrah experience. Our carefully selected Kaaba view hotels provide unmatched convenience, allowing you to spend more time in worship and less time traveling. We work with trusted hospitality partners to ensure exceptional service throughout your journey. Whether traveling alone, with family, or in a group, our packages are tailored to meet your spiritual and travel needs.",
+
+      benefits: [
+        "Competitive package pricing",
+        "Trusted Umrah travel specialists",
+        "Flexible travel dates",
+        "Secure and hassle-free booking process",
+        "Dedicated customer assistance before and during travel"
+      ],
+
+      ctaText: "Contact Us right now!"
+    },
+
+    closingSection: {
+      title: "Premium Comfort Near the Holy Kaaba",
+
+      description:
+        "A Kaaba view room offers more than luxury, it provides a unique spiritual connection throughout your stay in Makkah. Imagine witnessing the beauty of the Holy Kaaba from your hotel room while enjoying premium facilities and outstanding service. Our packages are ideal for pilgrims who value comfort, accessibility, and unforgettable memories during their sacred journey. Every detail is planned to help you focus on your worship and devotion.",
+
+      buttonText: "Book Now",
+
+      benefits: [
+        "Spectacular Kaaba-facing rooms",
+        "Elegant hotel facilities",
+        "High-quality dining options",
+        "Easy access for elderly pilgrims",
+        "Comfortable transportation arrangements"
+      ],
+
+      bottomTitle: "Secure Your Luxury Umrah Package Today",
+
+      bottomDescription:
+        "Secure Your Luxury Umrah Package Today and Enjoy an Unforgettable Pilgrimage Experience."
+    }
   }
 };
 
@@ -1164,6 +1228,40 @@ const faqData= {
         question: "How do I book a package?",
         answer:
           "Simply contact Haram Umrah Travels through our website or customer support team to reserve your package."
+      }
+    ]
+  },
+
+  "5star-kaaba": {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Find answers about our 5 Star Kaaba View Umrah Packages.",
+
+    faqs: [
+      {
+        question: "What is included in a 5 Star Kaaba View Package?",
+        answer:
+          "The package typically includes luxury accommodation with Kaaba views and essential Umrah travel arrangements."
+      },
+      {
+        question: "Are Kaaba view rooms guaranteed?",
+        answer:
+          "Yes, rooms are selected based on package availability and confirmed during booking."
+      },
+      {
+        question: "Can families book these packages?",
+        answer:
+          "Absolutely. Family-friendly room options are available for most packages."
+      },
+      {
+        question: "How far are the hotels from Masjid Al Haram?",
+        answer:
+          "The hotels are located within walking distance of the Haram."
+      },
+      {
+        question: "How early should I book my Umrah package?",
+        answer:
+          "Booking several weeks or months in advance helps secure the best rates and room availability."
       }
     ]
   }
@@ -1558,6 +1656,10 @@ const UmrahPackagesCombined: React.FC = () => {
     '5star-haram': {
       title: '5 Star Haram View Umrah Packages | Haram Umrah Travels',
       description: 'Experience premium Umrah with 5-star Haram-view hotels, exceptional service, and affordable packages designed for pilgrims from the USA.',
+    },
+    '5star-kaaba': {
+      title: '5 Star Kaaba View Packages | Luxury Umrah Travel Deals',
+      description: 'Book luxury 5 Star Kaaba View Packages with premium hotels near Haram. Enjoy comfort, convenience, and breathtaking Kaaba views.',
     },
   };
 
