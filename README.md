@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+# Noor Umrah Travels — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React + TypeScript frontend for the Noor Umrah Travels platform. Includes a public-facing website and a full admin dashboard.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+| Layer        | Technology                        |
+|--------------|-----------------------------------|
+| Framework    | React 19                          |
+| Language     | TypeScript                        |
+| Styling      | Tailwind CSS 3                    |
+| Routing      | React Router DOM v7               |
+| Notifications| react-hot-toast                   |
+| Charts       | Recharts                          |
+| Payments     | Affirm (JS SDK)                   |
+| Fonts        | Inter (Google Fonts)              |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── admin/
+│   ├── components/
+│   │   ├── Sidebar.tsx
+│   │   ├── AdminLayout.tsx
+│   │   ├── ProtectedRoute.tsx
+│   │   ├── ContactModal.tsx
+│   │   └── InquiryModal.tsx
+│   ├── pages/
+│   │   ├── Dashboard.tsx         # Analytics, charts
+│   │   ├── Login.tsx
+│   │   ├── Profile.tsx           # Profile + Change Password
+│   │   ├── Customers.tsx         # List + create + delete
+│   │   ├── CustomerDetails.tsx   # Edit customer
+│   │   ├── Quotes.tsx            # List + filter + search
+│   │   ├── QuoteDetails.tsx      # Edit quote + email/WhatsApp
+│   │   ├── CreateQuote.tsx
+│   │   ├── Payments.tsx          # List + filter + search
+│   │   ├── Contacts.tsx
+│   │   └── Inquiries.tsx
+│   └── services/
+│       ├── api.ts                # apiFetch helper with auth token
+│       ├── customerService.ts
+│       ├── quoteService.ts
+│       └── paymentService.ts
+├── pages/
+│   ├── PublicQuote.tsx           # Customer-facing quote + Affirm payment
+│   ├── PaymentSuccess.tsx        # Post-payment confirmation
+│   ├── PaymentCancel.tsx
+│   └── ...                       # Public website pages
+├── components/                   # Shared public-site components
+└── App.tsx                       # Route definitions
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone & install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone <your-repo-url>
+cd noor-umrah-travels-frontend
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Create `.env`
 
-### `npm run eject`
+Create a `.env` file in the root of this folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```env
+# Backend API base URL
+REACT_APP_API_URL=http://localhost:5001
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Affirm sandbox public key
+REACT_APP_AFFIRM_PUBLIC_KEY=your_affirm_public_key
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> **Important:** Never commit your `.env` file. Add it to `.gitignore`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3. Run
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+App starts on `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Admin Dashboard
+
+Access the admin panel at `/admin/login`.
+
+| Page             | Route                        | Description                              |
+|------------------|------------------------------|------------------------------------------|
+| Login            | `/admin/login`               | JWT-based admin login                    |
+| Dashboard        | `/admin/dashboard`           | Revenue, quotes & payments analytics     |
+| Customers        | `/admin/customers`           | List, create, delete customers           |
+| Customer Details | `/admin/customers/:id`       | View & edit customer info                |
+| Quotes           | `/admin/Quotes`              | List with status filters, copy link      |
+| Quote Details    | `/admin/quotes/:id`          | View, edit, send email/WhatsApp          |
+| Create Quote     | `/admin/quotes/create`       | Create a new quote for a customer        |
+| Payments         | `/admin/Payments`            | List with revenue summary & filters      |
+| Profile          | `/admin/profile`             | View profile & change password           |
+
+### Authentication
+
+- Admin login returns a JWT stored in `localStorage` as `adminToken`.
+- All admin API calls include `Authorization: Bearer <token>`.
+- `ProtectedRoute` redirects unauthenticated users to `/admin/login`.
+
+---
+
+## Payment Flow (Affirm)
+
+1. Admin creates a quote and sends it to the customer via email or WhatsApp.
+2. Customer opens the public quote link (`/quote/:quoteNumber`).
+3. Customer clicks **Pay with Affirm** — Affirm modal opens.
+4. On success, the frontend calls `/api/payment/affirm/authorize` to record the charge.
+5. Customer is redirected to `/payment/success`.
+6. If the customer opens the same link again, a **"Payment Already Completed"** screen is shown — no duplicate charges possible.
+
+---
+
+## Environment Notes
+
+- **Affirm SDK** is loaded dynamically via a custom `useAffirmScript` hook. Use sandbox keys during development.
+- **API URL** must match the backend port exactly (default `5001`).
+- All admin pages require the backend to be running.
