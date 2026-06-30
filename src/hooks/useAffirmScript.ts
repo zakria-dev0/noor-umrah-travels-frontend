@@ -12,7 +12,7 @@ export default function useAffirmScript(publicKey: string) {
     }
 
     const script = document.createElement("script");
-    script.src = process.env.REACT_APP_AFFIRM_SCRIPT_URL || "https://cdn1-sandbox.affirm.com/js/v2/affirm.js";
+    script.src = process.env.REACT_APP_AFFIRM_SCRIPT_URL || "https://cdn1.affirm.com/js/v2/affirm.js";
     script.async = true;
 
     script.onload = () => {
