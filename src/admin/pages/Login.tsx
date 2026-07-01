@@ -60,7 +60,7 @@ const Login = () => {
         className="bg-white p-8 rounded-lg shadow-md w-[400px]"
       >
         <h1 className="text-2xl font-bold mb-6">
-          Admin Login
+          Haram Admin Login
         </h1>
 
         {error && (

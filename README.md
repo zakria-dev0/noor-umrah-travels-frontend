@@ -1,6 +1,6 @@
-# Noor Umrah Travels — Frontend
+# Haram Umrah Travels — Frontend
 
-React + TypeScript frontend for the Noor Umrah Travels platform. Includes a public-facing website and a full admin dashboard.
+React + TypeScript frontend for the Haram Umrah Travels platform. Includes a public-facing website and a full admin dashboard.
 
 ---
 

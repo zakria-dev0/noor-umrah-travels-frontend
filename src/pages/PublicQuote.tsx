@@ -58,7 +58,7 @@ export default function PublicQuote() {
           user_cancel_url: `${window.location.origin}/payment/cancel`,
           user_confirmation_url_cancelled: `${window.location.origin}/payment/cancel`,
           user_confirmation_url_action: "GET",
-          name: "Noor Umrah Travels",
+          name: "Haram Umrah Travels",
         },
         order_id: quote.quoteNumber,
         currency: "USD",
@@ -209,11 +209,10 @@ export default function PublicQuote() {
             <div className="text-center pt-2">
               <p className="text-xs text-gray-400 leading-relaxed">
                 If you have any questions about your booking, please contact us.<br />
-                Thank you for choosing <span className="font-semibold text-gray-600">Noor Umrah Travels</span>.
+                Thank you for choosing <span className="font-semibold text-gray-600">Haram Umrah Travels</span>.
               </p>
             </div>
           </div>
-
         </div>
       </div>
     );
@@ -229,7 +228,7 @@ export default function PublicQuote() {
 
           {/* Header */}
           <div className="bg-gray-900 px-6 py-6">
-            <h1 className="text-xl font-bold text-white">Noor Umrah Travels</h1>
+            <h1 className="text-xl font-bold text-white">Haram Umrah Travels</h1>
             <p className="text-gray-400 text-sm mt-0.5">Secure Payment Portal</p>
           </div>
 

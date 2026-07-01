@@ -27,7 +27,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
 
       {/* Brand */}
       <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 flex-shrink-0">
-        <h2 className="font-bold text-lg text-gray-900 tracking-tight">Noor Admin</h2>
+        <h2 className="font-bold text-lg text-gray-900 tracking-tight">Haram Umrah Admin</h2>
         {onClose && (
           <button
             onClick={onClose}

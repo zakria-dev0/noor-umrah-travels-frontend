@@ -45,7 +45,7 @@ const AdminLayout = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span className="font-bold text-gray-900">Noor Admin</span>
+          <span className="font-bold text-gray-900">Haram Umrah Admin</span>
         </div>
 
         {/* Page content */}
