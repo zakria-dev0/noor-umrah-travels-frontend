@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -7,7 +8,6 @@ const FIELDS = [
   { name: "firstName",  label: "First Name",    required: true },
   { name: "lastName",   label: "Last Name",     required: true },
   { name: "email",      label: "Email Address", required: true },
-  { name: "phone",      label: "Phone",         required: true },
   { name: "address1",   label: "Address Line 1" },
   { name: "city",       label: "City" },
   { name: "state",      label: "State" },
@@ -28,7 +28,7 @@ export default function CustomerDetails() {
   const load = async () => {
     try {
       const res = await getCustomerById(id!);
-      if (res.success) setForm(res.data);
+      if (res.success) setForm({ ...res.data, phone: (res.data.phone ?? "").replace(/^\+1/, "") });
     } catch {
       toast.error("Failed to load customer.");
     } finally {
@@ -43,7 +43,7 @@ export default function CustomerDetails() {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await updateCustomer(id!, form);
+      const res = await updateCustomer(id!, { ...form, phone: `+1${form.phone ?? ""}` });
       if (res.success) {
         toast.success("Customer updated successfully.");
       } else {
@@ -95,7 +95,38 @@ export default function CustomerDetails() {
 
         <form onSubmit={handleSave} className="p-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {FIELDS.map(({ name, label, required }) => (
+            {FIELDS.slice(0, 2).map(({ name, label, required }) => (
+              <div key={name}>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">
+                  {label} {required && <span className="text-red-500">*</span>}
+                </label>
+                <input
+                  required={required}
+                  value={(form as any)[name] ?? ""}
+                  onChange={set(name)}
+                  placeholder={label}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                />
+              </div>
+            ))}
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">
+                Phone <span className="text-red-500">*</span>
+              </label>
+              <div className="flex items-center border border-gray-200 rounded-lg focus-within:ring-2 focus-within:ring-gray-900">
+                <span className="pl-3 pr-1 text-sm text-gray-900 select-none">+1</span>
+                <input
+                  required
+                  placeholder="2025551234"
+                  value={form.phone ?? ""}
+                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value.replace(/\D/g, "") }))}
+                  className="w-full min-w-0 rounded-r-lg pl-1 pr-3 py-2.5 text-sm focus:outline-none"
+                />
+              </div>
+            </div>
+
+            {FIELDS.slice(2).map(({ name, label, required }) => (
               <div key={name}>
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">
                   {label} {required && <span className="text-red-500">*</span>}

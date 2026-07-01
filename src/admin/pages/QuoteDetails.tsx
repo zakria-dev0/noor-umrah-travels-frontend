@@ -57,6 +57,12 @@ export default function QuoteDetails() {
 
   const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (Number(form.amount) < 100) {
+      toast.error("Amount must be at least 100 (Affirm rejects smaller payments)");
+      return;
+    }
+
     setSaving(true);
     try {
       const res = await updateQuote(id!, {
@@ -176,7 +182,7 @@ export default function QuoteDetails() {
           </div>
 
           {editing ? (
-            <form id="quote-edit-form" onSubmit={handleSave} className="p-5 space-y-4">
+            <form id="quote-edit-form" onSubmit={handleSave} noValidate className="p-5 space-y-4">
               <div>
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Package Name <span className="text-red-500">*</span></label>
                 <input required value={form.packageName} onChange={set("packageName")}
@@ -190,7 +196,7 @@ export default function QuoteDetails() {
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Amount</label>
-                  <input type="number" min="0" required value={form.amount} onChange={set("amount")}
+                  <input type="number" min="100" required value={form.amount} onChange={set("amount")}
                     className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
                 </div>
               </div>
