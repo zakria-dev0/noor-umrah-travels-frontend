@@ -151,12 +151,12 @@ export default function CreateQuote() {
         newErrors.amount =
           "Amount is required";
 
-      if (
-        Number(form.amount) <=
-        0
+      else if (
+        Number(form.amount) <
+        100
       )
         newErrors.amount =
-          "Invalid amount";
+          "Amount must be at least 100 (Affirm rejects smaller payments)";
 
       if (
         Number(
@@ -175,6 +175,18 @@ export default function CreateQuote() {
       setErrors(
         newErrors
       );
+
+      const firstError =
+        Object.values(
+          newErrors
+        )[0] as
+          | string
+          | undefined;
+
+      if (firstError)
+        toast.error(
+          firstError
+        );
 
       return (
         Object.keys(
@@ -272,6 +284,7 @@ return (
 
       <form
         onSubmit={handleSubmit}
+        noValidate
         className="p-6 space-y-6"
       >
 
@@ -402,6 +415,7 @@ return (
             <input
               type="number"
               name="amount"
+              min="100"
               value={form.amount}
               onChange={handleChange}
               className="w-full border rounded-lg p-3"

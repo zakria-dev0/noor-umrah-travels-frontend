@@ -46,7 +46,7 @@ export default function Customers() {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await createCustomer(form);
+      const res = await createCustomer({ ...form, phone: `+1${form.phone}` });
       if (res.success) {
         toast.success("Customer created successfully.");
         setForm(EMPTY_FORM);
@@ -127,7 +127,6 @@ export default function Customers() {
                 { field: "firstName", label: "First Name", required: true },
                 { field: "lastName",  label: "Last Name",  required: true },
                 { field: "email",     label: "Email",      required: true },
-                { field: "phone",     label: "Phone",      required: true },
               ].map(({ field, label, required }) => (
                 <div key={field} className="flex flex-col gap-1">
                   <label className="text-xs font-medium text-gray-600">{label}</label>
@@ -140,6 +139,20 @@ export default function Customers() {
                   />
                 </div>
               ))}
+
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-medium text-gray-600">Phone</label>
+                <div className="flex items-center border border-gray-200 rounded-lg focus-within:ring-2 focus-within:ring-gray-900">
+                  <span className="pl-3 pr-1 text-sm text-gray-900 select-none">+1</span>
+                  <input
+                    required
+                    placeholder="2025551234"
+                    value={form.phone}
+                    onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value.replace(/\D/g, "") }))}
+                    className="w-full min-w-0 rounded-r-lg pl-1 pr-3 py-2 text-sm focus:outline-none"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -152,6 +165,7 @@ export default function Customers() {
                 <div key={field} className="flex flex-col gap-1">
                   <label className="text-xs font-medium text-gray-600">{label}</label>
                   <input
+                    required
                     placeholder={label}
                     value={(form as any)[field]}
                     onChange={set(field)}
@@ -165,6 +179,7 @@ export default function Customers() {
               <div className="flex flex-col gap-1">
                 <label className="text-xs font-medium text-gray-600">Country</label>
                 <input
+                  required
                   placeholder="Country"
                   value={form.country}
                   onChange={set("country")}
