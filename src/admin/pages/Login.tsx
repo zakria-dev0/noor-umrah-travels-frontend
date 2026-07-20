@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { apiFetch } from "../services/api";
 
 const Login = () => {
@@ -55,6 +56,10 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
+      <Helmet>
+        <title>Admin Login | Haram Umrah Travels</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md w-[400px]"

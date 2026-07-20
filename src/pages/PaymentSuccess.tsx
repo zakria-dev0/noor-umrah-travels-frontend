@@ -1,5 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
+const PaymentMeta = () => (
+  <Helmet>
+    <title>Payment Status | Haram Umrah Travels</title>
+    <meta name="robots" content="noindex, follow" />
+  </Helmet>
+);
 
 type Status = "loading" | "success" | "error";
 
@@ -47,6 +55,7 @@ export default function PaymentSuccess() {
   if (status === "loading") {
     return (
       <div className="max-w-4xl mx-auto p-10 text-center">
+        <PaymentMeta />
         <div className="border rounded-lg shadow bg-white p-8">
           <p className="text-gray-600 text-lg">Confirming your payment, please wait...</p>
         </div>
@@ -57,6 +66,7 @@ export default function PaymentSuccess() {
   if (status === "error") {
     return (
       <div className="max-w-4xl mx-auto p-10 text-center">
+        <PaymentMeta />
         <div className="border rounded-lg shadow bg-white p-8">
           <h1 className="text-3xl font-bold text-red-600 mb-4">Payment Error</h1>
           <p className="text-gray-700">{errorMsg}</p>
@@ -68,6 +78,7 @@ export default function PaymentSuccess() {
 
   return (
     <div className="max-w-4xl mx-auto p-10 text-center">
+      <PaymentMeta />
       <div className="border rounded-lg shadow bg-white p-8">
         <h1 className="text-3xl font-bold text-green-700 mb-4">Payment Successful</h1>
         <p>Your payment has been authorised.</p>

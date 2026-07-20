@@ -1,6 +1,7 @@
 // UmrahPackagesPage.tsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRightIcon } from '../components/icons/Icons';
 
 import makkah1 from '../assets/images/packages/5-3_files/im-1.webp';
@@ -164,6 +165,29 @@ const pageTitles: Record<string, string> = {
   'affordable': '5 Star Affordable Umrah Packages',
   'travel': 'Umrah Travel Packages',
   'guide': 'Guide: How To Perform Umrah',
+};
+
+const pageMeta: Record<string, { title: string; description: string }> = {
+  'all-luxury': {
+    title: 'All Umrah Packages | Haram Umrah Travels',
+    description: 'Browse all Haram Umrah Travels packages in one place — luxury, premium, and budget-friendly Umrah options with visa, flights, and hotels included.',
+  },
+  'shuttle-premium': {
+    title: '5 Star Shuttle Premium Umrah Packages | Haram Umrah Travels',
+    description: 'Book Shuttle Premium Umrah Packages with 5-star hotel comfort and convenient shuttle transport between Makkah and Madinah, visa and transportation included.',
+  },
+  'land': {
+    title: '5 Star Land Umrah Packages | Haram Umrah Travels',
+    description: 'Explore our 5 Star Land Umrah Packages featuring premium hotel stays and ground transportation for a comfortable pilgrimage experience.',
+  },
+  'affordable': {
+    title: '5 Star Affordable Umrah Packages | Haram Umrah Travels',
+    description: 'Find Affordable 5 Star Umrah Packages from Haram Umrah Travels — quality hotels and full travel support at budget-friendly prices.',
+  },
+  'travel': {
+    title: 'Umrah Travel Packages | Haram Umrah Travels',
+    description: 'Discover Umrah Travel Packages with 4-star hotels, visa processing, and transportation — designed for a smooth and affordable pilgrimage journey.',
+  },
 };
 
 // ==================== FEATURE ICONS ====================
@@ -442,9 +466,15 @@ const PackagesPage: React.FC = () => {
   // Get data for current package type
   const packageData = allPackageData[packageType] || allPackageData['all-luxury'];
   const pageTitle = pageTitles[packageType] || 'Umrah Packages';
+  const meta = pageMeta[packageType] || pageMeta['all-luxury'];
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Helmet>
+
       {/* Hero Banner */}
       <PackagesHero title={pageTitle} />
 

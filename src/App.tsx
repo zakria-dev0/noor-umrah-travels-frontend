@@ -12,6 +12,7 @@ import GroupUmrah from './pages/GroupUmrah';
 import KaabaViewDetail from './pages/KaabaViewDetail';
 import HaramViewDetail from './pages/HaramViewDetail';
 import UmrahPackagesCombined from './pages/UmrahPackagesCombined';
+import GuidePage from './pages/GuidePage';
 import LegacyNightsRedirect from './components/utils/LegacyNightsRedirect';
 import TermsConditions from './pages/TermsConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -80,13 +81,6 @@ const App: React.FC = () => {
           <Route path="/packages/haram-view" element={<Navigate to="/packages/5-star/haram-view" replace />} />
           <Route path="/packages/haram-view/:nights" element={<LegacyNightsRedirect view="haram-view" />} />
 
-          {/* Umrah Package Routes */}
-          <Route path="/packages/all-luxury" element={<UmrahPackagesPage />} />
-          <Route path="/packages/shuttle-premium" element={<UmrahPackagesPage />} />
-          <Route path="/packages/land" element={<UmrahPackagesPage />} />
-          <Route path="/packages/affordable" element={<UmrahPackagesPage />} />
-          <Route path="/packages/travel" element={<UmrahPackagesPage />} />
-          
           {/* Legal Pages */}
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -94,7 +88,7 @@ const App: React.FC = () => {
           <Route path="/legal-compliance" element={<LegalCompliance />} />
 
           {/* Guide Page Route */}
-          <Route path="/guide" element={<div>Guide Page - Coming Soon</div>} />
+          <Route path="/guide" element={<GuidePage />} />
           
           {/* Optional: Catch-all route for package types */}
           <Route path="/packages/:packageType" element={<UmrahPackagesPage />} />

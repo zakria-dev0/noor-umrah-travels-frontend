@@ -1,9 +1,14 @@
 // RefundPolicy.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const RefundPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Refund Policy | Haram Umrah Travels</title>
+        <meta name="description" content="Review the Refund Policy for Haram Umrah Travels bookings, including cancellation timelines, eligibility, and how refunds are processed." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-noor-green">

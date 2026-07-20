@@ -1,5 +1,6 @@
 // HomePage.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/sections/HeroSection';
 import InquiryForm from '../components/sections/InquiryForm';
 import AboutSection from '../components/sections/AboutSection';
@@ -20,6 +21,10 @@ const SectionDivider = () => (
 const HomePage: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>Premium Umrah Packages from USA | Affordable & Trusted Travel Services</title>
+        <meta name="description" content="Book reliable Hajj and Umrah packages from the USA with Haram Umrah Travels. Explore affordable and luxurious 5-star Umrah packages for a smooth spiritual journey." />
+      </Helmet>
       <HeroSection />
       <InquiryForm />
 

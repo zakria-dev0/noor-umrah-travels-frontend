@@ -1,9 +1,14 @@
 // PrivacyPolicy.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Privacy Policy | Haram Umrah Travels</title>
+        <meta name="description" content="Read the Privacy Policy of Haram Umrah Travels to understand how we collect, use, and protect your personal information when you book an Umrah or Hajj package." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-noor-green">

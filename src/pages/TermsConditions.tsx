@@ -1,9 +1,14 @@
 // TermsConditions.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const TermsConditions: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Terms &amp; Conditions | Haram Umrah Travels</title>
+        <meta name="description" content="Read the Terms and Conditions for booking Umrah and Hajj packages with Haram Umrah Travels, including payment, cancellation, and travel policies." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-noor-green">

@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import useAffirmScript from "../hooks/useAffirmScript";
+
+const QuoteMeta = () => (
+  <Helmet>
+    <title>Your Quote | Haram Umrah Travels</title>
+    <meta name="robots" content="noindex, follow" />
+  </Helmet>
+);
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -152,6 +160,7 @@ export default function PublicQuote() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <QuoteMeta />
         <div className="text-center">
           <div className="w-10 h-10 border-4 border-gray-900 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
           <p className="text-gray-500 text-sm">Loading your quote...</p>
@@ -163,6 +172,7 @@ export default function PublicQuote() {
   if (!quote) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <QuoteMeta />
         <div className="text-center">
           <p className="text-2xl font-bold text-gray-800">Quote Not Found</p>
           <p className="text-gray-500 mt-2">This quote link is invalid or has expired.</p>
@@ -175,6 +185,7 @@ export default function PublicQuote() {
   if (PAID_STATUSES.includes(quote.status)) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <QuoteMeta />
         <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
 
           {/* Green banner */}
@@ -223,6 +234,7 @@ export default function PublicQuote() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
+      <QuoteMeta />
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
 

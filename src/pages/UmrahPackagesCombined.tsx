@@ -1687,7 +1687,13 @@ const UmrahPackagesCombined: React.FC = () => {
     },
   };
 
-  const pageMeta = combinedMeta[contentKey];
+  const pageMeta =
+    pathname === '/packages'
+      ? {
+          title: 'Umrah Packages | Haram Umrah Travels',
+          description: 'Browse all Umrah package tiers from Haram Umrah Travels — 5 Star Haram & Kaaba View, 4 Star, and 3 Star options with visa, flights, and hotels included.',
+        }
+      : combinedMeta[contentKey];
 
   return (
     <div className="min-h-screen bg-white">

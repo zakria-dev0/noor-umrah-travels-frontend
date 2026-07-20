@@ -1,5 +1,6 @@
 // GroupUmrah.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRightIcon } from '../components/icons/Icons';
 
 import makkah1 from '../assets/images/packages/5-3_files/im-1.webp';
@@ -234,6 +235,11 @@ const PackageCategorySection = ({ category }: { category: PackageCategory }) => 
 const GroupUmrah: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>5 Star Group Umrah Packages | Haram Umrah Travels</title>
+        <meta name="description" content="Book 5 Star Group Umrah Packages with special group discounts, premium hotels, visa, and transportation included — perfect for families and travel groups." />
+      </Helmet>
+
       {/* Hero Banner */}
       <PackagesHero />
 

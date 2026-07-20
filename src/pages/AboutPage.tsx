@@ -1,5 +1,6 @@
 // about page
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CheckShieldIcon, StarIconSolid, PlaneIcon, ArrowRightIcon, MailIcon } from '../components/icons/Icons';
 
 import madinahMosque from '../assets/images/about/5-2.jpg';
@@ -691,6 +692,10 @@ const ServingPilgrims: React.FC = () => {
 const AboutPage: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>About Us | Haram Umrah Travels</title>
+        <meta name="description" content="Learn about Haram Umrah Travels, a trusted US-based Umrah and Hajj operator registered under Seller of Travel license #ST46359, dedicated to smooth, spiritually enriching pilgrimages." />
+      </Helmet>
       <AboutHero />
       <SpiritualJourney />
       <UmrahSpecialists />

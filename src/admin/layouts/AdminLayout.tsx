@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Sidebar from "../components/Sidebar";
 
 const SIDEBAR_WIDTH = "w-52"; // 208px — compact but readable
@@ -10,6 +11,10 @@ const AdminLayout = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <Helmet>
+        <title>Admin | Haram Umrah Travels</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
 
       {/* Mobile overlay */}
       {sidebarOpen && (

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function PaymentCancel() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-6">
+      <Helmet>
+        <title>Payment Cancelled | Haram Umrah Travels</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="bg-white rounded-xl shadow-lg p-10 max-w-lg w-full text-center">
         <div className="text-6xl mb-6">❌</div>
 

@@ -1,6 +1,7 @@
  // contactPage.tsx
 import React, { useState, useEffect } from 'react';
-import { 
+import { Helmet } from 'react-helmet-async';
+import {
   PhoneIcon, 
   MailIcon, 
   WhatsAppIcon, 
@@ -1256,6 +1257,10 @@ const FAQSection: React.FC = () => {
 // ==================== MAIN CONTACT PAGE ====================
 const ContactPage: React.FC = () => (
   <>
+    <Helmet>
+      <title>Contact Us | Haram Umrah Travels</title>
+      <meta name="description" content="Get in touch with Haram Umrah Travels to book your Umrah package, request a custom quote, or ask questions — call, WhatsApp, or send us an inquiry today." />
+    </Helmet>
     <ContactHero />
     <ContactSection />
     <FAQSection />

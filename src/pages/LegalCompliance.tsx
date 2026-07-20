@@ -1,9 +1,14 @@
 // LegalCompliance.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const LegalCompliance: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Legal Compliance | Haram Umrah Travels</title>
+        <meta name="description" content="Haram Umrah Travels is a registered Seller of Travel (License #ST46359). Learn about our legal compliance, registrations, and commitment to trusted travel practices." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-noor-green">
