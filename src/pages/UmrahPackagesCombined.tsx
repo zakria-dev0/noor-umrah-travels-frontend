@@ -1,6 +1,6 @@
 // src/pages/UmrahPackagesCombined.tsx
 import React, { useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRightIcon } from '../components/icons/Icons';
 
@@ -604,7 +604,7 @@ const UmrahPackageCard = ({ pkg }: { pkg: PackageItem }) => {
   const navigate = useNavigate();
 
   const handleMoreDetails = () => {
-    navigate(`/packages/${pkg.type === 'kaaba' ? 'kaaba-view' : 'haram-view'}/${pkg.nights}`);
+    navigate(`/packages/5-star/${pkg.type === 'kaaba' ? 'kaaba-view' : 'haram-view'}/${pkg.nights}-nights`);
   };
 
   return (
@@ -1624,9 +1624,33 @@ const FAQSection = ({ content }: { content: FAQContent }) => {
 // MAIN PAGE
 // ══════════════════════════════════════════════════════════════
 const UmrahPackagesCombined: React.FC = () => {
+  const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
-  const tier = (searchParams.get('tier') as StarType) || '5star';
-  const view = (searchParams.get('view') as FiveStarView) || 'haram';
+
+  // Legacy links: /packages?tier=5star&view=haram, ?tier=4star, ?tier=3star
+  const legacyTier = searchParams.get('tier');
+  if (pathname === '/packages' && legacyTier) {
+    const legacyView = searchParams.get('view') === 'kaaba' ? 'kaaba-view' : 'haram-view';
+    const redirectPath =
+      legacyTier === '5star'
+        ? `/packages/5-star/${legacyView}`
+        : legacyTier === '4star'
+        ? '/packages/4-star'
+        : legacyTier === '3star'
+        ? '/packages/3-star'
+        : '/packages';
+    return <Navigate to={redirectPath} replace />;
+  }
+
+  let tier: StarType = '5star';
+  let view: FiveStarView = 'haram';
+  if (pathname === '/packages/4-star') {
+    tier = '4star';
+  } else if (pathname === '/packages/3-star') {
+    tier = '3star';
+  } else if (pathname === '/packages/5-star/kaaba-view') {
+    view = 'kaaba';
+  }
 
   // const content = seoData[tier];
   // const pageContent = seoData[tier];

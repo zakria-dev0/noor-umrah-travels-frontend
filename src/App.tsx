@@ -9,11 +9,10 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import UmrahPackagesPage from './pages/UmrahPackagesPage';
 import GroupUmrah from './pages/GroupUmrah';
-import FiveStar from './pages/FiveStar';
-import HaramView from './pages/HaramView';
 import KaabaViewDetail from './pages/KaabaViewDetail';
 import HaramViewDetail from './pages/HaramViewDetail';
 import UmrahPackagesCombined from './pages/UmrahPackagesCombined';
+import LegacyNightsRedirect from './components/utils/LegacyNightsRedirect';
 import TermsConditions from './pages/TermsConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
@@ -60,17 +59,27 @@ const App: React.FC = () => {
           {/* Group Umrah specific route */}
           <Route path="/group-umrah" element={<GroupUmrah />} />
 
-          {/* Combined Umrah Packages Route */}
+          {/* Combined Umrah Packages Route (also handles legacy ?tier= redirects) */}
           <Route path="/packages" element={<UmrahPackagesCombined />} />
 
-          {/* Kaaba View Routes */}
-          <Route path="/packages/kaaba-view" element={<FiveStar />} />
-          <Route path="/packages/kaaba-view/:nights" element={<KaabaViewDetail />} />
-          
-          {/* Haram View Routes - ADDED DETAIL ROUTE */}
-          <Route path="/packages/haram-view" element={<HaramView />} />
-          <Route path="/packages/haram-view/:nights" element={<HaramViewDetail />} /> {/* ADD THIS LINE */}
-          
+          {/* Tier Routes */}
+          <Route path="/packages/4-star" element={<UmrahPackagesCombined />} />
+          <Route path="/packages/3-star" element={<UmrahPackagesCombined />} />
+
+          {/* 5-Star: Kaaba View Routes */}
+          <Route path="/packages/5-star/kaaba-view" element={<UmrahPackagesCombined />} />
+          <Route path="/packages/5-star/kaaba-view/:nights" element={<KaabaViewDetail />} />
+
+          {/* 5-Star: Haram View Routes */}
+          <Route path="/packages/5-star/haram-view" element={<UmrahPackagesCombined />} />
+          <Route path="/packages/5-star/haram-view/:nights" element={<HaramViewDetail />} />
+
+          {/* Legacy URL redirects -> new URLs */}
+          <Route path="/packages/kaaba-view" element={<Navigate to="/packages/5-star/kaaba-view" replace />} />
+          <Route path="/packages/kaaba-view/:nights" element={<LegacyNightsRedirect view="kaaba-view" />} />
+          <Route path="/packages/haram-view" element={<Navigate to="/packages/5-star/haram-view" replace />} />
+          <Route path="/packages/haram-view/:nights" element={<LegacyNightsRedirect view="haram-view" />} />
+
           {/* Umrah Package Routes */}
           <Route path="/packages/all-luxury" element={<UmrahPackagesPage />} />
           <Route path="/packages/shuttle-premium" element={<UmrahPackagesPage />} />

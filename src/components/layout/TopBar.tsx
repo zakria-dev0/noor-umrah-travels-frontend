@@ -68,7 +68,7 @@ const TopBar: React.FC = () => {
             <span className="w-6 h-6 rounded-full bg-noor-gold/10 flex items-center justify-center group-hover:bg-noor-gold/20 transition-colors">
               <PhoneIcon className="w-3 h-3 text-noor-gold" />
             </span>
-            <span>+1 1 786 9104615</span>
+            <span>+1 786 9104615</span>
           </a>
 
           {/* Divider */}

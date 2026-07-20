@@ -124,7 +124,7 @@ const LegalCompliance: React.FC = () => {
 
             {/* Last Updated */}
             <div className="text-center text-gray-500 text-sm mt-10">
-              <p>Last Updated: January 2025</p>
+              <p>Last Updated: January 2026</p>
             </div>
           </div>
         </div>

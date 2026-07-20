@@ -1,6 +1,6 @@
  // KaabaViewDetail.tsx
 import React, { useState } from 'react';
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 // ── Shared images ─────────────────────────────────────────────
@@ -93,7 +93,7 @@ const makkahHotels: Hotel[] = [
     distance: '50m from Masjid al-Haram',
     image: pullmanMakkahImg,
     description:
-      'Part of the iconic Abraj Al-Bait Towers, the Zamzam Pullman Makkah stands just 50 metres from Masjid al-Haram. With 1,595 elegantly furnished rooms and suites offering sweeping Kaaba views, guests enjoy world-class dining, a full-service spa, fitness centre, and 24-hour concierge — all steps from the Grand Mosque.',
+      'Part of the iconic Abraj Al-Bait Towers, the Zamzam Pullman Makkah stands just 50 metres from Masjid al-Haram. With 1,595 elegantly furnished rooms and suites offering sweeping Kaaba views, guests enjoy world-class dining, a full-service spa, fitness centre, and 24-hour concierge all steps from the Grand Mosque.',
     highlights: [
       '50 m from Masjid al-Haram',
       'Direct Kaaba view rooms available',
@@ -109,7 +109,7 @@ const makkahHotels: Hotel[] = [
     distance: '100m from Masjid al-Haram',
     image: fairmontImg,
     description:
-      'Towering 76 storeys above Makkah inside the world-famous Clock Tower, the Fairmont is only 100 metres from Masjid al-Haram. Its 858 rooms and suites — many with direct Kaaba or Holy Mosque views — offer a rooftop pool, award-winning restaurants, a dedicated Zamzam lounge, and round-the-clock guest services.',
+      'Towering 76 storeys above Makkah inside the world-famous Clock Tower, the Fairmont is only 100 metres from Masjid al-Haram. Its 858 rooms and suites, many with direct Kaaba or Holy Mosque views offer a rooftop pool, award-winning restaurants, a dedicated Zamzam lounge, and round-the-clock guest services.',
     highlights: [
       '100 m from Masjid al-Haram',
       'Kaaba & Haram view rooms',
@@ -157,7 +157,7 @@ const makkahHotels: Hotel[] = [
     distance: 'Steps from Masjid al-Haram',
     image: rafflesMakkahImg,
     description:
-      'Occupying the upper floors of the Clock Tower, the Raffles Makkah Palace represents the pinnacle of luxury in the holy city. Its 213 palatial suites — each with a private butler — offer unobstructed Kaaba views and interiors inspired by traditional Islamic design, alongside a 2,000 m² spa and a private majlis lounge.',
+      'Occupying the upper floors of the Clock Tower, the Raffles Makkah Palace represents the pinnacle of luxury in the holy city. Its 213 palatial suites each with a private butler offer unobstructed Kaaba views and interiors inspired by traditional Islamic design, alongside a 2,000 m² spa and a private majlis lounge.',
     highlights: [
       'Steps from Masjid al-Haram',
       'All-suite hotel with private butlers',
@@ -994,8 +994,8 @@ const KaabaViewDetail: React.FC = () => {
 
   
   const { nights } = useParams<{ nights: string }>();
-  
-  const packageNights = Number(nights);
+
+  const packageNights = parseInt(nights || '', 10);
   
   const pageContent =
     kaabaViewContent[packageNights as 5 | 7 | 10] ||

@@ -54,11 +54,11 @@ const Navigation: React.FC = () => {
   const handleNavigate = (star: StarType, view?: FiveStarView) => {
     let path = '/packages';
     if (star === '5star') {
-      path = `/packages?tier=5star&view=${view || 'haram'}`;
+      path = `/packages/5-star/${(view || 'haram') === 'kaaba' ? 'kaaba-view' : 'haram-view'}`;
     } else if (star === '4star') {
-      path = '/packages?tier=4star';
+      path = '/packages/4-star';
     } else {
-      path = '/packages?tier=3star';
+      path = '/packages/3-star';
     }
     navigate(path);
     setPackagesOpen(false);
