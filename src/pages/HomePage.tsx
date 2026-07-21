@@ -22,8 +22,8 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Premium Umrah Packages from USA | Affordable & Trusted Travel Services</title>
-        <meta name="description" content="Book reliable Hajj and Umrah packages from the USA with Haram Umrah Travels. Explore affordable and luxurious 5-star Umrah packages for a smooth spiritual journey." />
+        <title>Cheap Umrah Packages from USA | Haram Umrah Travels</title>
+        <meta name="description" content="Book affordable Umrah packages from USA with flights, visa, hotels & transport included. Trusted US travel agency offering 3, 4 & 5-star Umrah packages." />
       </Helmet>
       <HeroSection />
       <InquiryForm />
