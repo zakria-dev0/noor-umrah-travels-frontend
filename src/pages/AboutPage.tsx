@@ -695,6 +695,7 @@ const AboutPage: React.FC = () => {
       <Helmet>
         <title>About Us | Haram Umrah Travels</title>
         <meta name="description" content="Learn about Haram Umrah Travels, a trusted US-based Umrah and Hajj operator registered under Seller of Travel license #ST46359, dedicated to smooth, spiritually enriching pilgrimages." />
+        <link rel="canonical" href="https://haramumrahtravels.com/about" />
       </Helmet>
       <AboutHero />
       <SpiritualJourney />

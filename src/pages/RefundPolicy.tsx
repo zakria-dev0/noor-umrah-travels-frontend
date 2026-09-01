@@ -8,6 +8,7 @@ const RefundPolicy: React.FC = () => {
       <Helmet>
         <title>Refund Policy | Haram Umrah Travels</title>
         <meta name="description" content="Review the Refund Policy for Haram Umrah Travels bookings, including cancellation timelines, eligibility, and how refunds are processed." />
+        <link rel="canonical" href="https://haramumrahtravels.com/refund-policy" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">

@@ -1033,6 +1033,7 @@ console.log("pageContent", pageContent);
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <link rel="canonical" href={`https://haramumrahtravels.com/packages/5-star/haram-view/${nights}`} />
       </Helmet>
 
       {/* ══════════════ PAGE HEADER ══════════════ */}
