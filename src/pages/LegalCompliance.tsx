@@ -8,6 +8,7 @@ const LegalCompliance: React.FC = () => {
       <Helmet>
         <title>Legal Compliance | Haram Umrah Travels</title>
         <meta name="description" content="Haram Umrah Travels is a registered Seller of Travel (License #ST46359). Learn about our legal compliance, registrations, and commitment to trusted travel practices." />
+        <link rel="canonical" href="https://haramumrahtravels.com/legal-compliance" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">

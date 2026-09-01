@@ -1028,6 +1028,7 @@ const KaabaViewDetail: React.FC = () => {
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <link rel="canonical" href={`https://haramumrahtravels.com/packages/5-star/kaaba-view/${nights}`} />
       </Helmet>
 
       {/* ══════════════ PAGE HEADER ══════════════ */}
