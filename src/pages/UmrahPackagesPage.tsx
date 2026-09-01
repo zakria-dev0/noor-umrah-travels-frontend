@@ -473,6 +473,7 @@ const PackagesPage: React.FC = () => {
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <link rel="canonical" href={`https://haramumrahtravels.com/packages/${packageType}`} />
       </Helmet>
 
       {/* Hero Banner */}
