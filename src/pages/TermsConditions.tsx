@@ -8,6 +8,7 @@ const TermsConditions: React.FC = () => {
       <Helmet>
         <title>Terms &amp; Conditions | Haram Umrah Travels</title>
         <meta name="description" content="Read the Terms and Conditions for booking Umrah and Hajj packages with Haram Umrah Travels, including payment, cancellation, and travel policies." />
+        <link rel="canonical" href="https://haramumrahtravels.com/terms-conditions" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">

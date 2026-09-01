@@ -1260,6 +1260,7 @@ const ContactPage: React.FC = () => (
     <Helmet>
       <title>Contact Us | Haram Umrah Travels</title>
       <meta name="description" content="Get in touch with Haram Umrah Travels to book your Umrah package, request a custom quote, or ask questions — call, WhatsApp, or send us an inquiry today." />
+      <link rel="canonical" href="https://haramumrahtravels.com/contact" />
     </Helmet>
     <ContactHero />
     <ContactSection />
