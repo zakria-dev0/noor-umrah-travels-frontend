@@ -8,6 +8,7 @@ const GuidePage: React.FC = () => (
       <title>Umrah Guide | Haram Umrah Travels</title>
       <meta name="description" content="A step-by-step guide to performing Umrah — coming soon from Haram Umrah Travels." />
       <meta name="robots" content="noindex, follow" />
+      <link rel="canonical" href="https://haramumrahtravels.com/guide" />
     </Helmet>
     <div className="text-center">
       <h1 className="text-2xl sm:text-3xl font-bold text-noor-green mb-3">Umrah Guide</h1>
