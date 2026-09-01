@@ -238,6 +238,7 @@ const GroupUmrah: React.FC = () => {
       <Helmet>
         <title>5 Star Group Umrah Packages | Haram Umrah Travels</title>
         <meta name="description" content="Book 5 Star Group Umrah Packages with special group discounts, premium hotels, visa, and transportation included — perfect for families and travel groups." />
+        <link rel="canonical" href="https://haramumrahtravels.com/group-umrah" />
       </Helmet>
 
       {/* Hero Banner */}
