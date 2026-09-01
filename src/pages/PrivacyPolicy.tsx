@@ -8,6 +8,7 @@ const PrivacyPolicy: React.FC = () => {
       <Helmet>
         <title>Privacy Policy | Haram Umrah Travels</title>
         <meta name="description" content="Read the Privacy Policy of Haram Umrah Travels to understand how we collect, use, and protect your personal information when you book an Umrah or Hajj package." />
+        <link rel="canonical" href="https://haramumrahtravels.com/privacy-policy" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
