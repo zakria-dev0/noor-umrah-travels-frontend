@@ -1701,6 +1701,7 @@ const UmrahPackagesCombined: React.FC = () => {
         <Helmet>
           <title>{pageMeta.title}</title>
           <meta name="description" content={pageMeta.description} />
+          <link rel="canonical" href={`https://haramumrahtravels.com${pathname}`} />
         </Helmet>
       )}
       {/* Fixed: Responsive header padding and text size */}
